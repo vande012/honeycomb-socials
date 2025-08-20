@@ -1,0 +1,52 @@
+{
+  "name": "vande-digital",
+  "version": "1.0.0",
+  "description": "Vande Design System & Blog Platform - A comprehensive design system built with Next.js 15 and integrated with Strapi CMS",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run develop",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm run start",
+    "start:backend": "cd backend && npm run start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules frontend/.next backend/build",
+    "lint": "cd frontend && npm run lint",
+    "type-check": "cd frontend && npx tsc --noEmit"
+  },
+  "keywords": [
+    "design-system",
+    "nextjs",
+    "strapi",
+    "blog",
+    "cms",
+    "tailwind",
+    "typescript",
+    "react"
+  ],
+  "author": "Vande Digital Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vande012/vande-digital.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vande012/vande-digital/issues"
+  },
+  "homepage": "https://github.com/vande012/vande-digital#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

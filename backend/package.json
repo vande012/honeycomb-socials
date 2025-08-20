@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.15.0",
+    "@strapi/plugin-graphql": "^5.0.0",
+    "@strapi/plugin-users-permissions": "5.15.0",
+    "@strapi/provider-upload-aws-s3": "^5.15.0",
+    "@strapi/strapi": "5.15.0",
+    "better-sqlite3": "11.3.0",
+    "lodash": "^4.17.19",
+    "pg": "^8.15.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "template": "website",
+    "uuid": "6b36863d-11ef-4372-86cc-9d3798ccebb6",
+    "installId": "0b196fab447c5fd1f7188593b238e822e1b26eea1a02fbc0ccacf494126b080f"
+  }
+}

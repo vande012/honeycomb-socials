@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_industry_overviews",
+  "info": {
+    "displayName": "Industry Overview",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "highlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.highlight"
+    }
+  }
+}

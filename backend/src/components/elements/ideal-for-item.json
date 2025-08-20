@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_ideal_for_items",
+  "info": {
+    "displayName": "Ideal For Item",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

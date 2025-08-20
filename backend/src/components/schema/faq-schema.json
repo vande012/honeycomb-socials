@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_schema_faq_schemas",
+  "info": {
+    "displayName": "faq-schema"
+  },
+  "options": {},
+  "attributes": {
+    "mainEntityName": {
+      "type": "string",
+      "required": true
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  }
+}

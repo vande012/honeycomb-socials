@@ -1,0 +1,44 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "../components/theme-provider";
+import { Navbar } from "../components/navbar";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Vande Design System",
+  description: "A comprehensive design system and component library built with Next.js and Tailwind CSS",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider
+          defaultTheme="system"
+          storageKey="vande-ui-theme"
+        >
+          <div className="min-h-screen bg-background">
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

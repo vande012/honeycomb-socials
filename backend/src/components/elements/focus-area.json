@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_focus_areas",
+  "info": {
+    "displayName": "Focus Area",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

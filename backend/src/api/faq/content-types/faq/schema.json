@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faqs",
+  "info": {
+    "singularName": "faq",
+    "pluralName": "faqs",
+    "displayName": "FAQ"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Question": {
+      "type": "string",
+      "required": true
+    },
+    "Answer": {
+      "type": "string",
+      "required": true
+    },
+    "Category": {
+      "type": "string"
+    },
+    "Order": {
+      "type": "integer",
+      "default": 1
+    },
+    "Schemaid": {
+      "type": "string"
+    }
+  }
+}

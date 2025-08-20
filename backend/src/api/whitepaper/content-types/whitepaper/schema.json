@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "whitepapers",
+  "info": {
+    "singularName": "whitepaper",
+    "pluralName": "whitepapers",
+    "displayName": "Whitepaper"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 250
+    },
+    "Document": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "CoverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "PublicationDate": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

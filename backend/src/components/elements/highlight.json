@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_highlights",
+  "info": {
+    "displayName": "Highlight",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "isEmphasized": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

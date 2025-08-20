@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "fullDescription": {
+      "type": "blocks"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "heroImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "gradient": {
+      "type": "string",
+      "default": "from-[#0C6BAF] to-[#187CC1]"
+    },
+    "keyFeatures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.service-feature"
+    },
+    "idealFor": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.ideal-for-item"
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.process-step"
+    }
+  }
+}
