@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Typography } from '../../components/ui/typography';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 
 interface TOCItem {
   id: string;
@@ -34,7 +33,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
               .map((child: any) => child.text || '')
               .join('')
               .trim();
-            
+
             if (text) {
               const id = `heading-${index}-${text.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
               headings.push({
@@ -55,7 +54,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
             const level = headerMatch[1].length;
             const text = headerMatch[2].trim();
             const id = `heading-${index}-${text.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-            
+
             headings.push({
               id,
               text,
@@ -77,21 +76,25 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
 
     const handleScroll = () => {
       const headingElements = tocItems.map(item => document.getElementById(item.id)).filter(Boolean);
-      
-      // Find the heading that's currently in view
+      const windowHeight = window.innerHeight;
+      const midPoint = windowHeight / 2;
+
+      // Find the heading that's closest to the midpoint
       let currentHeading = '';
-      
-      for (let i = headingElements.length - 1; i >= 0; i--) {
-        const element = headingElements[i];
+      let closestDistance = Infinity;
+
+      headingElements.forEach(element => {
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100) {
+          const distance = Math.abs(rect.top - midPoint);
+
+          if (distance < closestDistance && rect.top <= midPoint + 100) {
+            closestDistance = distance;
             currentHeading = element.id;
-            break;
           }
         }
-      }
-      
+      });
+
       setActiveId(currentHeading);
     };
 
@@ -101,17 +104,15 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [tocItems]);
 
-  // Scroll to heading
+  // Scroll to heading - position at midpoint of screen
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Account for sticky header
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      // Use scrollIntoView with block: 'center' for better browser support
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
       });
     }
   };
@@ -123,7 +124,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
 
   return (
     <Card className={`sticky top-24 ${className}`}>
-      <CardHeader className="pb-2">
+      <CardHeader className="pb-5">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg">Table of Contents</CardTitle>
           <Button
@@ -136,30 +137,30 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content, className = 
           </Button>
         </div>
       </CardHeader>
-      
+
       {!isCollapsed && (
         <CardContent className="pt-0">
           <nav className="space-y-1">
             {tocItems.map((item) => {
               const isActive = activeId === item.id;
               const indentClass = item.level > 1 ? `ml-${(item.level - 1) * 4}` : '';
-              
+
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollToHeading(item.id)}
                   className={`
                     block w-full text-left text-sm py-1 px-2 rounded transition-colors
-                    ${isActive 
-                      ? 'bg-primary text-primary-foreground font-medium' 
+                    ${isActive
+                      ? 'bg-primary text-primary-foreground font-medium'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                     }
                     ${indentClass}
                   `}
                 >
-                  <Typography variant="small" className="truncate">
+                  <span className="text-sm truncate">
                     {item.text}
-                  </Typography>
+                  </span>
                 </button>
               );
             })}

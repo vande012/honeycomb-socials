@@ -15,7 +15,7 @@ export interface UtmParams {
 }
 
 // Storage key for localStorage
-const UTM_STORAGE_KEY = 'kersten_utm_params';
+const UTM_STORAGE_KEY = 'honeycomb_utm_params';
 
 // Cookie expiration in days
 const COOKIE_EXPIRATION_DAYS = 30;

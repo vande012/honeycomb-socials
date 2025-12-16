@@ -77,14 +77,14 @@ const addToGoogleSheets = async (data: ContactFormData) => {
 const sendEmailNotification = async (data: ContactFormData) => {
   const transporter = createTransporter();
   
-  // Send all emails to Michael's Microsoft 365 address
-  const recipient = 'michael@kerstentalentcapital.com';
+  // Send all emails to the configured recipient address
+  const recipient = process.env.CONTACT_EMAIL || process.env.EMAIL_USER || 'contact@honeycombsocials.com';
   
   const emailHtml = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
       <div style="background: linear-gradient(135deg, #002C5F 0%, #0C6BAF 50%, #187CC1 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">New Contact Form Submission</h1>
-        <p style="color: #71C8F3; margin: 10px 0 0 0; font-size: 16px;">Kersten Talent Capital</p>
+        <p style="color: #71C8F3; margin: 10px 0 0 0; font-size: 16px;">Honeycomb Socials</p>
       </div>
       
       <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -158,7 +158,7 @@ const sendConfirmationEmail = async (data: ContactFormData) => {
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
       <div style="background: linear-gradient(135deg, #002C5F 0%, #0C6BAF 50%, #187CC1 100%); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
         <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">Thank You for Contacting Us!</h1>
-        <p style="color: #71C8F3; margin: 10px 0 0 0; font-size: 16px;">Kersten Talent Capital</p>
+        <p style="color: #71C8F3; margin: 10px 0 0 0; font-size: 16px;">Honeycomb Socials</p>
       </div>
       
       <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -167,7 +167,7 @@ const sendConfirmationEmail = async (data: ContactFormData) => {
         </p>
         
         <p style="color: #333; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-          Thank you for reaching out to Kersten Talent Capital. We have received your message and appreciate your interest in our executive search and leadership development services.
+          Thank you for reaching out to Honeycomb Socials. We have received your message and appreciate your interest in our services.
         </p>
         
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #187CC1; margin: 25px 0;">
@@ -184,7 +184,7 @@ const sendConfirmationEmail = async (data: ContactFormData) => {
         </p>
         
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://www.kerstentalentcapital.com" style="background: linear-gradient(135deg, #0C6BAF 0%, #187CC1 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
+          <a href="https://www.honeycombsocials.com" style="background: linear-gradient(135deg, #0C6BAF 0%, #187CC1 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
             Visit Our Website
           </a>
         </div>
@@ -192,11 +192,11 @@ const sendConfirmationEmail = async (data: ContactFormData) => {
         <div style="border-top: 1px solid #e9ecef; padding-top: 20px; margin-top: 30px;">
           <p style="color: #333; font-size: 16px; line-height: 1.6; margin-bottom: 15px;">
             Best regards,<br>
-            <strong style="color: #002C5F;">The Kersten Talent Capital Team</strong>
+            <strong style="color: #002C5F;">The Honeycomb Socials Team</strong>
           </p>
           
           <div style="color: #6c757d; font-size: 14px;">
-            <p style="margin: 5px 0;">📧 michael@kerstentalentcapital.com</p>
+            <p style="margin: 5px 0;">📧 ${process.env.CONTACT_EMAIL || process.env.EMAIL_USER || 'contact@honeycombsocials.com'}</p>
             <p style="margin: 5px 0;">📞 +1 (303) 524-1199</p>
             <p style="margin: 5px 0;">🏢 8310 South Valley Highway, Suite 300, Englewood, CO 80112</p>
           </div>
@@ -208,7 +208,7 @@ const sendConfirmationEmail = async (data: ContactFormData) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: data.email,
-    subject: 'Thank you for contacting Kersten Talent Capital',
+    subject: 'Thank you for contacting Honeycomb Socials',
     html: confirmationHtml,
   };
 

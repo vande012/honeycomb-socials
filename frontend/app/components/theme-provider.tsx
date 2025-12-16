@@ -26,27 +26,40 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = 'system',
-  storageKey = 'vande-ui-theme',
+  defaultTheme = 'light',
+  storageKey = 'template-theme',
   ...props
 }: ThemeProviderProps) {
-  // Start with defaultTheme to match server-side rendering
+  // Always start with defaultTheme to match server-side rendering
+  // Don't access localStorage in initial state to avoid hydration mismatch
   const [theme, setTheme] = useState<Theme>(defaultTheme)
   const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('light')
   const [mounted, setMounted] = useState(false)
 
-  // Read from localStorage only after component mounts (client-side only)
+  // Helper to get system theme
+  const getSystemTheme = (): 'dark' | 'light' => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    }
+    return 'light'
+  }
+
+  // Read from localStorage and apply theme only after mount (client-side only)
   useEffect(() => {
     setMounted(true)
+    
+    // Read from localStorage after mount
     const stored = localStorage.getItem(storageKey) as Theme
     if (stored && ['dark', 'light', 'system'].includes(stored)) {
       setTheme(stored)
     }
   }, [storageKey])
 
-  // Update resolved theme and apply classes
+  // Update resolved theme and apply classes, and listen for system changes
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted || typeof window === 'undefined') return
 
     const root = window.document.documentElement
     root.classList.remove('light', 'dark')
@@ -54,15 +67,34 @@ export function ThemeProvider({
     let resolved: 'dark' | 'light'
 
     if (theme === 'system') {
-      resolved = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
+      resolved = getSystemTheme()
     } else {
       resolved = theme
     }
 
     setResolvedTheme(resolved)
     root.classList.add(resolved)
+
+    // Listen for system theme changes when theme is set to 'system'
+    if (theme === 'system') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const handleChange = (e: MediaQueryListEvent) => {
+        const newResolved = e.matches ? 'dark' : 'light'
+        setResolvedTheme(newResolved)
+        root.classList.remove('light', 'dark')
+        root.classList.add(newResolved)
+      }
+
+      // Modern browsers
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', handleChange)
+        return () => mediaQuery.removeEventListener('change', handleChange)
+      } else {
+        // Fallback for older browsers
+        mediaQuery.addListener(handleChange)
+        return () => mediaQuery.removeListener(handleChange)
+      }
+    }
   }, [theme, mounted])
 
   const value = {

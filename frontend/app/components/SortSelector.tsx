@@ -1,8 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Button } from '../../components/ui/button';
-import { Typography } from '../../components/ui/typography';
+import { Button } from '../components/ui/button';
 
 const sortOptions = [
   { value: 'newest', label: 'Newest First' },
@@ -18,32 +17,32 @@ export default function SortSelector() {
 
   const handleSortChange = (sortValue: string) => {
     const params = new URLSearchParams(searchParams);
-    
+
     if (sortValue !== 'newest') {
       params.set('sort', sortValue);
     } else {
       params.delete('sort');
     }
-    
+
     // Reset to first page when sorting
     params.delete('page');
-    
+
     const queryString = params.toString();
     const url = queryString ? `/blog?${queryString}` : '/blog';
-    
+
     router.push(url);
   };
 
   return (
     <div className="space-y-3">
-      <Typography variant="h6" className="font-semibold">
+      <h6 className="font-semibold">
         Sort Posts
-      </Typography>
-      
+      </h6>
+
       <div className="flex flex-wrap gap-2">
         {sortOptions.map((option) => {
           const isActive = currentSort === option.value;
-          
+
           return (
             <Button
               key={option.value}

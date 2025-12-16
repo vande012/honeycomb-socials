@@ -61,10 +61,10 @@ export async function getGlobalDataClient() {
         id: 1,
         attributes: {
           metadata: {
-            metaTitle: 'Kersten Talent Capital',
+            metaTitle: 'Honeycomb Socials',
             metaDescription: 'Strategic talent investment',
           },
-          metaTitleSuffix: 'Kersten Talent Capital',
+          metaTitleSuffix: 'Honeycomb Socials',
           favicon: null,
           createdAt: '',
           updatedAt: '',

@@ -4,10 +4,10 @@ const nextConfig: NextConfig = {
   // Configure site URL for production and development
   env: {
     NEXT_PUBLIC_STRAPI_API_URL: process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app',
-    S3_BUCKET_URL: process.env.S3_BUCKET_URL || 'https://kerstencapital.s3.us-east-1.amazonaws.com',
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com',
+    S3_BUCKET_URL: process.env.S3_BUCKET_URL || 'https://honeycomb-socials.s3.us-east-1.amazonaws.com',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com',
   },
-  
+
   // Configure headers for better caching and performance
   async headers() {
     return [
@@ -83,28 +83,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  
-  // Configure redirects for old URLs
+
+  // Configure redirects (add your custom redirects here)
   async redirects() {
     return [
-      {
-        source: '/hear-from-others',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/our-capabilities',
-        destination: '/',
-        permanent: true,
-      },
-      {
-      source: '/guides',
-      destination: '/blog',
-      permanent: true,
-      },
+      // Example redirect:
+      // {
+      //   source: '/old-path',
+      //   destination: '/new-path',
+      //   permanent: true,
+      // },
     ];
   },
-  
+
   // Configure image domains and optimization
   images: {
     remotePatterns: [
@@ -116,7 +107,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'kerstencapital.s3.us-east-1.amazonaws.com',
+        hostname: 'honeycomb-socials.s3.us-east-1.amazonaws.com',
         port: '',
         pathname: '/**',
       },
@@ -146,13 +137,13 @@ const nextConfig: NextConfig = {
     path: '/_next/image',
     unoptimized: false,
   },
-  
+
   // Ensure sitemap and robots.txt are generated during build
   poweredByHeader: false,
-  
+
   // Optimize for SEO and performance
   reactStrictMode: true,
-  
+
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['framer-motion'],

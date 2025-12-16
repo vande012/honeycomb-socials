@@ -70,8 +70,17 @@ export async function getBlogPostBySlug(slug: string) {
       seo: {
         populate: '*',
       },
-      content: true,
+      content: {
+        populate: {
+          image: {
+            populate: '*'
+          }
+        }
+      },
       markdownContent: true,
+      images: {
+        populate: '*'
+      },
       // Also try common content field variations
       body: true,
       text: true,

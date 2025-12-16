@@ -7,7 +7,7 @@
  */
 
 // Base URL for the site
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
 
 /**
  * Generate canonical URL for a page
@@ -28,9 +28,9 @@ export function generateOrganizationSchema(): string {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Kersten Talent Capital",
+    "name": "Honeycomb Socials",
     "url": SITE_URL,
-    "logo": `${SITE_URL}/kersten-logo.jpg`,
+    "logo": `${SITE_URL}/logo.jpg`,
     "description": "Strategic talent investment firm specializing in executive search and leadership solutions.",
     "foundingDate": "2017",
     "numberOfEmployees": "10-50",
@@ -47,7 +47,7 @@ export function generateOrganizationSchema(): string {
       "@type": "ContactPoint",
       "telephone": "+1-303-414-2057",
       "contactType": "customer service",
-      "email": "michael@kerstentalentcapital.com"
+      "email": process.env.CONTACT_EMAIL || process.env.EMAIL_USER || "contact@honeycombsocials.com"
     },
     "sameAs": [
       "https://www.linkedin.com/company/kersten-talent-capital/",
@@ -127,8 +127,8 @@ export function generateLocalBusinessSchema(): string {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Kersten Talent Capital",
-    "image": `${SITE_URL}/kersten-logo.jpg`,
+    "name": "Honeycomb Socials",
+    "image": `${SITE_URL}/logo.jpg`,
     "url": SITE_URL,
     "telephone": "+1-303-414-2057",
     "address": {
@@ -183,7 +183,7 @@ export function generateArticleSchema(post: {
       "@type": "Article",
       "headline": post.title || "Blog Post",
       "description": post.excerpt || "Insights on leadership and talent acquisition",
-      "image": post.coverImage?.url ? post.coverImage.url : `${SITE_URL}/kersten-logo.jpg`,
+      "image": post.coverImage?.url ? post.coverImage.url : `${SITE_URL}/logo.jpg`,
       "datePublished": post.publishedAt || new Date().toISOString(),
       "dateModified": post.updatedAt || new Date().toISOString(),
       "author": {
@@ -192,10 +192,10 @@ export function generateArticleSchema(post: {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Kersten Talent Capital",
+        "name": "Honeycomb Socials",
         "logo": {
           "@type": "ImageObject",
-          "url": `${SITE_URL}/kersten-logo.jpg`
+          "url": `${SITE_URL}/logo.jpg`
         }
       },
       "mainEntityOfPage": {
@@ -242,7 +242,7 @@ export function generateServiceSchema(service: {
     "url": `${SITE_URL}${service.url}`,
     "provider": {
       "@type": "Organization",
-      "name": "Kersten Talent Capital",
+      "name": "Honeycomb Socials",
       "url": SITE_URL
     },
     "serviceType": service.category || "Executive Search",
@@ -312,7 +312,7 @@ export function generateWebPageSchema(page: {
  * @param siteUrl The base site URL
  * @returns Array of hreflang objects for Next.js metadata
  */
-export function generateHreflangTags(currentUrl: string, siteUrl: string = 'https://kerstentalentcapital.com') {
+export function generateHreflangTags(currentUrl: string, siteUrl: string = 'https://honeycombsocials.com') {
   // Remove trailing slash for consistency
   const cleanCurrentUrl = currentUrl.replace(/\/$/, '');
   const cleanSiteUrl = siteUrl.replace(/\/$/, '');
@@ -375,10 +375,10 @@ export function truncateMetaDescription(description: string, maxLength: number =
 /**
  * Generates optimal meta title for pages
  * @param pageTitle The main page title
- * @param brandName The brand name (default: "Kersten Talent Capital")
+ * @param brandName The brand name (default: "Honeycomb Socials")
  * @returns Optimized meta title
  */
-export function generateOptimalMetaTitle(pageTitle: string, brandName: string = "Kersten Talent Capital"): string {
+export function generateOptimalMetaTitle(pageTitle: string, brandName: string = "Honeycomb Socials"): string {
   const baseTitle = `${pageTitle} | ${brandName}`;
   return truncateMetaTitle(baseTitle, 60);
 }

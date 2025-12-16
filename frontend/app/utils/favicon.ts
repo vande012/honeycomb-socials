@@ -74,10 +74,10 @@ export function generateOgImages(image: StrapiImage | null, altText: string) {
   
   // Fallback to default OG image
   const defaultOgImage = {
-    url: 'https://kerstencapital.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
+    url: 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
     width: 1200,
     height: 630,
-    alt: altText || 'Kersten Talent Capital - Strategic Talent Investment & Career Acceleration',
+    alt: altText || 'Honeycomb Socials',
   };
   
   return [defaultOgImage];

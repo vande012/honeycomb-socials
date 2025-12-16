@@ -40,7 +40,7 @@ export async function generateMetadata(
     const { name } = category.data;
     
     // Base URL from environment or default
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
     
     // Canonical URL for this category
     const canonicalUrl = `${baseUrl}/blog/category/${slug}`;
@@ -48,12 +48,12 @@ export async function generateMetadata(
     // Generate hreflang tags for this page
     const hreflangTags = generateHreflangTags(`/blog/category/${slug}`, baseUrl);
     
-    const ogImages = await generateConsistentOgImages(`${name} | Blog Categories | Kersten Talent Capital`);
-    const twitterImages = await generateConsistentTwitterImages(`${name} | Blog Categories | Kersten Talent Capital`);
+    const ogImages = await generateConsistentOgImages(`${name} | Blog Categories | Honeycomb Socials`);
+    const twitterImages = await generateConsistentTwitterImages(`${name} | Blog Categories | Honeycomb Socials`);
     
     return {
-      title: `${name} | Blog Categories | Kersten Talent Capital`,
-      description: `Browse all blog posts in the ${name} category at Kersten Talent Capital.`,
+      title: `${name} | Blog Categories | Honeycomb Socials`,
+      description: `Browse all blog posts in the ${name} category at Honeycomb Socials.`,
       alternates: {
         canonical: canonicalUrl,
         languages: {
@@ -82,7 +82,7 @@ export async function generateMetadata(
     console.error('Error generating metadata:', error);
     return {
       title: 'Blog Category',
-      description: 'Kersten Talent Capital blog category',
+      description: 'Honeycomb Socials blog category',
     };
   }
 }

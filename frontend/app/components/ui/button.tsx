@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react'
-import { cn } from '../utils'
+import { cn } from '../../../utils'
 
 const buttonVariants = {
   variant: {

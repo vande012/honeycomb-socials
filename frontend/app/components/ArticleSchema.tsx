@@ -13,7 +13,7 @@ interface ArticleSchemaProps {
 }
 
 const ArticleSchema: React.FC<ArticleSchemaProps> = ({ post }) => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
   
   const schema = {
     '@context': 'https://schema.org',
@@ -25,12 +25,12 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({ post }) => {
     dateModified: post.updatedAt,
     author: {
       '@type': 'Organization',
-      name: 'Kersten Talent Capital',
+      name: 'Honeycomb Socials',
       url: baseUrl,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Kersten Talent Capital',
+      name: 'Honeycomb Socials',
       url: baseUrl,
       logo: {
         '@type': 'ImageObject',

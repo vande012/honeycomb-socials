@@ -1,7 +1,7 @@
 import { getStaticPages, getBlogPosts, getBlogCategories, getIndustryPages, getServicePages, SitemapEntry } from '../utils/sitemap-utils';
 
 // Base URL of the site
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
 /**
  * Generate the sitemap XML for the website

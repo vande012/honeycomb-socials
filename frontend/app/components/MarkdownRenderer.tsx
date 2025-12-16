@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '../../components/ui/typography';
+import Image from 'next/image';
 
 interface MarkdownRendererProps {
   content: string;
@@ -23,9 +23,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
     const flushParagraph = () => {
       if (currentParagraph.length > 0) {
         elements.push(
-          <Typography key={elements.length} variant="p" className="mb-4 leading-relaxed">
+          <p key={elements.length} className="mb-4 leading-relaxed">
             {parseInlineMarkdown(currentParagraph.join(' '))}
-          </Typography>
+          </p>
         );
         currentParagraph = [];
       }
@@ -84,29 +84,37 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
       if (trimmedLine.startsWith('#')) {
         flushParagraph();
         flushList();
-        
+
         const headerMatch = trimmedLine.match(/^(#{1,6})\s+(.+)$/);
         if (headerMatch) {
           const level = headerMatch[1].length;
           const text = headerMatch[2];
-          const variants = {
-            1: 'h1',
-            2: 'h2',
-            3: 'h3',
-            4: 'h4',
-            5: 'h5',
-            6: 'h6'
-          } as const;
+          const headingContent = parseInlineMarkdown(text);
+          const headingClass = "mb-4 mt-8 first:mt-0";
+          const headingId = `heading-${index}-${text.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
 
-          elements.push(
-            <Typography 
-              key={elements.length} 
-              variant={variants[level as keyof typeof variants] || 'h2'}
-              className="mb-4 mt-8 first:mt-0"
-            >
-              {parseInlineMarkdown(text)}
-            </Typography>
-          );
+          switch (level) {
+            case 1:
+              elements.push(<h1 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h1>);
+              break;
+            case 2:
+              elements.push(<h2 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h2>);
+              break;
+            case 3:
+              elements.push(<h3 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h3>);
+              break;
+            case 4:
+              elements.push(<h4 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h4>);
+              break;
+            case 5:
+              elements.push(<h5 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h5>);
+              break;
+            case 6:
+              elements.push(<h6 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h6>);
+              break;
+            default:
+              elements.push(<h2 key={elements.length} id={headingId} className={headingClass}>{headingContent}</h2>);
+          }
         }
         return;
       }
@@ -115,6 +123,30 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
       if (trimmedLine.startsWith('- ') || trimmedLine.startsWith('* ')) {
         flushParagraph();
         listItems.push(trimmedLine.slice(2));
+        return;
+      }
+
+      // Handle images ![alt](url)
+      const imageMatch = trimmedLine.match(/^!\[(.*?)\]\((.*?)\)$/);
+      if (imageMatch) {
+        flushParagraph();
+        flushList();
+        const alt = imageMatch[1];
+        const url = imageMatch[2];
+        elements.push(
+          <div key={elements.length} className="mb-6">
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src={url}
+                alt={alt || 'Image'}
+                width={800}
+                height={600}
+                className="w-full h-auto"
+                unoptimized
+              />
+            </div>
+          </div>
+        );
         return;
       }
 
@@ -152,33 +184,80 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
 
   // Parse inline markdown elements
   const parseInlineMarkdown = (text: string): React.ReactNode => {
-    let result = text;
+    const elements: React.ReactNode[] = [];
+    let lastIndex = 0;
+
+    // Check for inline images first
+    const imageRegex = /!\[(.*?)\]\((.*?)\)/g;
+    let match;
+    
+    imageRegex.lastIndex = 0;
+
+    while ((match = imageRegex.exec(text)) !== null) {
+      // Add text before the match
+      if (match.index > lastIndex) {
+        elements.push(processTextFormatting(text.slice(lastIndex, match.index)));
+      }
+
+      // Add inline image
+      const alt = match[1];
+      const url = match[2];
+      elements.push(
+        <span key={`img-${match.index}`} className="inline-block my-2">
+          <Image
+            src={url}
+            alt={alt || 'Image'}
+            width={600}
+            height={400}
+            className="w-full h-auto rounded-lg"
+            unoptimized
+          />
+        </span>
+      );
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Add remaining text
+    if (lastIndex < text.length) {
+      elements.push(processTextFormatting(text.slice(lastIndex)));
+    }
+
+    // If no images found, just process the text
+    if (elements.length === 0) {
+      return processTextFormatting(text);
+    }
+
+    return elements;
+  };
+
+  // Process bold and italic text formatting
+  const processTextFormatting = (text: string): React.ReactNode => {
     const elements: React.ReactNode[] = [];
     let lastIndex = 0;
 
     // Process bold text (**text**)
     const boldRegex = /\*\*(.*?)\*\*/g;
     let match;
-    
-    // Reset regex
+
     boldRegex.lastIndex = 0;
-    
+
     while ((match = boldRegex.exec(text)) !== null) {
       // Add text before the match
       if (match.index > lastIndex) {
         elements.push(text.slice(lastIndex, match.index));
       }
-      
+
       // Add bold text
       elements.push(
         <strong key={`bold-${match.index}`} className="font-bold">
           {match[1]}
         </strong>
       );
-      
+
       lastIndex = match.index + match[0].length;
     }
-    
+
     // Add remaining text
     if (lastIndex < text.length) {
       elements.push(text.slice(lastIndex));
@@ -189,21 +268,21 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
       const italicRegex = /\*(.*?)\*/g;
       italicRegex.lastIndex = 0;
       lastIndex = 0;
-      
+
       while ((match = italicRegex.exec(text)) !== null) {
         if (match.index > lastIndex) {
           elements.push(text.slice(lastIndex, match.index));
         }
-        
+
         elements.push(
           <em key={`italic-${match.index}`} className="italic">
             {match[1]}
           </em>
         );
-        
+
         lastIndex = match.index + match[0].length;
       }
-      
+
       if (lastIndex < text.length) {
         elements.push(text.slice(lastIndex));
       }

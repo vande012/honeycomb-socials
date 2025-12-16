@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Badge } from '../../components/ui/badge';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
-import { Typography } from '../../components/ui/typography';
+import { Badge } from '../components/ui/badge';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { BlogPost } from '../types/blog';
 import { formatDate, getReadingTime } from '../utils/blog-helpers';
 import { getS3URL } from '../api/api';
@@ -14,15 +13,15 @@ interface BlogPostCardProps {
 
 export default function BlogPostCard({ post, featured = false }: BlogPostCardProps) {
   const { title, slug, excerpt, coverImage, categories, publishedAt, content } = post;
-  
+
   // Calculate reading time
   const readingTime = getReadingTime(content || excerpt || '');
-  
+
   // Format date
   const formattedDate = formatDate(publishedAt);
-  
+
   // Get image URL
-  const imageUrl = coverImage?.url 
+  const imageUrl = coverImage?.url
     ? (coverImage.url.startsWith('http') ? coverImage.url : getS3URL(coverImage.url))
     : '/api/placeholder/400/240';
 
@@ -40,7 +39,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
               priority
             />
           </div>
-          
+
           {/* Content Section */}
           <div className="order-1 lg:order-2 flex flex-col justify-center">
             <CardHeader className="pb-4">
@@ -54,21 +53,21 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
                   </Badge>
                 )}
               </div>
-              
+
               <CardTitle className="text-2xl lg:text-3xl mb-3 leading-tight">
-                <Link 
+                <Link
                   href={`/blog/${slug}`}
                   className="hover:text-primary transition-colors"
                 >
                   {title}
                 </Link>
               </CardTitle>
-              
+
               <CardDescription className="text-base leading-relaxed line-clamp-3">
                 {excerpt}
               </CardDescription>
             </CardHeader>
-            
+
             <CardContent className="pt-0">
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <time dateTime={publishedAt}>{formattedDate}</time>
@@ -94,25 +93,25 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
           />
           {categories && categories.length > 0 && (
             <div className="absolute top-3 left-3">
-              <Badge variant="secondary" className="bg-white/90 text-gray-800">
+              <Badge variant="secondary" className="bg-background/90 text-foreground">
                 {categories[0].name}
               </Badge>
             </div>
           )}
         </div>
-        
+
         {/* Content */}
         <CardHeader className="pb-2">
           <CardTitle className="text-xl leading-tight line-clamp-2 group-hover:text-primary transition-colors">
             {title}
           </CardTitle>
         </CardHeader>
-        
+
         <CardContent className="pt-0">
           <CardDescription className="line-clamp-3 mb-4">
             {excerpt}
           </CardDescription>
-          
+
           <div className="flex items-center justify-between text-sm text-muted-foreground">
             <time dateTime={publishedAt}>{formattedDate}</time>
             <span>{readingTime} min read</span>

@@ -7,7 +7,7 @@ export interface SitemapEntry {
   priority?: number;
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
 
 /**
  * Get static pages for sitemap

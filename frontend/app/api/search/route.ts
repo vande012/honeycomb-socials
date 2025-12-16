@@ -23,14 +23,14 @@ export interface SearchResponse {
 const STATIC_PAGES = [
   {
     id: 'home',
-    title: 'Kersten Talent Capital - Executive Search & Fractional Hiring',
+    title: 'Honeycomb Socials',
     excerpt: 'Premier executive search and fractional hiring firm specializing in technology, financial services, and high-growth companies.',
     url: '/',
     category: 'Main'
   },
   {
     id: 'about-us',
-    title: 'About Us - Kersten Talent Capital',
+    title: 'About Us - Honeycomb Socials',
     excerpt: 'Learn about our founding philosophy, approach to executive search, and commitment to revolutionizing talent acquisition.',
     url: '/about-us',
     category: 'Company'

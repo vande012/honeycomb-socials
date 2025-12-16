@@ -4,16 +4,16 @@ import SearchResults from '../components/SearchResults';
 import { generateConsistentOgImages, generateConsistentTwitterImages } from '../utils/metadata';
 
 // Base URL from environment or default
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kerstentalentcapital.com';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const ogImages = await generateConsistentOgImages('Search Results | Kersten Talent Capital');
-    const twitterImages = await generateConsistentTwitterImages('Search Results | Kersten Talent Capital');
+    const ogImages = await generateConsistentOgImages('Search Results | Honeycomb Socials');
+    const twitterImages = await generateConsistentTwitterImages('Search Results | Honeycomb Socials');
     
     return {
-      title: 'Search Results | Kersten Talent Capital',
-      description: 'Search results for Kersten Talent Capital content including blog posts, pages, and FAQs.',
+      title: 'Search Results | Honeycomb Socials',
+      description: 'Search results for Honeycomb Socials content including blog posts, pages, and FAQs.',
       alternates: {
         canonical: `${baseUrl}/search`,
         languages: {
@@ -41,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
   } catch (error) {
     console.error('Error generating search metadata:', error);
     return {
-      title: 'Search Results | Kersten Talent Capital',
-      description: 'Search results for Kersten Talent Capital content including blog posts, pages, and FAQs.',
+      title: 'Search Results | Honeycomb Socials',
+      description: 'Search results for Honeycomb Socials content including blog posts, pages, and FAQs.',
       alternates: {
         canonical: `${baseUrl}/search`,
       },

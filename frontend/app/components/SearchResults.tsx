@@ -3,10 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Badge } from '../../components/ui/badge';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
-import { Typography } from '../../components/ui/typography';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
 import { SearchResult, SearchResponse } from '../api/search/route';
 
 interface SearchResultsProps {
@@ -27,14 +26,14 @@ const contentTypeLabels = {
   faq: 'FAQ',
 };
 
-export default function SearchResults({ 
-  initialQuery, 
-  initialPage, 
-  initialType 
+export default function SearchResults({
+  initialQuery,
+  initialPage,
+  initialType
 }: SearchResultsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -58,7 +57,7 @@ export default function SearchResults({
 
     try {
       const response = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}&page=${page}&pageSize=${pageSize}&type=${type}`);
-      
+
       if (!response.ok) {
         throw new Error('Search failed');
       }
@@ -78,22 +77,22 @@ export default function SearchResults({
   // Update URL when search parameters change
   const updateURL = (newQuery: string, newPage: number, newType: string) => {
     const params = new URLSearchParams();
-    
+
     if (newQuery.trim()) {
       params.set('q', newQuery);
     }
-    
+
     if (newPage > 1) {
       params.set('page', newPage.toString());
     }
-    
+
     if (newType !== 'all') {
       params.set('type', newType);
     }
 
     const queryString = params.toString();
     const url = queryString ? `/search?${queryString}` : '/search';
-    
+
     router.push(url, { scroll: false });
   };
 
@@ -191,24 +190,20 @@ export default function SearchResults({
       ) : error ? (
         <Card>
           <CardContent className="p-6 text-center">
-            <Typography variant="h6" className="text-destructive mb-2">
-              Search Error
-            </Typography>
-            <Typography variant="p" className="text-muted-foreground">
-              {error}
-            </Typography>
+            <h6 className="text-destructive mb-2 font-semibold">Search Error</h6>
+            <p className="text-muted-foreground">{error}</p>
           </CardContent>
         </Card>
       ) : results.length > 0 ? (
         <>
           {/* Results Summary */}
           <div className="flex items-center justify-between">
-            <Typography variant="small" className="text-muted-foreground">
+            <span className="text-sm text-muted-foreground">
               Found {total} result{total !== 1 ? 's' : ''} for "{query}"
-            </Typography>
-            <Typography variant="small" className="text-muted-foreground">
+            </span>
+            <span className="text-sm text-muted-foreground">
               Page {currentPage} of {totalPages}
-            </Typography>
+            </span>
           </div>
 
           {/* Results List */}
@@ -222,25 +217,25 @@ export default function SearchResults({
                     </span>
                     <div className="flex-1 space-y-2">
                       <div className="flex items-center gap-2">
-                        <Typography variant="h6" className="leading-tight">
-                          <Link 
+                        <h6 className="font-semibold leading-tight">
+                          <Link
                             href={result.url}
                             className="hover:text-primary transition-colors"
                           >
                             {result.title}
                           </Link>
-                        </Typography>
+                        </h6>
                         <Badge variant="outline" className="text-xs">
                           {contentTypeLabels[result.type]}
                         </Badge>
                       </div>
-                      
-                      <Typography variant="p" className="text-muted-foreground leading-relaxed">
+
+                      <p className="text-muted-foreground leading-relaxed">
                         {result.excerpt}
-                      </Typography>
-                      
+                      </p>
+
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <Link 
+                        <Link
                           href={result.url}
                           className="text-primary hover:underline"
                         >
@@ -275,11 +270,11 @@ export default function SearchResults({
               >
                 Previous
               </Button>
-              
+
               <span className="px-4 py-2 text-sm text-muted-foreground">
                 Page {currentPage} of {totalPages}
               </span>
-              
+
               <Button
                 variant="outline"
                 size="sm"
@@ -294,14 +289,12 @@ export default function SearchResults({
       ) : query ? (
         <Card>
           <CardContent className="p-12 text-center">
-            <Typography variant="h6" className="mb-2">
-              No Results Found
-            </Typography>
-            <Typography variant="p" className="text-muted-foreground mb-4">
+            <h6 className="font-semibold mb-2">No Results Found</h6>
+            <p className="text-muted-foreground mb-4">
               We couldn't find any results for "{query}". Try adjusting your search terms.
-            </Typography>
-            <Button 
-              variant="outline" 
+            </p>
+            <Button
+              variant="outline"
               onClick={() => {
                 setQuery('');
                 setResults([]);
@@ -316,16 +309,13 @@ export default function SearchResults({
       ) : (
         <Card>
           <CardContent className="p-12 text-center">
-            <Typography variant="h6" className="mb-2">
-              Start Searching
-            </Typography>
-            <Typography variant="p" className="text-muted-foreground">
+            <h6 className="font-semibold mb-2">Start Searching</h6>
+            <p className="text-muted-foreground">
               Enter a search term to find blog posts, pages, and FAQs.
-            </Typography>
+            </p>
           </CardContent>
         </Card>
       )}
     </div>
   );
 }
-

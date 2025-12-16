@@ -22,10 +22,10 @@ export async function generateConsistentOgImages(altText: string) {
     
     // Ensure we always have at least one OG image
     const finalOgImages = ogImages.length > 0 ? ogImages : [{
-      url: 'https://kerstencapital.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
+      url: 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
       width: 1200,
       height: 630,
-      alt: altText || 'Kersten Talent Capital',
+      alt: altText || 'Honeycomb Socials',
     }];
     
     return finalOgImages;
@@ -34,10 +34,10 @@ export async function generateConsistentOgImages(altText: string) {
     
     // Fallback to default OG image
     return [{
-      url: 'https://kerstencapital.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
+      url: 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png',
       width: 1200,
       height: 630,
-      alt: altText || 'Kersten Talent Capital',
+      alt: altText || 'Honeycomb Socials',
     }];
   }
 }

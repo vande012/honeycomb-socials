@@ -1,9 +1,8 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Badge } from '../../components/ui/badge';
-import { Button } from '../../components/ui/button';
-import { Typography } from '../../components/ui/typography';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
 import { Category } from '../types/blog';
 
 interface CategoryFilterProps {
@@ -17,19 +16,19 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
 
   const handleCategoryChange = (categorySlug: string | null) => {
     const params = new URLSearchParams(searchParams);
-    
+
     if (categorySlug) {
       params.set('category', categorySlug);
     } else {
       params.delete('category');
     }
-    
+
     // Reset to first page when filtering
     params.delete('page');
-    
+
     const queryString = params.toString();
     const url = queryString ? `/blog?${queryString}` : '/blog';
-    
+
     router.push(url);
   };
 
@@ -39,10 +38,10 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
 
   return (
     <div className="space-y-3">
-      <Typography variant="h6" className="font-semibold">
+      <h6 className="font-semibold">
         Filter by Category
-      </Typography>
-      
+      </h6>
+
       <div className="flex flex-wrap gap-2">
         {/* All Categories Option */}
         <Button
@@ -52,19 +51,19 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
           className="rounded-full"
         >
           All Posts
-          <Badge 
-            variant="secondary" 
+          <Badge
+            variant="secondary"
             className="ml-2 bg-white/20 text-inherit border-0"
           >
             {categories.reduce((total, cat) => total + (cat.blog_posts?.length || 0), 0)}
           </Badge>
         </Button>
-        
+
         {/* Individual Categories */}
         {categories.map((category) => {
           const isActive = currentCategory === category.slug;
           const postCount = category.blog_posts?.length || 0;
-          
+
           return (
             <Button
               key={category.id}
@@ -75,8 +74,8 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
             >
               {category.name}
               {postCount > 0 && (
-                <Badge 
-                  variant="secondary" 
+                <Badge
+                  variant="secondary"
                   className="ml-2 bg-white/20 text-inherit border-0"
                 >
                   {postCount}
