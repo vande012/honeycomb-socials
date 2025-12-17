@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+/*import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
@@ -9,6 +9,8 @@ interface ContactFormData {
   name: string;
   notes: string;
 }
+
+export const runtime = 'nodejs';
 
 // Email configuration
 const createTransporter = () => {
@@ -254,4 +256,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+} */

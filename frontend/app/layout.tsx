@@ -6,7 +6,8 @@ import { Navbar } from "./components/navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { FAQ } from "./components/FAQ";
-import { getFAQs } from "./api/api";
+import { getFAQs, getGlobalData } from "./api/api";
+import { generateIconMetadata } from "./utils/favicon";
 
 /* ============================================
    FONT CUSTOMIZATION
@@ -40,10 +41,31 @@ const redHatDisplay = Red_Hat_Display({
    ============================================
    Update these values for your project.
    ============================================ */
-export const metadata: Metadata = {
-  title: "My Template",
-  description: "A Next.js + Strapi starter template with Tailwind CSS and TypeScript",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const globalData = await getGlobalData();
+    const global = globalData?.data;
+
+    const metaTitle = global?.metadata?.metaTitle || "Honeycomb Socials";
+    const metaDescription =
+      global?.metadata?.metaDescription ||
+      "Social media management for beauty and wellness businesses that value aesthetics as much as results.";
+
+    const icons = generateIconMetadata(global?.favicon || null);
+
+    return {
+      title: metaTitle,
+      description: metaDescription,
+      icons,
+    };
+  } catch (e) {
+    return {
+      title: "Honeycomb Socials",
+      description:
+        "Social media management for beauty and wellness businesses that value aesthetics as much as results.",
+    };
+  }
+}
 
 export default async function RootLayout({
   children,
