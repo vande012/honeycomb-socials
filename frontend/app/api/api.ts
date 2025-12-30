@@ -1,5 +1,5 @@
 import qs from 'qs';
-
+import { logger } from '../utils/logger';
 
 /**
  * Get full Strapi URL from path
@@ -17,10 +17,14 @@ export function getStrapiURL(path = '') {
  * Helper to make GET requests to Strapi API endpoints
  * @param {string} path Path of the API route
  * @param {Object} urlParamsObject URL params object, will be stringified
- * @param {Object} options Options passed to fetch
+ * @param {Object} options Options passed to fetch, including next.revalidate for caching
  * @returns Parsed API call response
  */
-export async function fetchAPI(path: string, urlParamsObject = {}, options = {}) {
+export async function fetchAPI(
+  path: string, 
+  urlParamsObject: Record<string, any> = {}, 
+  options: RequestInit & { next?: { revalidate?: number } } = {}
+) {
   try {
     // Build request URL
     const queryString = qs.stringify(urlParamsObject, {
@@ -31,7 +35,17 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
     const apiPath = path.startsWith('/api') ? path : `/api${path.startsWith('/') ? path : `/${path}`}`;
     const requestUrl = `${getStrapiURL(apiPath)}${queryString ? `?${queryString}` : ''}`;
 
-    console.log('Fetching from URL:', requestUrl);
+    logger.log('Fetching from URL:', requestUrl);
+
+    // Set default revalidation if not provided (5 minutes)
+    const defaultRevalidate = options.next?.revalidate ?? 300;
+    const fetchOptions: RequestInit & { next?: { revalidate?: number } } = {
+      ...options,
+      next: {
+        revalidate: defaultRevalidate,
+        ...options.next,
+      },
+    };
 
     // Make the request to Strapi with authentication token
     const response = await fetch(requestUrl, {
@@ -39,14 +53,14 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.STRAPI_API_TOKEN || ''}`,
       },
-      ...options,
+      ...fetchOptions,
     });
 
     // Log full response details for debugging
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('API response error:', response.status, response.statusText);
-      console.error('Error details:', errorText);
+      logger.error('API response error:', response.status, response.statusText);
+      logger.error('Error details:', errorText);
 
       // Check for specific validation errors
       let errorJson = null;
@@ -58,7 +72,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
 
       // Handle content field error specifically - this is a common issue with Strapi v5
       if (errorJson?.error?.details?.key === 'content' || errorText.includes('Invalid key content')) {
-        console.log('Content field error detected - trying with wildcard populate');
+        logger.log('Content field error detected - trying with wildcard populate');
 
         // Replace the params with a wildcard populate
         const simplifiedParams: Record<string, any> = {
@@ -71,7 +85,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
         });
 
         const simpleUrl = `${getStrapiURL(apiPath)}${simpleQueryString ? `?${simpleQueryString}` : ''}`;
-        console.log('Retrying with wildcard populate URL:', simpleUrl);
+        logger.log('Retrying with wildcard populate URL:', simpleUrl);
 
         const simpleResponse = await fetch(simpleUrl, {
           headers: {
@@ -82,16 +96,16 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
         });
 
         if (simpleResponse.ok) {
-          console.log('Wildcard populate request succeeded');
+          logger.log('Wildcard populate request succeeded');
           const simpleData = await simpleResponse.json();
           return normalizeResponse(simpleData);
         }
 
-        console.error('Wildcard populate request also failed');
+        logger.error('Wildcard populate request also failed');
       }
       // Handle invalid populate errors by trying simpler approach
       else if (response.status === 400 && errorText.includes('Invalid key')) {
-        console.log('Trying with simplified populate parameter...');
+        logger.log('Trying with simplified populate parameter...');
 
         // Simplify the populate parameter if it's complex
         const simplifiedParams: Record<string, any> = { ...urlParamsObject };
@@ -104,7 +118,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
           });
 
           const simpleUrl = `${getStrapiURL(apiPath)}${simpleQueryString ? `?${simpleQueryString}` : ''}`;
-          console.log('Retrying with simplified URL:', simpleUrl);
+          logger.log('Retrying with simplified URL:', simpleUrl);
 
           const simpleResponse = await fetch(simpleUrl, {
             headers: {
@@ -115,12 +129,12 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
           });
 
           if (simpleResponse.ok) {
-            console.log('Simplified request succeeded');
+            logger.log('Simplified request succeeded');
             const simpleData = await simpleResponse.json();
             return normalizeResponse(simpleData);
           }
 
-          console.error('Simplified request also failed');
+          logger.error('Simplified request also failed');
         }
       }
 
@@ -130,7 +144,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
     const data = await response.json();
 
     // Log a brief summary of the response data for debugging
-    console.log(`API response summary for ${path}:`, {
+    logger.log(`API response summary for ${path}:`, {
       dataType: Array.isArray(data.data) ? 'array' : typeof data.data === 'object' ? 'object' : 'other',
       itemCount: Array.isArray(data.data) ? data.data.length : data.data ? 1 : 0,
       metaInfo: data.meta ? 'present' : 'absent'
@@ -138,7 +152,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
 
     return normalizeResponse(data);
   } catch (error) {
-    console.error('API fetch error:', error);
+    logger.error('API fetch error:', error);
     throw error;
   }
 }
@@ -151,7 +165,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
 function normalizeResponse(data: any) {
   // Handle edge cases where Strapi returns unexpected data structure
   if (!data.data && !data.meta) {
-    console.warn('Unexpected API response format - normalizing:', typeof data);
+    logger.warn('Unexpected API response format - normalizing:', typeof data);
 
     // Try to convert to expected format
     if (Array.isArray(data)) {
@@ -198,11 +212,13 @@ export async function getFAQs() {
   };
 
   try {
-    const data = await fetchAPI('/faqs', queryParams);
-    console.log('FAQs fetched successfully');
+    const data = await fetchAPI('/faqs', queryParams, {
+      next: { revalidate: 3600 } // Cache for 1 hour - FAQs change infrequently
+    });
+    logger.log('FAQs fetched successfully');
     return data;
   } catch (error) {
-    console.error('Failed to fetch FAQs:', error);
+    logger.error('Failed to fetch FAQs:', error);
     return {
       data: [],
       meta: {}
@@ -263,21 +279,23 @@ export async function getGlobalData() {
   };
 
   try {
-    const data = await fetchAPI('/global', queryParams);
+    const data = await fetchAPI('/global', queryParams, {
+      next: { revalidate: 3600 } // Cache for 1 hour - global data changes infrequently
+    });
 
     // Log a summary for debugging
-    console.log('Global data fetched successfully');
+    logger.log('Global data fetched successfully');
     if (data?.data?.navbar?.menu) {
-      console.log(`Navbar menu loaded with ${data.data.navbar.menu.length} menu items`);
+      logger.log(`Navbar menu loaded with ${data.data.navbar.menu.length} menu items`);
       data.data.navbar.menu.forEach((menuItem: any, index: number) => {
         const linkCount = menuItem.links ? menuItem.links.length : 0;
-        console.log(`  Menu ${index}: "${menuItem.title}" (${linkCount} links)`);
+        logger.log(`  Menu ${index}: "${menuItem.title}" (${linkCount} links)`);
       });
     }
 
     return data;
   } catch (error) {
-    console.error('Failed to fetch global data:', error);
+    logger.error('Failed to fetch global data:', error);
     // Return a fallback data structure matching Strapi v5's actual response format
     return {
       data: {

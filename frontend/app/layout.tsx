@@ -8,6 +8,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { FAQ } from "./components/FAQ";
 import { getFAQs, getGlobalData } from "./api/api";
 import { generateIconMetadata } from "./utils/favicon";
+import { logger } from "./utils/logger";
 
 /* ============================================
    FONT CUSTOMIZATION
@@ -77,7 +78,7 @@ export default async function RootLayout({
   try {
     faqData = await getFAQs();
   } catch (error) {
-    console.error('Failed to fetch FAQs in layout:', error);
+    logger.error('Failed to fetch FAQs in layout:', error);
   }
 
   const faqs = faqData?.data || [];

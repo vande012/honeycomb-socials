@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import qs from 'qs';
+import { logger } from '@/app/utils/logger';
 
 /**
  * Blog API route that proxies requests to Strapi
@@ -119,7 +120,7 @@ export async function GET(request: NextRequest) {
     // Try each endpoint until we get a successful response
     for (const endpoint of endpointVersions) {
       const currentUrl = `${baseUrl}${endpoint}${queryString ? `?${queryString}` : ''}`;
-      console.log(`Trying endpoint: ${currentUrl}`);
+      logger.log(`Trying endpoint: ${currentUrl}`);
       
       try {
         const currentResponse = await fetch(currentUrl, {
@@ -128,7 +129,7 @@ export async function GET(request: NextRequest) {
             'Authorization': `Bearer ${process.env.STRAPI_API_TOKEN || ''}`,
           },
           next: {
-            revalidate: 180, // 3 minutes cache
+            revalidate: 300, // Standardized to 5 minutes cache
           },
         });
         
@@ -140,17 +141,17 @@ export async function GET(request: NextRequest) {
             statusText: currentResponse.statusText,
             error: errorText
           });
-          console.error(`Error with endpoint ${endpoint}:`, currentResponse.status, currentResponse.statusText);
+          logger.error(`Error with endpoint ${endpoint}:`, currentResponse.status, currentResponse.statusText);
           continue;
         }
         
         // If we get here, we have a successful response
         response = currentResponse;
         responseData = await response.json();
-        console.log(`Success with endpoint ${endpoint}`);
+        logger.log(`Success with endpoint ${endpoint}`);
         break;
       } catch (endpointError) {
-        console.error(`Exception with endpoint ${endpoint}:`, endpointError);
+        logger.error(`Exception with endpoint ${endpoint}:`, endpointError);
         errorDetails.push({
           endpoint,
           error: endpointError instanceof Error ? endpointError.message : String(endpointError)
@@ -172,7 +173,7 @@ export async function GET(request: NextRequest) {
     // Return the successful response data
     return NextResponse.json(responseData);
   } catch (error) {
-    console.error('Blog API proxy error:', error);
+    logger.error('Blog API proxy error:', error);
     return NextResponse.json(
       { error: `Internal server error: ${error instanceof Error ? error.message : String(error)}` },
       { status: 500 }

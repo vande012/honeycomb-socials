@@ -51,6 +51,7 @@ const footerNav = {
       { label: 'Florist & Wedding', href: '/industries/florist-wedding' },
       { label: 'Boutique & Lifestyle', href: '/industries/boutique-lifestyle' },
       { label: 'Gyms & Fitness', href: '/industries/gyms' },
+      { label: 'Spas & MedSpas', href: '/industries/spas-medspas' },
     ],
   },
   services: {
@@ -121,7 +122,7 @@ export function Footer() {
 
           {/* Main Navigation */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -140,7 +141,7 @@ export function Footer() {
 
           {/* Industries */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
               {footerNav.industries.title}
             </h3>
             <ul className="space-y-3">
@@ -159,7 +160,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
               {footerNav.services.title}
             </h3>
             <ul className="space-y-3">

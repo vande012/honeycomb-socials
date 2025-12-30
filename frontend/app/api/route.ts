@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import qs from 'qs';
+import { logger } from '@/app/utils/logger';
 
 /**
  * API route that proxies requests to Strapi
@@ -65,7 +66,7 @@ export async function GET(request: NextRequest) {
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error('API proxy error:', error);
+    logger.error('API proxy error:', error);
     return NextResponse.json(
       { error: `Internal server error: ${error instanceof Error ? error.message : String(error)}` },
       { status: 500 }

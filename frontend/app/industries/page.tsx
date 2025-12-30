@@ -7,7 +7,8 @@ import {
   Package, 
   Eye, 
   Paintbrush, 
-  Dumbbell 
+  Dumbbell,
+  Heart
 } from 'lucide-react';
 
 const industries = [
@@ -58,6 +59,12 @@ const industries = [
     href: '/industries/gyms',
     icon: Dumbbell,
     description: 'Build a strong community and attract members with motivating content.',
+  },
+  {
+    title: 'Spas & MedSpas',
+    href: '/industries/spas-medspas',
+    icon: Heart,
+    description: 'Attract clients seeking relaxation and professional aesthetic treatments.',
   },
 ];
 

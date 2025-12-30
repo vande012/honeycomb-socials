@@ -36,6 +36,7 @@ const navItems: NavItem[] = [
       { label: "Florist & Wedding", href: "/industries/florist-wedding" },
       { label: "Boutique & Lifestyle", href: "/industries/boutique-lifestyle" },
       { label: "Gyms & Fitness", href: "/industries/gyms" },
+      { label: "Spas & MedSpas", href: "/industries/spas-medspas" },
     ]
   },
   {

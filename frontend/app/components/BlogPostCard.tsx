@@ -37,6 +37,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
@@ -90,6 +91,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
             alt={coverImage?.alternativeText || title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           {categories && categories.length > 0 && (
             <div className="absolute top-3 left-3">

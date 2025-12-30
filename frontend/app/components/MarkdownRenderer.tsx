@@ -210,7 +210,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
             width={600}
             height={400}
             className="w-full h-auto rounded-lg"
-            unoptimized
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 600px"
           />
         </span>
       );

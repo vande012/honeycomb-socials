@@ -10,7 +10,8 @@ import {
   Palette, 
   Flower2, 
   ShoppingBag, 
-  Dumbbell 
+  Dumbbell,
+  Heart
 } from 'lucide-react'
 
 interface Industry {
@@ -29,7 +30,7 @@ const industries: Industry[] = [
     href: '/industries/salons-hairstylists',
     benefit: 'Showcase your work and book more clients',
     icon: Scissors,
-    image: '/salon.jpg'
+    image: '/industries/salon.jpeg'
   },
   {
     id: 'nail-salons',
@@ -37,7 +38,7 @@ const industries: Industry[] = [
     href: '/industries/nail-salons',
     benefit: 'Turn your nail art into client bookings',
     icon: Sparkles,
-    image: '/salon.jpg' // Placeholder - can use specific image if available
+    image: '/industries/nail.jpeg'
   },
   {
     id: 'beauty-brands',
@@ -45,7 +46,7 @@ const industries: Industry[] = [
     href: '/industries/beauty-brands',
     benefit: 'Build brand loyalty through authentic content',
     icon: Package,
-    image: '/brand.jpg'
+    image: '/industries/beauty.jpg'
   },
   {
     id: 'lash-brow',
@@ -53,7 +54,7 @@ const industries: Industry[] = [
     href: '/industries/lash-brow',
     benefit: 'Transform before/afters into repeat bookings',
     icon: Eye,
-    image: '/salon.jpg'
+    image: '/industries/eyebrow.jpg'
   },
   {
     id: 'makeup-artists',
@@ -61,7 +62,7 @@ const industries: Industry[] = [
     href: '/industries/makeup-artists',
     benefit: 'Portfolio that attracts your ideal clients',
     icon: Palette,
-    image: '/content.jpg'
+    image: '/industries/makeup.jpg'
   },
   {
     id: 'florist-wedding',
@@ -69,7 +70,7 @@ const industries: Industry[] = [
     href: '/industries/florist-wedding',
     benefit: 'Capture the beauty of every arrangement',
     icon: Flower2,
-    image: '/industries.jpg'
+    image: '/industries/florist.jpg'
   },
   {
     id: 'boutique-lifestyle',
@@ -77,7 +78,7 @@ const industries: Industry[] = [
     href: '/industries/boutique-lifestyle',
     benefit: 'Curated style that drives sales',
     icon: ShoppingBag,
-    image: '/brand.jpg'
+    image: '/industries/botique.jpg'
   },
   {
     id: 'gyms',
@@ -85,7 +86,15 @@ const industries: Industry[] = [
     href: '/industries/gyms',
     benefit: 'Build community and attract members',
     icon: Dumbbell,
-    image: '/industries.jpg'
+    image: '/industries/gym.jpg'
+  },
+  {
+    id: 'spas-medspas',
+    title: 'Spas & MedSpas',
+    href: '/industries/spas-medspas',
+    benefit: 'Attract clients seeking relaxation and professional treatments',
+    icon: Heart,
+    image: '/industries/spa.jpeg'
   }
 ]
 

@@ -4,11 +4,15 @@ import { getBlogPostBySlug, getBlogPosts } from '@/app/api/blog/api';
 import { getS3URL } from '@/app/api/api';
 import ArticleSchema from '@/app/components/ArticleSchema';
 import { generateHreflangTags, generateOptimalMetaTitle, generateOptimalMetaDescription } from '@/app/utils/seo';
+import { logger } from '@/app/utils/logger';
 import qs from 'qs';
 import BlogPostClient from './BlogPostClient';
 
 // Next.js 15 compatible type definitions
 type Params = Promise<{ slug: string }>;
+
+// Revalidate blog posts every hour - content changes less frequently
+export const revalidate = 3600;
 
 /**
  * Generate metadata for the page
@@ -21,7 +25,7 @@ export async function generateMetadata(
     // Properly await the params object
     const { slug } = await props.params;
     const post = await getBlogPostBySlug(slug).catch(error => {
-      console.error('Error generating metadata:', error);
+      logger.error('Error generating metadata:', error);
       return { data: null };
     });
 
@@ -118,12 +122,12 @@ export async function generateStaticParams() {
         limit: 100, // Limit to 100 posts for static generation
       },
     }).catch(error => {
-      console.error('Error fetching posts for static params:', error);
+      logger.error('Error fetching posts for static params:', error);
       return { data: [] };
     });
 
     if (!posts || !posts.data || !Array.isArray(posts.data)) {
-      console.warn('No posts data available for static params generation');
+      logger.warn('No posts data available for static params generation');
       return [];
     }
 
@@ -131,7 +135,7 @@ export async function generateStaticParams() {
       slug: post.slug,
     }));
   } catch (error) {
-    console.error('Error generating static params:', error);
+    logger.error('Error generating static params:', error);
     return [];
   }
 }
@@ -141,7 +145,7 @@ export async function generateStaticParams() {
  */
 async function fetchPostDirectly(slug: string) {
   try {
-    console.log(`Trying direct fetch for post with slug: ${slug}`);
+    logger.log(`Trying direct fetch for post with slug: ${slug}`);
 
     // Try both possible API endpoints and formats
     const endpoints = [
@@ -182,7 +186,7 @@ async function fetchPostDirectly(slug: string) {
 
         // Build the full URL
         const url = `${baseUrl}/api/${endpoint}?${queryString}`;
-        console.log(`Trying direct fetch from: ${url}`);
+        logger.log(`Trying direct fetch from: ${url}`);
 
         const response = await fetch(url, {
           headers: {
@@ -193,12 +197,12 @@ async function fetchPostDirectly(slug: string) {
         });
 
         if (!response.ok) {
-          console.log(`Endpoint ${endpoint} returned ${response.status}`);
+          logger.log(`Endpoint ${endpoint} returned ${response.status}`);
           continue;
         }
 
         const data = await response.json();
-        console.log(`Direct fetch response structure:`, {
+        logger.log(`Direct fetch response structure:`, {
           hasData: !!data.data,
           dataType: data.data ? (Array.isArray(data.data) ? 'array' : 'object') : 'none',
         });
@@ -208,18 +212,18 @@ async function fetchPostDirectly(slug: string) {
             data: data.data[0],
             meta: data.meta
           };
-          console.log(`Successfully found post with endpoint: ${endpoint}`);
+          logger.log(`Successfully found post with endpoint: ${endpoint}`);
           break;
         } else if (data.data) {
           post = {
             data: data.data,
             meta: data.meta
           };
-          console.log(`Successfully found post with endpoint: ${endpoint}`);
+          logger.log(`Successfully found post with endpoint: ${endpoint}`);
           break;
         }
       } catch (endpointError) {
-        console.error(`Error fetching from endpoint ${endpoint}:`, endpointError);
+        logger.error(`Error fetching from endpoint ${endpoint}:`, endpointError);
       }
     }
 
@@ -227,7 +231,7 @@ async function fetchPostDirectly(slug: string) {
     if (!post) {
       try {
         const proxyUrl = `/api/blog?type=posts&slug=${slug}`;
-        console.log(`Trying proxy API: ${proxyUrl}`);
+        logger.log(`Trying proxy API: ${proxyUrl}`);
 
         const response = await fetch(proxyUrl, {
           next: { revalidate: 300 }, // Cache for 5 minutes instead of no-store
@@ -248,13 +252,13 @@ async function fetchPostDirectly(slug: string) {
           }
         }
       } catch (proxyError) {
-        console.error('Error with proxy fetch:', proxyError);
+        logger.error('Error with proxy fetch:', proxyError);
       }
     }
 
     return post;
   } catch (error) {
-    console.error('Error in direct fetch:', error);
+    logger.error('Error in direct fetch:', error);
     return null;
   }
 }
@@ -265,21 +269,21 @@ async function fetchPostDirectly(slug: string) {
 export default async function BlogPostPage({ params }: { params: Params }) {
   try {
     const { slug } = await params;
-    console.log(`Rendering blog post page for slug: ${slug}`);
+    logger.log(`Rendering blog post page for slug: ${slug}`);
 
     // Try getting the post through the normal API
     let post = await getBlogPostBySlug(slug).catch(error => {
-      console.error('Error in getBlogPostBySlug:', error);
+      logger.error('Error in getBlogPostBySlug:', error);
       return null;
     });
 
     // If not found, try direct fetch as fallback
     if (!post || !post.data) {
-      console.log(`Post not found through normal API, trying direct fetch for: ${slug}`);
+      logger.log(`Post not found through normal API, trying direct fetch for: ${slug}`);
       const directPost = await fetchPostDirectly(slug);
 
       if (!directPost || !directPost.data) {
-        console.error(`Post not found with slug: ${slug} after all attempts`);
+        logger.error(`Post not found with slug: ${slug} after all attempts`);
         notFound();
       }
 
@@ -288,7 +292,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
 
     // Ensure post data exists before destructuring
     if (!post.data) {
-      console.error(`Post data is null or undefined for slug: ${slug}`);
+      logger.error(`Post data is null or undefined for slug: ${slug}`);
       notFound();
     }
 
@@ -333,7 +337,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
       </>
     );
   } catch (error) {
-    console.error('Error fetching blog post:', error);
+    logger.error('Error fetching blog post:', error);
     notFound();
   }
 } 

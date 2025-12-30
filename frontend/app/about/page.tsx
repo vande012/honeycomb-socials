@@ -27,8 +27,8 @@ export default function AboutPage() {
       <section className="relative py-20 md:py-28 overflow-hidden bg-background">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-            {/* Image Section */}
-            <div className="order-1 lg:order-1 flex justify-center lg:justify-start">
+            {/* Image Section - Hidden on mobile, shown after subtitle */}
+            <div className="hidden lg:flex order-1 lg:order-1 justify-center lg:justify-start">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
@@ -38,6 +38,7 @@ export default function AboutPage() {
                     className="object-cover"
                     priority
                     quality={90}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
                 {/* Decorative element */}
@@ -46,7 +47,7 @@ export default function AboutPage() {
             </div>
 
             {/* Content Section */}
-            <div className="order-2 lg:order-2">
+            <div className="order-1 lg:order-2">
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-3 h-3 rounded-full bg-primary"></div>
@@ -60,6 +61,25 @@ export default function AboutPage() {
                 <p className="text-2xl md:text-3xl text-primary font-semibold mb-6">
                   Social Media Strategist + Content Creator
                 </p>
+              </div>
+
+              {/* Image Section - Shown on mobile after subtitle */}
+              <div className="flex lg:hidden justify-center mb-6">
+                <div className="relative w-full max-w-md">
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="/MaggieVandehey.jpg?v=2"
+                      alt="Maggie Vandehey - Social Media Strategist"
+                      fill
+                      className="object-cover"
+                      priority
+                      quality={90}
+                      sizes="(max-width: 768px) 100vw, 400px"
+                    />
+                  </div>
+                  {/* Decorative element */}
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+                </div>
               </div>
 
               <div className="space-y-6 text-base md:text-lg text-foreground/90 leading-relaxed">

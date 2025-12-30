@@ -1,4 +1,5 @@
 import { fetchAPI } from '../api';
+import { logger } from '@/app/utils/logger';
 import { BlogPostResponse, BlogPostsResponse, CategoriesResponse, CategoryResponse } from '@/app/types/blog';
 
 // Correct paths for Strapi v5
@@ -27,20 +28,24 @@ export async function getBlogPosts(params = {}) {
   };
 
   const mergedParams = { ...defaultParams, ...params };
-  console.log('Getting blog posts with params:', JSON.stringify(mergedParams, null, 2));
+  logger.log('Getting blog posts with params:', JSON.stringify(mergedParams, null, 2));
   
   try {
     // Try both formats if needed
     try {
-      const response = await fetchAPI(BLOG_POSTS_ENDPOINT, mergedParams);
+      const response = await fetchAPI(BLOG_POSTS_ENDPOINT, mergedParams, {
+        next: { revalidate: 300 } // Cache for 5 minutes
+      });
       return response as BlogPostsResponse;
     } catch (error) {
-      console.log('Trying alternative endpoint format...');
-      const response = await fetchAPI('api::blog-post.blog-post', mergedParams);
+      logger.log('Trying alternative endpoint format...');
+      const response = await fetchAPI('api::blog-post.blog-post', mergedParams, {
+        next: { revalidate: 300 }
+      });
       return response as BlogPostsResponse;
     }
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
+    logger.error('Error fetching blog posts:', error);
     throw error;
   }
 }
@@ -51,7 +56,7 @@ export async function getBlogPosts(params = {}) {
  * @returns {Promise<BlogPostResponse>} Blog post data
  */
 export async function getBlogPostBySlug(slug: string) {
-  console.log(`Fetching blog post with slug: ${slug}`);
+  logger.log(`Fetching blog post with slug: ${slug}`);
   
   // First try with detailed populate to ensure we get content
   const params = {
@@ -106,21 +111,23 @@ export async function getBlogPostBySlug(slug: string) {
     // Try each endpoint until one works
     for (const endpoint of endpointVariations) {
       try {
-        console.log(`Trying to fetch blog post with endpoint: ${endpoint}`);
-        response = await fetchAPI(endpoint, params);
+        logger.log(`Trying to fetch blog post with endpoint: ${endpoint}`);
+        response = await fetchAPI(endpoint, params, {
+          next: { revalidate: 3600 } // Cache for 1 hour - blog posts change less frequently
+        });
         if (response) {
-          console.log(`Success with endpoint: ${endpoint}`);
+          logger.log(`Success with endpoint: ${endpoint}`);
           break;
         }
       } catch (endpointError) {
-        console.warn(`Failed with endpoint ${endpoint}:`, endpointError);
+        logger.warn(`Failed with endpoint ${endpoint}:`, endpointError);
         error = endpointError;
       }
     }
     
     // If detailed populate failed, try with wildcard
     if (!response) {
-      console.log('Trying with wildcard populate...');
+      logger.log('Trying with wildcard populate...');
       const wildcardParams = {
         filters: {
           slug: {
@@ -132,14 +139,16 @@ export async function getBlogPostBySlug(slug: string) {
       
       for (const endpoint of endpointVariations) {
         try {
-          console.log(`Trying wildcard populate with endpoint: ${endpoint}`);
-          response = await fetchAPI(endpoint, wildcardParams);
+          logger.log(`Trying wildcard populate with endpoint: ${endpoint}`);
+          response = await fetchAPI(endpoint, wildcardParams, {
+            next: { revalidate: 3600 }
+          });
           if (response) {
-            console.log(`Success with wildcard populate and endpoint: ${endpoint}`);
+            logger.log(`Success with wildcard populate and endpoint: ${endpoint}`);
             break;
           }
         } catch (endpointError) {
-          console.warn(`Failed wildcard with endpoint ${endpoint}:`, endpointError);
+          logger.warn(`Failed wildcard with endpoint ${endpoint}:`, endpointError);
           error = endpointError;
         }
       }
@@ -147,11 +156,11 @@ export async function getBlogPostBySlug(slug: string) {
     
     // If all endpoints failed, throw the last error
     if (!response) {
-      console.error(`All endpoints failed to fetch blog post with slug: ${slug}`);
+      logger.error(`All endpoints failed to fetch blog post with slug: ${slug}`);
       throw error || new Error('Failed to fetch blog post');
     }
     
-    console.log(`Blog post response data:`, {
+    logger.log(`Blog post response data:`, {
       hasData: !!response.data,
       dataType: response.data ? (Array.isArray(response.data) ? 'array' : 'object') : 'none',
       length: response.data && Array.isArray(response.data) ? response.data.length : 'n/a'
@@ -160,7 +169,7 @@ export async function getBlogPostBySlug(slug: string) {
     // Log the actual content structure for debugging
     const postData = Array.isArray(response.data) ? response.data[0] : response.data;
     if (postData) {
-      console.log('Post content structure:', {
+      logger.log('Post content structure:', {
         hasContent: !!postData.content,
         contentType: typeof postData.content,
         hasMarkdownContent: !!postData.markdownContent,
@@ -172,7 +181,7 @@ export async function getBlogPostBySlug(slug: string) {
     
     // Check if we have any data
     if (!response.data || (Array.isArray(response.data) && response.data.length === 0)) {
-      console.error(`No blog post found with slug: ${slug}`);
+      logger.error(`No blog post found with slug: ${slug}`);
       // Use type assertion to handle the null case
       return { data: null, meta: response.meta } as unknown as BlogPostResponse;
     }
@@ -183,7 +192,7 @@ export async function getBlogPostBySlug(slug: string) {
       meta: response.meta,
     } as BlogPostResponse;
   } catch (error) {
-    console.error(`Error fetching blog post with slug ${slug}:`, error);
+    logger.error(`Error fetching blog post with slug ${slug}:`, error);
     throw error;
   }
 }
@@ -204,15 +213,19 @@ export async function getCategories(params = {}) {
   try {
     // Try both formats if needed
     try {
-      const response = await fetchAPI(CATEGORIES_ENDPOINT, mergedParams);
+      const response = await fetchAPI(CATEGORIES_ENDPOINT, mergedParams, {
+        next: { revalidate: 3600 } // Cache for 1 hour - categories change infrequently
+      });
       return response as CategoriesResponse;
     } catch (error) {
-      console.log('Trying alternative endpoint format for categories...');
-      const response = await fetchAPI('api::category.category', mergedParams);
+      logger.log('Trying alternative endpoint format for categories...');
+      const response = await fetchAPI('api::category.category', mergedParams, {
+        next: { revalidate: 3600 }
+      });
       return response as CategoriesResponse;
     }
   } catch (error) {
-    console.error('Error fetching categories:', error);
+    logger.error('Error fetching categories:', error);
     throw error;
   }
 }
@@ -223,7 +236,7 @@ export async function getCategories(params = {}) {
  * @returns {Promise<CategoryResponse>} Category data
  */
 export async function getCategoryBySlug(slug: string) {
-  console.log(`Fetching category with slug: ${slug}`);
+  logger.log(`Fetching category with slug: ${slug}`);
   
   const params = {
     filters: {
@@ -238,13 +251,17 @@ export async function getCategoryBySlug(slug: string) {
     // Try both formats if needed
     let response;
     try {
-      response = await fetchAPI(CATEGORIES_ENDPOINT, params);
+      response = await fetchAPI(CATEGORIES_ENDPOINT, params, {
+        next: { revalidate: 3600 } // Cache for 1 hour
+      });
     } catch (firstError) {
-      console.log('Trying alternative endpoint format for category...');
-      response = await fetchAPI('api::category.category', params);
+      logger.log('Trying alternative endpoint format for category...');
+      response = await fetchAPI('api::category.category', params, {
+        next: { revalidate: 3600 }
+      });
     }
     
-    console.log(`Category response data structure:`, {
+    logger.log(`Category response data structure:`, {
       hasData: !!response.data,
       dataType: response.data ? (Array.isArray(response.data) ? 'array' : 'object') : 'none',
       length: response.data && Array.isArray(response.data) ? response.data.length : 'n/a'
@@ -252,7 +269,7 @@ export async function getCategoryBySlug(slug: string) {
     
     // Check if we have any data
     if (!response.data || (Array.isArray(response.data) && response.data.length === 0)) {
-      console.error(`No category found with slug: ${slug}`);
+      logger.error(`No category found with slug: ${slug}`);
       // Use type assertion to handle the null case
       return { data: null, meta: response.meta } as unknown as CategoryResponse;
     }
@@ -263,7 +280,7 @@ export async function getCategoryBySlug(slug: string) {
       meta: response.meta,
     } as CategoryResponse;
   } catch (error) {
-    console.error(`Error fetching category with slug ${slug}:`, error);
+    logger.error(`Error fetching category with slug ${slug}:`, error);
     throw error;
   }
 }
@@ -298,20 +315,24 @@ export async function getBlogPostsByCategory(categorySlug: string, params = {}) 
   };
 
   const mergedParams = { ...defaultParams, ...params };
-  console.log(`Getting blog posts for category ${categorySlug} with params:`, JSON.stringify(mergedParams, null, 2));
+  logger.log(`Getting blog posts for category ${categorySlug} with params:`, JSON.stringify(mergedParams, null, 2));
   
   try {
     // Try both formats if needed
     try {
-      const response = await fetchAPI(BLOG_POSTS_ENDPOINT, mergedParams);
+      const response = await fetchAPI(BLOG_POSTS_ENDPOINT, mergedParams, {
+        next: { revalidate: 300 } // Cache for 5 minutes
+      });
       return response as BlogPostsResponse;
     } catch (error) {
-      console.log('Trying alternative endpoint format for filtered posts...');
-      const response = await fetchAPI('api::blog-post.blog-post', mergedParams);
+      logger.log('Trying alternative endpoint format for filtered posts...');
+      const response = await fetchAPI('api::blog-post.blog-post', mergedParams, {
+        next: { revalidate: 300 }
+      });
       return response as BlogPostsResponse;
     }
   } catch (error) {
-    console.error(`Error fetching blog posts for category ${categorySlug}:`, error);
+    logger.error(`Error fetching blog posts for category ${categorySlug}:`, error);
     throw error;
   }
 } 

@@ -176,6 +176,7 @@ const RichTextRenderer: React.FC<RichTextRendererProps> = ({ content, className 
                 width={block.image.width || 800}
                 height={block.image.height || 400}
                 className="w-full h-auto"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
               />
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import qs from 'qs';
+import { logger } from '@/app/utils/logger';
 
 /**
  * API route specifically for blog categories
@@ -66,7 +67,7 @@ export async function GET(request: NextRequest) {
         'Authorization': `Bearer ${process.env.STRAPI_API_TOKEN || ''}`,
       },
       next: {
-        revalidate: 300, // Cache for 5 minutes - categories change infrequently
+        revalidate: 3600, // Cache for 1 hour - categories change infrequently
       },
     });
     
@@ -84,7 +85,7 @@ export async function GET(request: NextRequest) {
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Categories API proxy error:', error);
+    logger.error('Categories API proxy error:', error);
     return NextResponse.json(
       { error: `Internal server error: ${error instanceof Error ? error.message : String(error)}` },
       { status: 500 }

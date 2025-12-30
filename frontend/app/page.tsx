@@ -1,5 +1,9 @@
 import { getGlobalData } from './api/api'
 import { getBlogPosts } from './api/blog/api'
+import { logger } from './utils/logger'
+
+// Revalidate homepage every 5 minutes
+export const revalidate = 300;
 import { Button } from './components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
 import Link from 'next/link'
@@ -27,7 +31,7 @@ export default async function Home() {
     })
     blogPosts = blogData?.data || []
   } catch (error) {
-    console.error('Failed to fetch blog posts:', error)
+    logger.error('Failed to fetch blog posts:', error)
   }
 
   return (
@@ -36,14 +40,15 @@ export default async function Home() {
       <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image
-            src="/home-hero.jpg"
-            alt="Pampas grass background"
-            fill
-            className="object-cover object-center animate-subtle-zoom"
-            priority
-            quality={90}
-          />
+            <Image
+              src="/home-hero.jpg"
+              alt="Pampas grass background"
+              fill
+              className="object-cover object-center animate-subtle-zoom"
+              priority
+              quality={90}
+              sizes="100vw"
+            />
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-transparent" />
         </div>
@@ -74,6 +79,7 @@ export default async function Home() {
               fill
               className="object-cover"
               quality={90}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
@@ -195,6 +201,7 @@ export default async function Home() {
                   height={650}
                   className="w-full h-auto rounded-2xl shadow-2xl object-cover"
                   quality={90}
+                  sizes="(max-width: 1024px) 100vw, 500px"
                 />
               </div>
             </div>

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getCategoryBySlug, getBlogPostsByCategory, getCategories } from '@/app/api/blog/api';
 import { generateHreflangTags } from '@/app/utils/seo';
 import { generateConsistentOgImages, generateConsistentTwitterImages } from '@/app/utils/metadata';
+import { logger } from '@/app/utils/logger';
 import BlogPostCard from '@/app/components/BlogPostCard';
 import CategoryFilter from '@/app/components/CategoryFilter';
 import SortSelector from '@/app/components/SortSelector';
@@ -16,8 +17,8 @@ type SearchParams = Promise<{
   sort?: string; 
 }>;
 
-// Mark this page as dynamically rendered
-export const dynamic = 'force-dynamic';
+// Use ISR with 5 minute revalidation
+export const revalidate = 300;
 
 /**
  * Generate metadata for the page
@@ -79,7 +80,7 @@ export async function generateMetadata(
       },
     };
   } catch (error) {
-    console.error('Error generating metadata:', error);
+    logger.error('Error generating metadata:', error);
     return {
       title: 'Blog Category',
       description: 'Honeycomb Socials blog category',
@@ -109,7 +110,7 @@ export async function generateStaticParams() {
  */
 async function fetchCategoryDirectly(slug: string) {
   try {
-    console.log(`Trying direct fetch for category with slug: ${slug}`);
+    logger.log(`Trying direct fetch for category with slug: ${slug}`);
     
     // Try both possible API endpoints
     const endpoints = ['categories', 'category'];
@@ -130,7 +131,7 @@ async function fetchCategoryDirectly(slug: string) {
         
         // Build the full URL
         const url = `${baseUrl}/api/${endpoint}?${queryString.toString()}`;
-        console.log(`Trying direct fetch from: ${url}`);
+        logger.log(`Trying direct fetch from: ${url}`);
         
         const response = await fetch(url, {
           headers: {
@@ -141,12 +142,12 @@ async function fetchCategoryDirectly(slug: string) {
         });
         
         if (!response.ok) {
-          console.log(`Endpoint ${endpoint} returned ${response.status}`);
+          logger.log(`Endpoint ${endpoint} returned ${response.status}`);
           continue;
         }
-        
+
         const data = await response.json();
-        console.log(`Direct fetch response structure:`, {
+        logger.log(`Direct fetch response structure:`, {
           hasData: !!data.data,
           isArray: Array.isArray(data.data),
           length: Array.isArray(data.data) ? data.data.length : 'n/a'
@@ -157,24 +158,24 @@ async function fetchCategoryDirectly(slug: string) {
             data: data.data[0], 
             meta: data.meta 
           };
-          console.log(`Successfully found category with endpoint: ${endpoint}`);
+          logger.log(`Successfully found category with endpoint: ${endpoint}`);
           break;
         } else if (data.data) {
           category = { 
             data: data.data, 
             meta: data.meta 
           };
-          console.log(`Successfully found category with endpoint: ${endpoint}`);
+          logger.log(`Successfully found category with endpoint: ${endpoint}`);
           break;
         }
       } catch (endpointError) {
-        console.error(`Error fetching from endpoint ${endpoint}:`, endpointError);
+        logger.error(`Error fetching from endpoint ${endpoint}:`, endpointError);
       }
     }
     
     return category as any;
   } catch (error) {
-    console.error('Error in direct fetch for category:', error);
+    logger.error('Error in direct fetch for category:', error);
     return null;
   }
 }
@@ -185,7 +186,7 @@ async function fetchCategoryDirectly(slug: string) {
 export default async function CategoryPage(props: { params: Params, searchParams?: SearchParams }) {
   try {
     const { slug } = await props.params;
-    console.log(`Rendering category page for slug: ${slug}`);
+    logger.log(`Rendering category page for slug: ${slug}`);
     
     // Extract page and sort parameters safely with defaults
     const searchParamsResolved = props.searchParams ? await props.searchParams : {};
@@ -202,14 +203,14 @@ export default async function CategoryPage(props: { params: Params, searchParams
     
     // Try direct fetch if category not found
     if (!category || !category.data) {
-      console.log(`Category not found through normal API, trying direct fetch for: ${slug}`);
+      logger.log(`Category not found through normal API, trying direct fetch for: ${slug}`);
       const directCategory = await fetchCategoryDirectly(slug);
-      
+
       if (!directCategory) {
-        console.error(`Category not found with slug: ${slug} after all attempts`);
+        logger.error(`Category not found with slug: ${slug} after all attempts`);
         notFound();
       }
-      
+
       category = directCategory;
     }
     
@@ -344,7 +345,7 @@ export default async function CategoryPage(props: { params: Params, searchParams
       </main>
     );
   } catch (error) {
-    console.error('Error fetching category page:', error);
+    logger.error('Error fetching category page:', error);
     notFound();
   }
 } 
