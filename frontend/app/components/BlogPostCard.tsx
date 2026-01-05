@@ -30,7 +30,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
       <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 col-span-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
           {/* Image Section */}
-          <div className="relative order-2 lg:order-1">
+          <div className="relative order-2 lg:order-1 h-[300px] lg:h-auto lg:min-h-[400px]">
             <Image
               src={imageUrl}
               alt={coverImage?.alternativeText || title}
