@@ -69,7 +69,7 @@ export default async function Home() {
       </section>
 
       {/* About Section - Split Layout */}
-      <section className="relative w-full overflow-hidden bg-[#F2E9D0] dark:bg-[#E5D9BC] py-12 md:py-16 lg:py-20">
+      <section className="relative w-full overflow-hidden bg-muted py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1400px] mx-auto gap-0">
           {/* Image Side */}
           <div className="relative h-[500px] lg:h-[750px]">
@@ -84,13 +84,13 @@ export default async function Home() {
           </div>
 
           {/* Content Side */}
-          <div className="bg-[#5d3d2e] dark:bg-[#331d08] flex items-center px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-20">
+          <div className="bg-card flex items-center px-8 md:px-12 lg:px-16 py-12 md:py-16 lg:py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F2DEA9] mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-8 leading-tight">
                 Your Beauty Business Deserves Better
               </h2>
               
-              <div className="space-y-6 text-[#F2DEA9]/90 text-base md:text-lg leading-relaxed">
+              <div className="space-y-6 text-card-foreground/90 text-base md:text-lg leading-relaxed">
                 <p>
                   Your beauty business deserves socials that feel intentional, on-brand, and actually work for you.
                 </p>
@@ -107,13 +107,13 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-[#DAA755] hover:bg-[#DAA755]/90 text-black font-semibold rounded-lg transition-all duration-300 text-center hover:scale-105 shadow-lg"
+                  className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 text-center hover:scale-105 shadow-lg"
                 >
                   Book Free Consultation
                 </a>
                 <a
                   href="/audit"
-                  className="px-8 py-4 bg-transparent border-2 border-[#F2DEA9] hover:bg-[#F2DEA9]/10 text-[#F2DEA9] font-semibold rounded-lg transition-all duration-300 text-center"
+                  className="px-8 py-4 bg-transparent border-2 border-card-foreground hover:bg-card-foreground/10 text-card-foreground font-semibold rounded-lg transition-all duration-300 text-center"
                 >
                   Get Free Instagram Audit
                 </a>

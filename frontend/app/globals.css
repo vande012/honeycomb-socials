@@ -14,43 +14,44 @@
 
 :root {
   /* Background & Foreground */
-  --background: #f2e9d0;
-  --foreground: #6D3710;
-  /* Dark Brown */
+  --background: #fafafa;
+  /* Light Background */
+  --foreground: #1f1e1c;
+  /* Dark Text */
 
   /* Muted (subtle backgrounds, disabled states) */
-  --muted: #F2DEA9;
+  --muted: #f2e9d0;
   /* Cream/Beige */
-  --muted-foreground: #97704F;
+  --muted-foreground: #6D3710;
   /* Medium Brown */
 
   /* Borders & Inputs */
-  --border: #F2DEA9;
-  /* Cream/Beige */
-  --input: #F2DEA9;
-  /* Cream/Beige */
+  --border: #e5e5e5;
+  /* Light Border */
+  --input: #ffffff;
+  /* White Input */
 
   /* Cards & Popovers */
   --card: #ffffff;
-  --card-foreground: #6D3710;
+  --card-foreground: #1f1e1c;
   --popover: #ffffff;
-  --popover-foreground: #6D3710;
+  --popover-foreground: #1f1e1c;
 
   /* Primary (main brand color) */
-  --primary: #DAA755;
-  /* Light Brown/Gold */
+  --primary: #b99645;
+  /* Gold - matches dark theme */
   --primary-foreground: #000000;
   /* Black */
 
   /* Secondary */
-  --secondary: #F2DEA9;
+  --secondary: #f2e9d0;
   /* Cream/Beige */
-  --secondary-foreground: #6D3710;
+  --secondary-foreground: #1f1e1c;
 
   /* Accent */
-  --accent: #F2DEA9;
-  /* Cream/Beige */
-  --accent-foreground: #6D3710;
+  --accent: #b99645;
+  /* Gold - matches primary */
+  --accent-foreground: #1f1e1c;
 
   /* Semantic Colors - Kept standard but warmer */
   --destructive: #ef4444;
@@ -63,46 +64,46 @@
   --info-foreground: #eff6ff;
 
   /* Focus Ring */
-  --ring: #DAA755;
+  --ring: #b99645;
 
   /* Border Radius */
   --radius: 0.625rem;
 }
 
 .dark {
-  --background: #331D08;
-  /* Dark Brown */
-  --foreground: #F2DEA9;
-  /* Cream/Beige */
+  --background: #1f1e1c;
+  /* Dark Background */
+  --foreground: #fafafa;
+  /* Light Text */
 
-  --muted: #6D3710;
-  /* Dark Brown */
-  --muted-foreground: #97704F;
-  /* Medium Brown */
+  --muted: #2a2927;
+  /* Slightly lighter than background */
+  --muted-foreground: #a8a8a8;
+  /* Muted text color */
 
-  --border: #331D08;
-  /* Very Dark Brown */
-  --input: #331D08;
-  /* Very Dark Brown */
+  --border: #2a2927;
+  /* Border color */
+  --input: #2a2927;
+  /* Input background */
 
-  --card: #0A0A0A;
-  /* Near Black */
-  --card-foreground: #F2DEA9;
-  --popover: #0A0A0A;
-  --popover-foreground: #F2DEA9;
+  --card: #262523;
+  /* Card background - slightly lighter */
+  --card-foreground: #fafafa;
+  --popover: #262523;
+  --popover-foreground: #fafafa;
 
-  --primary: #DAA755;
-  /* Light Brown/Gold */
+  --primary: #b99645;
+  /* Gold/Accent Color */
   --primary-foreground: #000000;
   /* Black */
 
-  --secondary: #6D3710;
-  /* Dark Brown */
-  --secondary-foreground: #F2DEA9;
+  --secondary: #2a2927;
+  /* Secondary background */
+  --secondary-foreground: #fafafa;
 
-  --accent: #6D3710;
-  /* Dark Brown */
-  --accent-foreground: #F2DEA9;
+  --accent: #b99645;
+  /* Accent color matches primary */
+  --accent-foreground: #fafafa;
 
   --destructive: #f87171;
   --destructive-foreground: #fef2f2;
@@ -113,7 +114,8 @@
   --info: #2563eb;
   --info-foreground: #eff6ff;
 
-  --ring: #DAA755;
+  --ring: #b99645;
+  /* Focus ring matches primary */
 }
 
 /* Tailwind theme bindings */

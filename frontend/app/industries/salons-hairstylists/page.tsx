@@ -19,7 +19,7 @@ export default function SalonsHairstylistsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/salon.jpeg"
+            src="/industries/salon-2.jpg"
             alt="Salon background"
             fill
             className="object-cover"

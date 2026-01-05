@@ -5,18 +5,18 @@ export function middleware(request: NextRequest) {
   const response = NextResponse.next()
 
   // Only set CSP headers, don't block anything
-  // In development, allow unsafe-eval for Next.js HMR
+  // In development, allow unsafe-eval for Next.js HMR and Vercel Live
   // In production, Next.js doesn't use eval, so this is safe
   if (process.env.NODE_ENV === 'development') {
     response.headers.set(
       'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.hubspot.com https://js.hs-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https:; frame-src https://*.hubspot.com;"
+      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:;"
     )
   } else {
     // Production: strict CSP without unsafe-eval
     response.headers.set(
       'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-inline' https://*.hubspot.com https://js.hs-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https:; frame-src https://*.hubspot.com;"
+      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:;"
     )
   }
 

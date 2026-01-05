@@ -68,7 +68,7 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-[#f2dea9] dark:bg-[#6d3810]">
+    <section className="py-16 md:py-20 bg-muted">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
