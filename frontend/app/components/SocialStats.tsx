@@ -81,7 +81,7 @@ function StatCard({ platform, icon, stats }: StatCardProps) {
   return (
     <div 
       ref={cardRef}
-      className="bg-card border border-border rounded-xl p-5 hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+      className="bg-background border border-border rounded-3xl p-6 hover:shadow-xl transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
     >
       <div className="flex items-center gap-2 mb-4">
         <div className="text-primary w-6 h-6 flex items-center justify-center">
@@ -182,7 +182,7 @@ export function SocialStats() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Real Results, Real Growth
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
               We've helped businesses grow across every major platform—with content that converts and strategy that sticks.
             </p>
           </div>
@@ -205,7 +205,7 @@ export function SocialStats() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Real Results, Real Growth
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-foreground max-w-3xl mx-auto">
             We've helped businesses grow across every major platform—with content that converts and strategy that sticks.
           </p>
         </div>

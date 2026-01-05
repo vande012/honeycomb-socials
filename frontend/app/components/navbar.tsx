@@ -75,27 +75,18 @@ export function Navbar({ className }: NavbarProps) {
   const [mobileOpenDropdown, setMobileOpenDropdown] = React.useState<string | null>(null)
 
   return (
-    <header className={cn("border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50", className)}>
+    <header className={cn("border-b-2 border-white/20 bg-[#1f1e1c]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1f1e1c]/90 sticky top-0 z-50", className)} role="banner">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-20 md:h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            {/* Dark logo for light theme */}
+            {/* Gold logo for dark navbar */}
             <Image
-              src="/logo-dark.png?v=2"
+              src="/logo-gold.png"
               alt="Honeycomb Socials"
               width={300}
               height={102}
-              className="h-16 md:h-20 w-auto object-contain dark:hidden"
-              priority
-            />
-            {/* Light logo for dark theme */}
-            <Image
-              src="/logo-light.png?v=2"
-              alt="Honeycomb Socials"
-              width={300}
-              height={102}
-              className="h-16 md:h-20 w-auto object-contain hidden dark:block"
+              className="h-16 md:h-20 w-auto object-contain"
               priority
             />
           </Link>
@@ -115,7 +106,7 @@ export function Navbar({ className }: NavbarProps) {
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
                       <button
-                        className="text-base font-medium text-foreground/80 hover:text-primary transition-colors duration-200 flex items-center gap-1 group"
+                        className="text-base font-medium text-white/90 hover:text-primary transition-colors duration-200 flex items-center gap-1 group"
                       >
                         {item.label}
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
@@ -124,12 +115,12 @@ export function Navbar({ className }: NavbarProps) {
                       {/* Dropdown Menu */}
                       {openDropdown === item.label && (
                         <div className="absolute top-full left-0 pt-2 w-64">
-                          <div className="bg-background border border-border rounded-lg shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                          <div className="bg-[#1f1e1c] border-2 border-white/20 rounded-2xl shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                             {item.children.map((child) => (
                               <Link
                                 key={child.label}
                                 href={child.href}
-                                className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-muted transition-colors"
+                                className="block px-4 py-2.5 text-sm text-white/90 hover:text-primary hover:bg-white/10 transition-colors"
                               >
                                 {child.label}
                               </Link>
@@ -141,7 +132,7 @@ export function Navbar({ className }: NavbarProps) {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-base font-medium text-foreground/80 hover:text-primary transition-colors duration-200 relative group"
+                      className="text-base font-medium text-white/90 hover:text-primary transition-colors duration-200 relative group"
                     >
                       {item.label}
                       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full" />
@@ -167,7 +158,7 @@ export function Navbar({ className }: NavbarProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden"
+              className="lg:hidden text-white hover:text-white/80 hover:bg-white/10"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -181,7 +172,7 @@ export function Navbar({ className }: NavbarProps) {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-sm">
+          <div className="lg:hidden border-t-2 border-white/20 bg-[#1f1e1c]/95 backdrop-blur-sm">
             <nav className="py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
               <ul className="space-y-1">
                 {navItems.map((item) => (
@@ -190,7 +181,7 @@ export function Navbar({ className }: NavbarProps) {
                       <>
                         <button
                           onClick={() => setMobileOpenDropdown(mobileOpenDropdown === item.label ? null : item.label)}
-                          className="w-full flex items-center justify-between px-4 py-3 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                          className="w-full flex items-center justify-between px-4 py-3 text-white/90 hover:text-primary hover:bg-white/10 rounded-2xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#1f1e1c]"
                         >
                           <span>{item.label}</span>
                           <ChevronDown className={cn(
@@ -206,7 +197,7 @@ export function Navbar({ className }: NavbarProps) {
                               <li key={child.label}>
                                 <Link
                                   href={child.href}
-                                  className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                                  className="block px-4 py-2.5 text-sm text-white/80 hover:text-primary hover:bg-white/10 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {child.label}
@@ -219,7 +210,7 @@ export function Navbar({ className }: NavbarProps) {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block px-4 py-3 text-foreground/80 hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                        className="block px-4 py-3 text-white/90 hover:text-primary hover:bg-white/10 rounded-2xl transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#1f1e1c]"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -232,7 +223,7 @@ export function Navbar({ className }: NavbarProps) {
                 <li className="pt-2">
                   <Link
                     href="/audit"
-                    className="block mx-4 px-4 py-3 bg-primary text-primary-foreground font-semibold text-center rounded-lg hover:bg-primary/90 transition-colors"
+                    className="block mx-4 px-4 py-3 bg-primary text-primary-foreground font-semibold text-center rounded-2xl hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#1f1e1c]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Free Audit

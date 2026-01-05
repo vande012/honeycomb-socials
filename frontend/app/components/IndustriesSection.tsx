@@ -138,7 +138,8 @@ export function IndustriesSection() {
               <Link
                 key={industry.id}
                 href={industry.href}
-                className="group bg-card/95 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-border/50 block"
+                className="group bg-card/95 backdrop-blur-sm rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-border/50 hover:border-primary/30 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label={`Learn more about ${industry.title}`}
               >
                 {/* Industry Image */}
                 <div className="relative h-[200px] overflow-hidden bg-card rounded-t-2xl" style={{ marginTop: '-1px', marginLeft: '-1px', marginRight: '-1px', width: 'calc(100% + 2px)' }}>
@@ -153,7 +154,7 @@ export function IndustriesSection() {
 
                   
                   {/* Icon Badge - Top Right */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-2.5 shadow-lg group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-300 z-10">
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-300 z-10">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>
@@ -186,13 +187,14 @@ export function IndustriesSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-card/95 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-border/50 max-w-4xl mx-auto">
+        <div className="text-center bg-card/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-2 border-border/50 max-w-4xl mx-auto shadow-lg">
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
             If you're in the beauty industry and your socials don't reflect the quality of your work, we're here to change that.
           </p>
           <Link
             href="/portfolio"
-            className="inline-block px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-block px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="View our portfolio"
           >
             See Our Work
           </Link>

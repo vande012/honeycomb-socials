@@ -24,6 +24,7 @@ export function ThemeToggle() {
         variant="ghost"
         size="icon"
         aria-label="Toggle theme"
+        className="text-white hover:text-white/80 hover:bg-white/10 dark:text-foreground dark:hover:text-foreground dark:hover:bg-accent"
       >
         <Moon className="h-5 w-5" />
       </Button>
@@ -36,6 +37,7 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
+      className="text-white hover:text-white/80 hover:bg-white/10 dark:text-foreground dark:hover:text-foreground dark:hover:bg-accent"
     >
       {resolvedTheme === 'dark' ? (
         <Sun className="h-5 w-5" />

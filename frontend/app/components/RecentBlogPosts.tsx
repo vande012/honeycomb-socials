@@ -68,14 +68,14 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-muted">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             Latest Insights
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
             Tips, strategies, and insights to help you grow your beauty business through social media.
           </p>
         </div>
@@ -90,7 +90,8 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
               <Link
                 key={post.id || post.documentId}
                 href={`/blog/${post.slug}`}
-                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group bg-card border-2 border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label={`Read blog post: ${post.title}`}
               >
                 {/* Cover Image */}
                 {coverImageUrl && (
@@ -129,13 +130,13 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
 
                   {/* Excerpt */}
                   {post.excerpt && (
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-foreground text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                   )}
 
                   {/* Meta */}
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <div className="flex items-center justify-between text-xs text-accent">
                     <span>{formatDate(post.publishedAt)}</span>
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
@@ -152,7 +153,8 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="View all blog posts"
           >
             View All Posts
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -66,8 +66,8 @@
   /* Focus Ring */
   --ring: #b99645;
 
-  /* Border Radius */
-  --radius: 0.625rem;
+  /* Border Radius - Increased for tumble girl aesthetic */
+  --radius: 1rem;
 }
 
 .dark {
@@ -260,12 +260,23 @@ p {
   background: var(--muted);
 }
 
-::-webkit-scrollbar-thumb {
+/* Light theme scrollbar - gold */
+:root::-webkit-scrollbar-thumb {
+  background: #b99645;
+  border-radius: var(--radius);
+}
+
+:root::-webkit-scrollbar-thumb:hover {
+  background: #9d7e38;
+}
+
+/* Dark theme scrollbar */
+.dark::-webkit-scrollbar-thumb {
   background: var(--muted-foreground);
   border-radius: var(--radius);
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dark::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
 }
 
@@ -302,6 +313,63 @@ p {
 
 .animation-delay-300 {
   animation-delay: 0.3s;
+}
+
+/* Floating animation for social icons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: float 7s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.animate-float-delay-2 {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.animate-float-delay-3 {
+  animation: float 6.5s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.animate-float-delay-4 {
+  animation: float 7.5s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.animate-float-delay-5 {
+  animation: float 8.5s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+/* Gold glow effect */
+.gold-glow {
+  text-shadow: 
+    0 0 10px rgba(185, 150, 69, 0.5),
+    0 0 20px rgba(185, 150, 69, 0.4),
+    0 0 30px rgba(185, 150, 69, 0.3),
+    0 0 40px rgba(185, 150, 69, 0.2);
+}
+
+.gold-glow-icon {
+  filter: drop-shadow(0 0 8px rgba(185, 150, 69, 0.6)) 
+          drop-shadow(0 0 16px rgba(185, 150, 69, 0.4))
+          drop-shadow(0 0 24px rgba(185, 150, 69, 0.2));
 }
 
 /* Hexagon button for scroll to top */

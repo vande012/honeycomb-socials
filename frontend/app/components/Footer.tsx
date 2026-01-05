@@ -71,32 +71,22 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-[#2a2927] bg-[#1f1e1c] text-white">
       <div className="container mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-8">
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              {/* Dark logo for light theme */}
               <Image
-                src="/logo-dark.png?v=2"
+                src="/logo-gold.png"
                 alt="Honeycomb Socials"
                 width={300}
                 height={102}
-                className="h-24 md:h-28 w-auto object-contain dark:hidden"
-                priority
-              />
-              {/* Light logo for dark theme */}
-              <Image
-                src="/logo-light.png?v=2"
-                alt="Honeycomb Socials"
-                width={300}
-                height={102}
-                className="h-24 md:h-28 w-auto object-contain hidden dark:block"
+                className="h-24 md:h-28 w-auto object-contain"
                 priority
               />
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-md">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-md font-sans">
               Social media management for beauty and wellness businesses that value aesthetics as much as results.
             </p>
             
@@ -110,10 +100,10 @@ export function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    className="w-11 h-11 rounded-full bg-white/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-primary/20 border border-white/10 hover:border-primary/50"
                     aria-label={`Follow us on ${social.name}`}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <IconComponent className="w-5 h-5 text-white group-hover:text-primary-foreground" />
                   </a>
                 );
               })}
@@ -122,15 +112,15 @@ export function Footer() {
 
           {/* Main Navigation */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
+            <h3 className="font-semibold text-white mb-4 text-base md:text-lg uppercase tracking-wider">
               Navigation
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {footerNav.main.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="inline-block text-sm text-white/80 hover:text-primary transition-colors duration-300 font-sans"
                   >
                     {link.label}
                   </Link>
@@ -141,15 +131,15 @@ export function Footer() {
 
           {/* Industries */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
+            <h3 className="font-semibold text-white mb-4 text-base md:text-lg uppercase tracking-wider">
               {footerNav.industries.title}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {footerNav.industries.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="inline-block text-sm text-white/80 hover:text-primary transition-colors duration-300 font-sans"
                   >
                     {link.label}
                   </Link>
@@ -160,15 +150,15 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4 text-base uppercase tracking-wider">
+            <h3 className="font-semibold text-white mb-4 text-base md:text-lg uppercase tracking-wider">
               {footerNav.services.title}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {footerNav.services.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="inline-block text-sm text-white/80 hover:text-primary transition-colors duration-300 font-sans"
                   >
                     {link.label}
                   </Link>
@@ -179,21 +169,21 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border pt-8 mt-8">
+        <div className="border-t border-white/10 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
+            <p className="text-sm text-white/70 text-center md:text-left font-sans">
               © {currentYear} Honeycomb Socials. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-primary transition-colors duration-300 font-sans"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-white/70 hover:text-primary transition-colors duration-300 font-sans"
               >
                 Terms of Service
               </Link>

@@ -35,7 +35,7 @@ export function FAQ({ faqs }: FAQProps) {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-accent">
             Got questions? We've got answers.
           </p>
         </div>
@@ -45,14 +45,14 @@ export function FAQ({ faqs }: FAQProps) {
           {faqs.map((faq, index) => (
             <div
               key={faq.id || faq.documentId || index}
-              className="bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-card dark:bg-background border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left transition-colors duration-200 hover:bg-muted/50"
+                className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left transition-colors duration-200 hover:bg-muted/50 dark:hover:bg-muted/30"
                 aria-expanded={openIndex === index}
               >
-                <h3 className="text-lg md:text-xl font-semibold text-foreground pr-4">
+                <h3 className="text-lg md:text-xl font-semibold text-foreground dark:text-foreground pr-4">
                   {faq.Question}
                 </h3>
                 <ChevronDown
@@ -67,8 +67,8 @@ export function FAQ({ faqs }: FAQProps) {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 md:px-8 pb-5 md:pb-6 pt-2">
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <div className="px-6 md:px-8 pb-5 md:pb-6 pt-2 dark:bg-background">
+                  <p className="text-base md:text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">
                     {faq.Answer}
                   </p>
                 </div>
@@ -78,8 +78,8 @@ export function FAQ({ faqs }: FAQProps) {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-12 md:mt-16 p-8 bg-card border-2 border-primary/20 rounded-xl">
-          <p className="text-lg md:text-xl text-foreground mb-4">
+        <div className="text-center mt-12 md:mt-16 p-8 bg-card dark:bg-background border-2 border-primary/20 rounded-xl">
+          <p className="text-lg md:text-xl text-foreground dark:text-foreground mb-4">
             Still have questions?
           </p>
           <a

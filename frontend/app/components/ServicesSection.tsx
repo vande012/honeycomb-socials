@@ -72,7 +72,7 @@ export function ServicesSection() {
   const currentService = services[selectedService]
 
   return (
-    <section className="py-16 md:py-20 bg-card">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -94,10 +94,10 @@ export function ServicesSection() {
                   <button
                     key={service.id}
                     onClick={() => setSelectedService(index)}
-                    className={`w-full text-left p-4 md:p-6 rounded-xl transition-all duration-300 ${
+                    className={`w-full text-left p-5 md:p-7 rounded-3xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                       selectedService === index
-                        ? 'bg-primary text-primary-foreground shadow-lg scale-[1.02]'
-                        : 'bg-card-foreground/10 hover:bg-card-foreground/20 text-card-foreground border border-card-foreground/20'
+                        ? 'bg-primary text-primary-foreground shadow-xl scale-[1.02]'
+                        : 'bg-card-foreground/10 hover:bg-card-foreground/20 text-card-foreground border-2 border-card-foreground/20 hover:border-card-foreground/30'
                     }`}
                   >
                     <h3 className={`text-xl md:text-2xl font-serif ${selectedService === index ? 'font-bold' : 'font-medium'} mb-2`}>
@@ -116,7 +116,8 @@ export function ServicesSection() {
               <div className="mt-8">
                 <a
                   href="/services"
-                  className="inline-block w-full md:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-center"
+                  className="inline-block w-full md:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Explore all services"
                 >
                   Explore All Services
                 </a>
@@ -125,7 +126,7 @@ export function ServicesSection() {
 
             {/* Right: Carousel - Fixed Height */}
             <div className="order-1 lg:order-2">
-              <div className="relative bg-card-foreground/10 rounded-2xl overflow-hidden border border-card-foreground/20 w-full h-[500px] md:h-[600px] lg:h-[650px]">
+              <div className="relative bg-card-foreground/10 rounded-3xl overflow-hidden border-2 border-card-foreground/20 w-full h-[500px] md:h-[600px] lg:h-[650px] shadow-lg">
                 {/* Carousel Image - Fixed height container */}
                 <div className="relative w-full h-full">
                   <Image
