@@ -12,6 +12,7 @@ import { SocialStats } from './components/SocialStats'
 import { RecentBlogPosts } from './components/RecentBlogPosts'
 import { ServicesSection } from './components/ServicesSection'
 import { IndustriesSection } from './components/IndustriesSection'
+import { AnimatedWord } from './components/AnimatedWord'
 import { Palette, Target, Megaphone, Users, Search, Camera, Dumbbell } from 'lucide-react'
 
 export default async function Home() {
@@ -90,7 +91,9 @@ export default async function Home() {
           <div className="max-w-4xl w-full py-12 md:py-0 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-6 md:mb-8 animate-fade-in-up">
               <span className="text-white block drop-shadow-lg">SOCIAL MEDIA</span>
-              <span className="text-white block drop-shadow-lg">MANAGEMENT</span>
+              <span className="text-white block drop-shadow-lg">
+                <AnimatedWord />
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl italic text-white/95 max-w-2xl mx-auto lg:mx-0 mb-8 md:mb-10 animate-fade-in-up animation-delay-300 font-sans leading-relaxed">
               For small businesses with taste.
