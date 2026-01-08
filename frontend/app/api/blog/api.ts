@@ -58,39 +58,14 @@ export async function getBlogPosts(params = {}) {
 export async function getBlogPostBySlug(slug: string) {
   logger.log(`Fetching blog post with slug: ${slug}`);
   
-  // First try with detailed populate to ensure we get content
+  // First try with wildcard populate - safest approach for unknown content structure
   const params = {
     filters: {
       slug: {
         $eq: slug,
       },
     },
-    populate: {
-      coverImage: {
-        populate: '*',
-      },
-      categories: {
-        populate: '*',
-      },
-      seo: {
-        populate: '*',
-      },
-      content: {
-        populate: {
-          image: {
-            populate: '*'
-          }
-        }
-      },
-      markdownContent: true,
-      images: {
-        populate: '*'
-      },
-      // Also try common content field variations
-      body: true,
-      text: true,
-      description: true,
-    }
+    populate: '*'
   };
 
   try {
@@ -125,30 +100,43 @@ export async function getBlogPostBySlug(slug: string) {
       }
     }
     
-    // If detailed populate failed, try with wildcard
+    // If wildcard populate failed, try with deep populate for relations
     if (!response) {
-      logger.log('Trying with wildcard populate...');
-      const wildcardParams = {
+      logger.log('Trying with deep populate...');
+      const deepParams = {
         filters: {
           slug: {
             $eq: slug,
           },
         },
-        populate: '*'
+        populate: {
+          coverImage: {
+            populate: '*',
+          },
+          categories: {
+            populate: '*',
+          },
+          seo: {
+            populate: '*',
+          },
+          images: {
+            populate: '*'
+          },
+        }
       };
       
       for (const endpoint of endpointVariations) {
         try {
-          logger.log(`Trying wildcard populate with endpoint: ${endpoint}`);
-          response = await fetchAPI(endpoint, wildcardParams, {
+          logger.log(`Trying deep populate with endpoint: ${endpoint}`);
+          response = await fetchAPI(endpoint, deepParams, {
             next: { revalidate: 3600 }
           });
           if (response) {
-            logger.log(`Success with wildcard populate and endpoint: ${endpoint}`);
+            logger.log(`Success with deep populate and endpoint: ${endpoint}`);
             break;
           }
         } catch (endpointError) {
-          logger.warn(`Failed wildcard with endpoint ${endpoint}:`, endpointError);
+          logger.warn(`Failed deep populate with endpoint ${endpoint}:`, endpointError);
           error = endpointError;
         }
       }

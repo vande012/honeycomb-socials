@@ -23,16 +23,46 @@ export function getStaticPages(): SitemapEntry[] {
       priority: 1.0,
     },
     {
+      url: `${SITE_URL}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/blog`,
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/search`,
+      url: `${SITE_URL}/portfolio`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/process`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/audit`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/services`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/industries`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
   ];
 }
@@ -99,37 +129,30 @@ export async function getBlogCategories(): Promise<SitemapEntry[]> {
 
 /**
  * Get industry pages for sitemap
+ * These are static pages, not from the API
  */
-export async function getIndustryPages(): Promise<SitemapEntry[]> {
-  try {
-    const response = await fetchAPI('industries', {
-      pagination: {
-        pageSize: 50,
-      },
-      sort: ['displayOrder:asc'],
-      fields: ['slug', 'updatedAt', 'publishedAt'],
-      filters: {
-        isActive: {
-          $eq: true,
-        },
-      },
-    });
+export function getIndustryPages(): SitemapEntry[] {
+  const currentDate = new Date().toISOString();
+  
+  // Static industry pages based on actual routes in the app
+  const industryPages = [
+    'salons-hairstylists',
+    'nail-salons',
+    'beauty-brands',
+    'lash-brow',
+    'makeup-artists',
+    'florist-wedding',
+    'boutique-lifestyle',
+    'gyms',
+    'spas-medspas',
+  ];
 
-    if (!response?.data || !Array.isArray(response.data)) {
-      console.warn('No industries found for sitemap');
-      return [];
-    }
-
-    return response.data.map((industry: any) => ({
-      url: `${SITE_URL}/industries/${industry.slug}`,
-      lastModified: industry.updatedAt || industry.publishedAt,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }));
-  } catch (error) {
-    console.error('Error fetching industries for sitemap:', error);
-    return [];
-  }
+  return industryPages.map(industry => ({
+    url: `${SITE_URL}/industries/${industry}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 }
 
 /**
@@ -138,11 +161,14 @@ export async function getIndustryPages(): Promise<SitemapEntry[]> {
 export function getServicePages(): SitemapEntry[] {
   const currentDate = new Date().toISOString();
   
-  // Static service pages - these could eventually come from Strapi
+  // Static service pages based on actual routes in the app
   const servicePages = [
-    'executive-search',
-    'fractional-hiring',
-    'contingency-hiring',
+    'full-management',
+    'content-creation',
+    'brand-identity',
+    'strategy',
+    'consulting',
+    'addons',
   ];
 
   return servicePages.map(service => ({
@@ -153,27 +179,6 @@ export function getServicePages(): SitemapEntry[] {
   }));
 }
 
-/**
- * Get FAQ pages for sitemap
- */
-export async function getFAQPages(): Promise<SitemapEntry[]> {
-  try {
-    // FAQ page itself
-    const currentDate = new Date().toISOString();
-    
-    return [
-      {
-        url: `${SITE_URL}/faq`,
-        lastModified: currentDate,
-        changeFrequency: 'weekly' as const,
-        priority: 0.6,
-      },
-    ];
-  } catch (error) {
-    console.error('Error generating FAQ pages for sitemap:', error);
-    return [];
-  }
-}
 
 /**
  * Get all pages from Strapi for sitemap
@@ -216,15 +221,13 @@ export async function getAllSitemapEntries(): Promise<SitemapEntry[]> {
       categories,
       industries,
       servicePages,
-      faqPages,
       strapiPages,
     ] = await Promise.all([
       Promise.resolve(getStaticPages()),
       getBlogPosts(),
       getBlogCategories(),
-      getIndustryPages(),
+      Promise.resolve(getIndustryPages()),
       Promise.resolve(getServicePages()),
-      getFAQPages(),
       getStrapiPages(),
     ]);
 
@@ -234,7 +237,6 @@ export async function getAllSitemapEntries(): Promise<SitemapEntry[]> {
       ...categories,
       ...industries,
       ...servicePages,
-      ...faqPages,
       ...strapiPages,
     ];
   } catch (error) {

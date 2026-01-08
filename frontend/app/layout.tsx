@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Red_Hat_Display } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Red_Hat_Display, Dancing_Script } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -37,6 +36,11 @@ const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
 });
 
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+});
+
 /* ============================================
    METADATA CUSTOMIZATION
    ============================================
@@ -63,7 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: "Honeycomb Socials",
       description:
-        "Social media management for beauty and wellness businesses that value aesthetics as much as results.",
+        "Social media management for beauty and wellness businesses. Aesthetic content that converts followers into clients. Book your free consultation today.",
     };
   }
 }
@@ -86,23 +90,18 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${redHatDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${redHatDisplay.variable} ${dancingScript.variable} antialiased`}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          defaultTheme="light"
-          storageKey="template-theme"
-        >
-          <div className="min-h-screen bg-background flex flex-col">
-            <Navbar />
-            <main className="flex-1">
-              {children}
-              <FAQ faqs={faqs} />
-            </main>
-            <Footer />
-            <ScrollToTop />
-          </div>
-        </ThemeProvider>
+        <div className="min-h-screen bg-background flex flex-col">
+          <Navbar />
+          <main className="flex-1">
+            {children}
+            <FAQ faqs={faqs} />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
 
 /* CSS Version: 2024-12-19 - Force rebuild */
 
@@ -17,7 +16,7 @@
   --background: #fafafa;
   /* Light Background */
   --foreground: #1f1e1c;
-  /* Dark Text */
+  /* Text Color */
 
   /* Muted (subtle backgrounds, disabled states) */
   --muted: #f2e9d0;
@@ -38,8 +37,8 @@
   --popover-foreground: #1f1e1c;
 
   /* Primary (main brand color) */
-  --primary: #b99645;
-  /* Gold - matches dark theme */
+  --primary: #c9a86a;
+  /* Soft Gold - softer, more feminine */
   --primary-foreground: #000000;
   /* Black */
 
@@ -49,8 +48,8 @@
   --secondary-foreground: #1f1e1c;
 
   /* Accent */
-  --accent: #b99645;
-  /* Gold - matches primary */
+  --accent: #c9a86a;
+  /* Soft Gold - matches primary */
   --accent-foreground: #1f1e1c;
 
   /* Semantic Colors - Kept standard but warmer */
@@ -64,59 +63,12 @@
   --info-foreground: #eff6ff;
 
   /* Focus Ring */
-  --ring: #b99645;
+  --ring: #c9a86a;
 
   /* Border Radius - Increased for tumble girl aesthetic */
   --radius: 1rem;
 }
 
-.dark {
-  --background: #1f1e1c;
-  /* Dark Background */
-  --foreground: #fafafa;
-  /* Light Text */
-
-  --muted: #2a2927;
-  /* Slightly lighter than background */
-  --muted-foreground: #a8a8a8;
-  /* Muted text color */
-
-  --border: #2a2927;
-  /* Border color */
-  --input: #2a2927;
-  /* Input background */
-
-  --card: #262523;
-  /* Card background - slightly lighter */
-  --card-foreground: #fafafa;
-  --popover: #262523;
-  --popover-foreground: #fafafa;
-
-  --primary: #b99645;
-  /* Gold/Accent Color */
-  --primary-foreground: #000000;
-  /* Black */
-
-  --secondary: #2a2927;
-  /* Secondary background */
-  --secondary-foreground: #fafafa;
-
-  --accent: #b99645;
-  /* Accent color matches primary */
-  --accent-foreground: #fafafa;
-
-  --destructive: #f87171;
-  --destructive-foreground: #fef2f2;
-  --success: #16a34a;
-  --success-foreground: #f0fdf4;
-  --warning: #d97706;
-  --warning-foreground: #fffbeb;
-  --info: #2563eb;
-  --info-foreground: #eff6ff;
-
-  --ring: #b99645;
-  /* Focus ring matches primary */
-}
 
 /* Tailwind theme bindings */
 @theme inline {
@@ -149,6 +101,7 @@
   --font-mono: var(--font-geist-mono);
   --font-playfair-display: var(--font-playfair-display);
   --font-red-hat-display: var(--font-red-hat-display);
+  --font-dancing-script: var(--font-dancing-script);
   --radius: var(--radius);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -176,6 +129,10 @@ h6 {
 
 p {
   font-family: var(--font-red-hat-display), system-ui, sans-serif;
+}
+
+.script-font {
+  font-family: var(--font-dancing-script), cursive;
 }
 
 /* Blog post content styles */
@@ -260,25 +217,16 @@ p {
   background: var(--muted);
 }
 
-/* Light theme scrollbar - gold */
+/* Light theme scrollbar - soft gold */
 :root::-webkit-scrollbar-thumb {
-  background: #b99645;
+  background: #c9a86a;
   border-radius: var(--radius);
 }
 
 :root::-webkit-scrollbar-thumb:hover {
-  background: #9d7e38;
+  background: #b8965a;
 }
 
-/* Dark theme scrollbar */
-.dark::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: var(--radius);
-}
-
-.dark::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
-}
 
 /* Subtle zoom animation for hero background */
 @keyframes subtle-zoom {
@@ -311,8 +259,16 @@ p {
   opacity: 0;
 }
 
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
 .animation-delay-300 {
   animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
 }
 
 /* Floating animation for social icons */

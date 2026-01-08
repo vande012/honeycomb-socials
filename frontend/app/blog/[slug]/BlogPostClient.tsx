@@ -182,7 +182,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             )}
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div className="prose prose-lg max-w-none">
               {(() => {
                 if (post.markdownContent && typeof post.markdownContent === 'string' && post.markdownContent.trim()) {
                   return <MarkdownRenderer content={post.markdownContent} />;

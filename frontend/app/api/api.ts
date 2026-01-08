@@ -1,5 +1,6 @@
 import qs from 'qs';
 import { logger } from '../utils/logger';
+import { env } from 'process';
 
 /**
  * Get full Strapi URL from path
@@ -7,7 +8,10 @@ import { logger } from '../utils/logger';
  * @returns {string} Full Strapi URL
  */
 export function getStrapiURL(path = '') {
-  const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app/';
+  const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+  if (!apiUrl) {
+    throw new Error('NEXT_PUBLIC_STRAPI_API_URL environment variable is not set');
+  }
   // Remove trailing slash if present
   const baseUrl = apiUrl.replace(/\/$/, '');
   return `${baseUrl}${path.startsWith('/') ? path : `/${path}`}`;

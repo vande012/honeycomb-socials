@@ -29,7 +29,7 @@ export default function BoutiqueLifestylePage() {
         </div>
         {/* Content */}
         <div className="relative z-20 container mx-auto px-4 md:px-8 max-w-4xl text-center">
-          <div className="bg-white/50 dark:bg-background/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Social Media Marketing for Boutiques & Lifestyle Brands
             </h1>

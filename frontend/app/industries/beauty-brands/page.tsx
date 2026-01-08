@@ -5,7 +5,7 @@ import { Check } from 'lucide-react';
 
 export const metadata = {
   title: 'Social Media Marketing for Beauty Brands & Products | Honeycomb Socials',
-  description: 'Build your beauty brand with strategic social media marketing. Aesthetic content, brand identity development, and growth strategies for beauty product companies.',
+  description: 'Build your beauty brand with strategic social media marketing. Aesthetic content and growth strategies for beauty product companies. Get started today.',
 };
 
 // Revalidate every hour - static content
@@ -29,7 +29,7 @@ export default function BeautyBrandsPage() {
         </div>
         {/* Content */}
         <div className="relative z-20 container mx-auto px-4 md:px-8 max-w-4xl text-center">
-          <div className="bg-white/50 dark:bg-background/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Social Media Marketing for Beauty Brands & Products
             </h1>

@@ -68,14 +68,14 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#fafafa] via-[#faf8f0] to-white">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-4">
             Latest Insights
           </h2>
-          <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-[#1f1e1c]/80 max-w-3xl mx-auto">
             Tips, strategies, and insights to help you grow your beauty business through social media.
           </p>
         </div>
@@ -90,12 +90,12 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
               <Link
                 key={post.id || post.documentId}
                 href={`/blog/${post.slug}`}
-                className="group bg-card border-2 border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="group bg-gradient-to-br from-white via-[#faf8f0] to-[#f5eed5] border border-[#e5e5e5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#c9a86a] focus:ring-offset-2"
                 aria-label={`Read blog post: ${post.title}`}
               >
                 {/* Cover Image */}
                 {coverImageUrl && (
-                  <div className="relative h-48 overflow-hidden bg-muted">
+                  <div className="relative h-48 overflow-hidden bg-[#f2e9d0]">
                     <Image
                       src={coverImageUrl}
                       alt={post.title}
@@ -103,6 +103,8 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
+                    {/* Soft gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 )}
 
@@ -114,8 +116,7 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
                       {post.categories.slice(0, 2).map((category: any) => (
                         <Badge
                           key={category?.id || Math.random()}
-                          variant="secondary"
-                          className="text-xs"
+                          className="text-xs bg-[#f2e9d0] text-[#1f1e1c] hover:bg-[#c9a86a] hover:text-white transition-colors border-0"
                         >
                           {category?.name || 'Uncategorized'}
                         </Badge>
@@ -124,19 +125,19 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
                   )}
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-[#1f1e1c] mb-3 line-clamp-2 group-hover:text-[#c9a86a] transition-colors">
                     {post.title}
                   </h3>
 
                   {/* Excerpt */}
                   {post.excerpt && (
-                    <p className="text-foreground text-sm mb-4 line-clamp-3">
+                    <p className="text-[#1f1e1c]/70 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
                   )}
 
                   {/* Meta */}
-                  <div className="flex items-center justify-between text-xs text-accent">
+                  <div className="flex items-center justify-between text-xs text-[#1f1e1c]/60">
                     <span>{formatDate(post.publishedAt)}</span>
                     <div className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />
@@ -153,11 +154,14 @@ export function RecentBlogPosts({ posts }: RecentBlogPostsProps) {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#1f1e1c] via-[#2a2825] to-[#1f1e1c] hover:from-[#1f1e1c]/95 hover:via-[#2a2825]/95 hover:to-[#1f1e1c]/95 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2 relative overflow-hidden"
             aria-label="View all blog posts"
           >
-            View All Posts
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span className="relative z-10 flex items-center gap-2">
+              View All Posts
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 via-[#d4b87a]/30 to-[#c9a86a]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
         </div>
       </div>

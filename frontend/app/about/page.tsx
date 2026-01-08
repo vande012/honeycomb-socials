@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
   title: 'About Maggie Vandehey | Honeycomb Socials',
-  description: 'Meet Maggie Vandehey, social media strategist and content creator specializing in helping small businesses grow online through authentic, high-performing content.',
+  description: 'Meet Maggie Vandehey, social media strategist helping beauty and wellness businesses grow online. Authentic content that converts. View portfolio and book a consultation.',
 }
 
 export default function AboutPage() {

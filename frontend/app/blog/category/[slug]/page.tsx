@@ -54,7 +54,7 @@ export async function generateMetadata(
     
     return {
       title: `${name} | Blog Categories | Honeycomb Socials`,
-      description: `Browse all blog posts in the ${name} category at Honeycomb Socials.`,
+      description: `Browse all ${name} blog posts at Honeycomb Socials. Get social media tips, content ideas, and strategies for beauty and wellness businesses. Read more.`,
       alternates: {
         canonical: canonicalUrl,
         languages: {
@@ -66,16 +66,16 @@ export async function generateMetadata(
         },
       },
       openGraph: {
-        title: `${name} | Blog Categories | Kersten Talent Capital`,
-        description: `Browse all blog posts in the ${name} category at Kersten Talent Capital.`,
+        title: `${name} | Blog Categories | Honeycomb Socials`,
+        description: `Browse all ${name} blog posts at Honeycomb Socials. Get social media tips, content ideas, and strategies for beauty and wellness businesses. Read more.`,
         url: canonicalUrl,
         type: 'website',
         images: ogImages,
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${name} | Blog Categories | Kersten Talent Capital`,
-        description: `Browse all blog posts in the ${name} category at Kersten Talent Capital.`,
+        title: `${name} | Blog Categories | Honeycomb Socials`,
+        description: `Browse all ${name} blog posts at Honeycomb Socials. Get social media tips, content ideas, and strategies for beauty and wellness businesses. Read more.`,
         images: twitterImages,
       },
     };
@@ -83,7 +83,7 @@ export async function generateMetadata(
     logger.error('Error generating metadata:', error);
     return {
       title: 'Blog Category',
-      description: 'Honeycomb Socials blog category',
+      description: 'Browse blog posts at Honeycomb Socials. Get social media tips, content ideas, and strategies for beauty and wellness businesses. Read more.',
     };
   }
 }
@@ -120,7 +120,11 @@ async function fetchCategoryDirectly(slug: string) {
       if (category) break;
       
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app/';
+        const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+        if (!apiUrl) {
+          logger.error('NEXT_PUBLIC_STRAPI_API_URL is not set');
+          continue;
+        }
         const baseUrl = apiUrl.replace(/\/$/, '');
         
         // Convert to query string

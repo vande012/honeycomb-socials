@@ -36,81 +36,62 @@ export default async function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      {/* Hero Section - Tumble Girl Aesthetic */}
-      <section className="relative w-full min-h-[700px] sm:min-h-[750px] md:h-[700px] lg:h-[800px] overflow-hidden bg-[#1f1e1c]">
-        {/* Desktop Split Layout: Black Left, Video Right */}
-        <div className="hidden lg:grid lg:grid-cols-2 absolute inset-0 z-0">
-          {/* Left Half - Black Background */}
-          <div className="relative bg-[#1f1e1c]">
-            {/* Subtle foggy overlay at seam - very subtle blend */}
-            <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-[#1f1e1c] via-[#1f1e1c]/98 to-transparent z-10 backdrop-blur-[1px]" />
-          </div>
-          
-          {/* Right Half - Video Background */}
-          <div className="relative overflow-hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster="/honey.jpg"
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              aria-label="Hero background video"
-            >
-              <source src="/honey.mp4" type="video/mp4" />
-            </video>
-            {/* Subtle foggy overlay at seam - very subtle blend */}
-            <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-[#1f1e1c]/98 via-[#1f1e1c]/85 to-transparent z-10 backdrop-blur-[1px]" />
-            {/* Soft gradient overlay for tumble girl aesthetic */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1f1e1c]/75 via-[#1f1e1c]/55 to-[#1f1e1c]/65 z-5" />
+    <main className="min-h-screen bg-[#fafafa]">
+      {/* Hero Section - Enhanced UX & Design */}
+      <section className="relative w-full min-h-[900px] sm:min-h-[700px] lg:min-h-[900px] overflow-hidden bg-[#fafafa] -mb-px">
+        {/* Full Width Image Background with Subtle Animation */}
+        <div className="absolute inset-0 z-0">
+          <div className="relative w-full h-full">
+            <Image
+              src="/home-hero.jpg"
+              alt="Beauty social media management"
+              fill
+              className="object-cover object-center animate-subtle-zoom"
+              priority
+              quality={90}
+              sizes="100vw"
+            />
+            {/* Refined gradient overlay for better text readability and visual depth */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/50 to-[#fafafa]/60 lg:from-[#fafafa] lg:via-[#fafafa]/65 lg:to-transparent" />
+            {/* Additional subtle overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#fafafa]/20" />
           </div>
         </div>
 
-        {/* Mobile/Tablet - Full Width Video Background */}
-        <div className="lg:hidden absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster="/honey.jpg"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            aria-label="Hero background video"
-          >
-            <source src="/honey.mp4" type="video/mp4" />
-          </video>
-          {/* Soft gradient overlay for tumble girl aesthetic */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1f1e1c]/75 via-[#1f1e1c]/55 to-[#1f1e1c]/65 z-10" />
-        </div>
-        
-        {/* Hero Content */}
-        <div className="relative z-20 h-full min-h-[700px] sm:min-h-[750px] md:min-h-0 container mx-auto px-4 md:px-8 flex items-center justify-center lg:justify-start">
-          <div className="max-w-4xl w-full py-12 md:py-0 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-6 md:mb-8 animate-fade-in-up">
-              <span className="text-white block drop-shadow-lg">SOCIAL MEDIA</span>
-              <span className="text-white block drop-shadow-lg">
+        {/* Content Overlay with Improved Spacing */}
+        <div className="relative z-10 h-full min-h-[600px] sm:min-h-[700px] lg:min-h-[900px] container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center">
+          <div className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl py-12 sm:py-16 md:py-20 lg:py-24">
+            {/* Decorative Script Text - Refined sizing and spacing */}
+            <p className="script-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#c9a86a] mb-3 sm:mb-4 md:mb-5 animate-fade-in-up font-medium">
+              welcome!
+            </p>
+            
+            {/* Main Headline - Enhanced typography and spacing */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6 md:mb-8 text-[#1f1e1c] animate-fade-in-up animation-delay-100 tracking-tight">
+              <span className="block mb-1 sm:mb-2">SOCIAL MEDIA</span>
+              <span className="block text-[#c9a86a]">
                 <AnimatedWord />
               </span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl italic text-white/95 max-w-2xl mx-auto lg:mx-0 mb-8 md:mb-10 animate-fade-in-up animation-delay-300 font-sans leading-relaxed">
-              For small businesses with taste.
+            
+            {/* Subheadline - Improved readability and visual weight */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#1f1e1c]/85 max-w-2xl mb-8 sm:mb-10 md:mb-12 leading-relaxed animate-fade-in-up animation-delay-300 font-medium">
+              We create aesthetic, strategic social media content that attracts the clients you actually want—no burnout, no guesswork, just beautiful results.
             </p>
             
-            {/* CTAs - Soft rounded buttons with gentle shadows */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
+            {/* CTAs - Enhanced prominence and visual hierarchy */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 md:gap-6 animate-fade-in-up animation-delay-500">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-2xl hover:shadow-primary/20 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-[#1f1e1c]"
+                className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden"
                 aria-label="Book a free consultation"
               >
-                Book Free Consultation
+                <span className="relative z-10">Work With Us</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link
                 href="/audit"
-                className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl text-center border-2 border-white/30 hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#1f1e1c]"
+                className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-white/90 backdrop-blur-sm border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg"
                 aria-label="Get a free social media audit"
               >
                 Get Free Audit
@@ -120,11 +101,11 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* About Section - Split Layout with Tumble Girl Aesthetic */}
-      <section className="relative w-full overflow-hidden bg-foreground py-16 md:py-20 lg:py-24">
+      {/* About Section - Airy Feminine Aesthetic */}
+      <section className="relative w-full overflow-hidden bg-white pt-0 pb-16 md:pt-20 md:pb-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1400px] mx-auto gap-0">
-          {/* Image Side - Soft rounded corners */}
-          <div className="relative h-[500px] lg:h-[750px] overflow-hidden">
+          {/* Image Side */}
+          <div className="relative h-[500px] lg:h-[750px] overflow-hidden order-2 lg:order-1">
             <Image
               src="/salon.jpg"
               alt="Beauty salon workspace with elegant styling"
@@ -135,14 +116,19 @@ export default async function Home() {
             />
           </div>
 
-          {/* Content Side - Cozy padding and soft styling */}
-          <div className="bg-card flex items-center px-8 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24">
+          {/* Content Side */}
+          <div className="bg-[#fafafa] flex items-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20 lg:py-24 order-1 lg:order-2">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground mb-8 leading-tight">
-                Your Beauty Business Deserves Better
+              {/* Decorative Script Text */}
+              <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
+                your beauty business
+              </p>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f1e1c] mb-8 leading-tight">
+                Deserves Better Socials
               </h2>
               
-              <div className="space-y-6 text-card-foreground/90 text-base md:text-lg leading-relaxed">
+              <div className="space-y-6 text-[#1f1e1c]/80 text-base md:text-lg leading-relaxed">
                 <p>
                   Your beauty business deserves socials that feel intentional, on-brand, and actually work for you.
                 </p>
@@ -151,7 +137,7 @@ export default async function Home() {
                   At Honeycomb Socials, we create platform-specific content with real strategy—no copy-paste templates, no burnout, no guesswork. Just aesthetic, strategic social media marketing that attracts the clients you actually want.
                 </p>
                 
-                <p className="font-medium">
+                <p className="font-medium text-[#1f1e1c]">
                   Ready for support that's both beautiful and effective? Let's talk.
                 </p>
               </div>
@@ -159,14 +145,14 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                   aria-label="Book a free consultation"
                 >
                   Book Free Consultation
                 </a>
                 <a
                   href="/audit"
-                  className="px-8 py-4 bg-transparent border-2 border-card-foreground hover:bg-card-foreground/10 text-card-foreground font-semibold rounded-2xl transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-card-foreground focus:ring-offset-2"
+                  className="px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                   aria-label="Get a free Instagram audit"
                 >
                   Get Free Instagram Audit
@@ -186,25 +172,25 @@ export default async function Home() {
       {/* Industries We Serve Section */}
       <IndustriesSection />
 
-      {/* About Section - Tumble Girl Aesthetic */}
-      <section className="py-16 md:py-20 lg:py-24 bg-background">
+      {/* About Section - Airy Feminine Aesthetic */}
+      <section className="py-16 md:py-20 lg:py-24 bg-[#fafafa]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Text Content */}
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight">
+              {/* Decorative Script Text */}
+              <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
+                hi, there! I'm Maggie Vandehey
+              </p>
+              
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-8 leading-tight">
                 About Honeycomb Socials
               </h2>
               
-              <div className="space-y-6 text-base md:text-lg text-foreground/90 leading-relaxed">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    Hi, I'm Maggie Vandehey
-                  </h3>
-                  <p>
-                    I help salons, stylists, estheticians, injectors, and beauty brands grow with aesthetic content and real strategy—without the burnout or guesswork.
-                  </p>
-                </div>
+              <div className="space-y-6 text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed">
+                <p>
+                  I help salons, stylists, estheticians, injectors, and beauty brands grow with aesthetic content and real strategy—without the burnout or guesswork.
+                </p>
 
                 <p>
                   Because posting random Canva templates ≠ marketing. Your business deserves content with intention, not pressure.
@@ -218,27 +204,27 @@ export default async function Home() {
                   Stick around for branding tips, content ideas, and done-for-you strategies that actually work.
                 </p>
 
-                <p className="font-semibold text-foreground">
+                <p className="font-semibold text-[#1f1e1c]">
                   Want to work together? Send me a DM or book a free consultation below.
                 </p>
 
-                {/* Soft rounded card with gentle border */}
-                <div className="bg-card border-2 border-primary/20 rounded-3xl p-6 md:p-8 shadow-lg">
-                  <p className="text-base md:text-lg text-foreground leading-relaxed mb-6">
-                    <strong>Feeling stuck with your Instagram?</strong> I'm offering free social media audits to help you figure out what's working, what's not, and how to start attracting the clients you want. It's quick, helpful, and tailored to your business.
+                {/* Soft rounded card */}
+                <div className="bg-white border border-[#e5e5e5] rounded-2xl p-6 md:p-8 shadow-sm">
+                  <p className="text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed mb-6">
+                    <strong className="text-[#1f1e1c]">Feeling stuck with your Instagram?</strong> I'm offering free social media audits to help you figure out what's working, what's not, and how to start attracting the clients you want. It's quick, helpful, and tailored to your business.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a
                       href="/contact"
-                      className="px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      className="px-6 py-3 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                       aria-label="Book a free consultation"
                     >
                       Book Free Consultation
                     </a>
                     <a
                       href="/audit"
-                      className="px-6 py-3 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-2xl transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      className="px-6 py-3 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                       aria-label="Get a free audit"
                     >
                       Get Free Audit
@@ -248,7 +234,7 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* Image - Soft rounded with gentle shadow */}
+            {/* Image */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <Image
@@ -256,7 +242,7 @@ export default async function Home() {
                   alt="Maggie Vandehey, founder of Honeycomb Socials"
                   width={500}
                   height={650}
-                  className="w-full h-auto rounded-3xl shadow-2xl object-cover"
+                  className="w-full h-auto rounded-2xl shadow-lg object-cover"
                   quality={90}
                   sizes="(max-width: 1024px) 100vw, 500px"
                 />

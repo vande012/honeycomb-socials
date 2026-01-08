@@ -161,7 +161,11 @@ async function fetchPostDirectly(slug: string) {
       if (post) break;
 
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app/';
+        const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+        if (!apiUrl) {
+          logger.error('NEXT_PUBLIC_STRAPI_API_URL is not set');
+          continue;
+        }
         const baseUrl = apiUrl.replace(/\/$/, '');
 
         // Try with qs library for more reliable parameter formatting

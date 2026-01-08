@@ -81,7 +81,7 @@ function StatCard({ platform, icon, stats }: StatCardProps) {
   return (
     <div 
       ref={cardRef}
-      className="bg-background border border-border rounded-3xl p-6 hover:shadow-xl transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
+      className="bg-gradient-to-br from-background via-[#faf8f0] to-[#f5eed5] border border-primary/20 rounded-3xl p-6 hover:shadow-xl transition-all duration-300 animate-fade-in-up hover:-translate-y-1 hover:border-primary/40"
     >
       <div className="flex items-center gap-2 mb-4">
         <div className="text-primary w-6 h-6 flex items-center justify-center">

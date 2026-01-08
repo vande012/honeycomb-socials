@@ -14,7 +14,7 @@ import {
 
 export const metadata = {
   title: 'My Process | Social Media Management Workflow | Honeycomb Socials',
-  description: 'Discover our step-by-step social media management process. From discovery calls to content creation and scheduling, learn how we help beauty and wellness businesses grow online with strategic, done-for-you social media.',
+  description: 'Our 7-step social media management process: discovery, strategy, content creation, and scheduling. See how we help beauty businesses grow. Book your free consultation.',
   keywords: 'social media management process, how social media management works, social media onboarding process, what to expect social media management, social media management workflow, step by step social media management, monthly social media content calendar, done for you social media',
 }
 
@@ -253,7 +253,7 @@ export default function ProcessPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] dark:from-[#331D08] dark:to-[#6D3710] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] overflow-hidden">
         <div className="absolute inset-0 opacity-5"></div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -301,7 +301,7 @@ export default function ProcessPage() {
           </div>
 
           {/* Process Steps */}
-          <div className="max-w-7xl mx-auto space-y-24">
+          <div className="max-w-7xl mx-auto space-y-20 lg:space-y-28">
             {processSteps.map((step, index) => {
               const Icon = step.icon
               const isEven = index % 2 === 0
@@ -309,12 +309,12 @@ export default function ProcessPage() {
               return (
                 <div 
                   key={step.number}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-start ${
                     isEven ? '' : 'lg:grid-flow-dense'
                   }`}
                 >
-                  {/* Image Section */}
-                  <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} relative`}>
+                  {/* Image Section - Sticky on desktop for better alignment */}
+                  <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} relative lg:sticky lg:top-24`}>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                       <Image
                         src={step.image}
@@ -331,79 +331,85 @@ export default function ProcessPage() {
                     </div>
                   </div>
 
-                  {/* Content Section */}
-                  <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">
-                          Step {step.number}
+                  {/* Content Section - Better organized with improved spacing */}
+                  <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} lg:py-4`}>
+                    {/* Header Section */}
+                    <div className="mb-8">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-7 h-7 text-primary" />
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                          {step.title}
-                        </h3>
+                        <div>
+                          <div className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">
+                            Step {step.number}
+                          </div>
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                            {step.title}
+                          </h3>
+                        </div>
                       </div>
+
+                      <p className="text-xl lg:text-2xl text-primary font-semibold italic">
+                        {step.subtitle}
+                      </p>
                     </div>
 
-                    <p className="text-xl text-primary font-semibold mb-6 italic">
-                      {step.subtitle}
-                    </p>
+                    {/* Content Sections - Better visual hierarchy */}
+                    <div className="space-y-8">
+                      {/* What Happens */}
+                      <div>
+                        <h4 className="text-xl lg:text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                          <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
+                          What Happens
+                        </h4>
+                        <div className="space-y-4">
+                          {step.whatHappens.map((item, i) => (
+                            <p key={i} className="text-base md:text-lg lg:text-xl text-foreground/90 leading-relaxed pl-8">
+                              {item}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
 
-                    {/* What Happens */}
-                    <div className="mb-6">
-                      <h4 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-primary" />
-                        What Happens
-                      </h4>
-                      <div className="space-y-3">
-                        {step.whatHappens.map((item, i) => (
-                          <p key={i} className="text-base md:text-lg text-foreground/90 leading-relaxed pl-7">
-                            {item}
+                      {/* Why It Matters */}
+                      <div className="bg-card/50 rounded-xl p-6 lg:p-8 border border-border/50">
+                        <h4 className="text-xl lg:text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                          <Sparkles className="w-6 h-6 text-primary flex-shrink-0" />
+                          Why It Matters
+                        </h4>
+                        <div className="space-y-4">
+                          {step.whyItMatters.map((item, i) => (
+                            <p key={i} className="text-base lg:text-lg text-foreground/90 leading-relaxed">
+                              {item}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Outcome */}
+                      <div>
+                        <h4 className="text-xl lg:text-2xl font-bold text-foreground mb-4">
+                          Outcome
+                        </h4>
+                        <ul className="space-y-3">
+                          {step.outcome.map((item, i) => (
+                            <li key={i} className="flex items-start gap-3 text-base lg:text-lg text-foreground/90">
+                              <CheckCircle2 className="w-5 h-5 lg:w-6 lg:h-6 text-primary flex-shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Additional Info */}
+                      {step.additionalInfo && (
+                        <div className="bg-primary/10 border-l-4 border-primary rounded-r-lg p-5 lg:p-6">
+                          <p className="text-sm md:text-base lg:text-lg text-foreground/90 italic">
+                            <strong>Note:</strong> {step.additionalInfo}
                           </p>
-                        ))}
-                      </div>
+                        </div>
+                      )}
                     </div>
-
-                    {/* Why It Matters */}
-                    <div className="mb-6 bg-card/50 rounded-xl p-6 border border-border/50">
-                      <h4 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                        <Sparkles className="w-5 h-5 text-primary" />
-                        Why It Matters
-                      </h4>
-                      <div className="space-y-3">
-                        {step.whyItMatters.map((item, i) => (
-                          <p key={i} className="text-base text-foreground/90 leading-relaxed">
-                            {item}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Outcome */}
-                    <div className="mb-6">
-                      <h4 className="text-xl font-bold text-foreground mb-3">
-                        Outcome
-                      </h4>
-                      <ul className="space-y-2">
-                        {step.outcome.map((item, i) => (
-                          <li key={i} className="flex items-start gap-3 text-base text-foreground/90">
-                            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Additional Info */}
-                    {step.additionalInfo && (
-                      <div className="bg-primary/10 border-l-4 border-primary rounded-r-lg p-4">
-                        <p className="text-sm md:text-base text-foreground/90 italic">
-                          <strong>Note:</strong> {step.additionalInfo}
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               )
@@ -576,31 +582,31 @@ export default function ProcessPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#5C3D2E] to-[#331D08] dark:from-[#331D08] dark:to-[#0A0A0A]">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#fafafa] to-[#f2e9d0]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2DEA9] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-6">
               Ready to Start Your <span className="italic font-serif">Social Media Journey?</span>
             </h2>
-            <p className="text-xl md:text-2xl text-[#F2DEA9]/90 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#1f1e1c]/80 mb-8 leading-relaxed">
               Let's talk about your beauty or wellness business, your social media goals, and how my process can help you grow without the overwhelm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#DAA755] hover:bg-[#DAA755]/90 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Book Your Free Discovery Call
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#F2DEA9] hover:bg-[#F2DEA9]/10 text-[#F2DEA9] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
               >
                 See My Work
               </Link>
             </div>
-            <p className="text-sm md:text-base text-[#F2DEA9]/70 mt-8 italic">
+            <p className="text-sm md:text-base text-[#1f1e1c]/70 mt-8 italic">
               No pressure, no commitments—just an honest conversation about whether we're the right fit. If we're not, I'll tell you and may even refer you to someone better suited to your needs.
             </p>
           </div>

@@ -13,7 +13,7 @@ import {
 
 export const metadata = {
   title: 'Portfolio | Honeycomb Socials',
-  description: 'View our portfolio of social media optimization and content creation work for businesses across various industries.',
+  description: 'View our portfolio of social media success stories. See how we help beauty and wellness businesses grow with strategic content that converts. Get inspired.',
 }
 
 export default function PortfolioPage() {

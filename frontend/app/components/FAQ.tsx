@@ -28,15 +28,18 @@ export function FAQ({ faqs }: FAQProps) {
   }
 
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white via-[#fafafa] to-[#f2e9d0]/30">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
+            got questions?
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg md:text-xl text-accent">
-            Got questions? We've got answers.
+          <p className="text-lg md:text-xl text-[#1f1e1c]/80">
+            We've got answers.
           </p>
         </div>
 
@@ -45,14 +48,18 @@ export function FAQ({ faqs }: FAQProps) {
           {faqs.map((faq, index) => (
             <div
               key={faq.id || faq.documentId || index}
-              className="bg-card dark:bg-background border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-white border border-[#e5e5e5] rounded-2xl overflow-hidden transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left transition-colors duration-200 hover:bg-muted/50 dark:hover:bg-muted/30"
+                className={`w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between text-left transition-all duration-200 ${
+                  openIndex === index
+                    ? 'bg-[#f2e9d0]/30'
+                    : 'hover:bg-[#fafafa]'
+                }`}
                 aria-expanded={openIndex === index}
               >
-                <h3 className="text-lg md:text-xl font-semibold text-foreground dark:text-foreground pr-4">
+                <h3 className="text-lg md:text-xl font-semibold text-[#1f1e1c] pr-4">
                   {faq.Question}
                 </h3>
                 <ChevronDown
@@ -67,8 +74,8 @@ export function FAQ({ faqs }: FAQProps) {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 md:px-8 pb-5 md:pb-6 pt-2 dark:bg-background">
-                  <p className="text-base md:text-lg text-muted-foreground dark:text-muted-foreground leading-relaxed">
+                <div className="px-6 md:px-8 pb-5 md:pb-6 pt-2 bg-[#fafafa]/50">
+                  <p className="text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed">
                     {faq.Answer}
                   </p>
                 </div>
@@ -78,13 +85,16 @@ export function FAQ({ faqs }: FAQProps) {
         </div>
 
         {/* Contact CTA */}
-        <div className="text-center mt-12 md:mt-16 p-8 bg-card dark:bg-background border-2 border-primary/20 rounded-xl">
-          <p className="text-lg md:text-xl text-foreground dark:text-foreground mb-4">
-            Still have questions?
+        <div className="text-center mt-12 md:mt-16 p-8 md:p-10 bg-gradient-to-br from-[#f2e9d0]/50 to-white border border-[#c9a86a]/20 rounded-2xl shadow-sm">
+          <p className="script-font text-2xl sm:text-3xl text-[#c9a86a] mb-2">
+            still have questions?
+          </p>
+          <p className="text-lg md:text-xl text-[#1f1e1c] mb-6">
+            We're here to help!
           </p>
           <a
             href="/contact"
-            className="inline-block px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-block px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Get in Touch
           </a>

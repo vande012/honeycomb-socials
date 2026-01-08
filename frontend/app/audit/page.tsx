@@ -2,7 +2,7 @@ import React from 'react';
 
 export const metadata = {
   title: 'Free Social Media Audit | Honeycomb Socials',
-  description: 'Get honest, personalized feedback on your social media. Free audit with actionable tips to help you attract your dream clients.',
+  description: 'Get a free social media audit with personalized feedback and actionable tips. Discover what\'s working, what\'s not, and how to attract your dream clients today.',
 };
 
 export default function AuditPage() {

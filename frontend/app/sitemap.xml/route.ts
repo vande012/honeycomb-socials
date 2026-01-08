@@ -1,35 +1,25 @@
-import { getStaticPages, getBlogPosts, getBlogCategories, getIndustryPages, getServicePages, SitemapEntry } from '../utils/sitemap-utils';
-
-// Base URL of the site
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+import { getAllSitemapEntries, SitemapEntry } from '../utils/sitemap-utils';
 
 /**
  * Generate the sitemap XML for the website
  * This includes static pages and dynamic content from the API
  * 
  * NOTE: This project has two sitemap implementations:
- * 1. app/sitemap.ts - Uses Next.js built-in sitemap generation
+ * 1. app/sitemap.ts - Uses Next.js built-in sitemap generation (RECOMMENDED)
+ *    - Automatically generates /sitemap.xml
+ *    - Better integration with Next.js routing and caching
  * 2. This file (sitemap.xml/route.ts) - Custom XML sitemap generation with more control
+ *    - Generates /sitemap.xml/route (alternative endpoint)
+ *    - Can be removed if app/sitemap.ts covers all needs
  * 
- * Both implementations use the same data sources from utils/sitemap.ts
+ * Both implementations use the same data sources from utils/sitemap-utils.ts
+ * 
+ * For human-readable sitemap, see: app/sitemap/page.tsx
  */
 export async function GET(): Promise<Response> {
   try {
-    // Collect all URLs from different sources
-    const staticPages = getStaticPages();
-    const blogPosts = await getBlogPosts();
-    const categories = await getBlogCategories();
-    const industries = await getIndustryPages();
-    const servicePages = getServicePages();
-    
-    // Combine all URLs
-    const urls: SitemapEntry[] = [
-      ...staticPages,
-      ...blogPosts,
-      ...categories,
-      ...industries,
-      ...servicePages,
-    ];
+    // Get all sitemap entries
+    const urls = await getAllSitemapEntries();
     
     // Generate XML
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

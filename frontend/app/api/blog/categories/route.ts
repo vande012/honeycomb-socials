@@ -49,7 +49,13 @@ export async function GET(request: NextRequest) {
     }
     
     // Build the Strapi URL
-    const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app/';
+    const apiUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL;
+    if (!apiUrl) {
+      return NextResponse.json(
+        { error: 'NEXT_PUBLIC_STRAPI_API_URL environment variable is not set' },
+        { status: 500 }
+      );
+    }
     const baseUrl = apiUrl.replace(/\/$/, '');
     const path = '/api/categories';
     

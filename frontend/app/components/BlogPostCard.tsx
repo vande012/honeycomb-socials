@@ -27,7 +27,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
 
   if (featured) {
     return (
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 col-span-full dark:bg-background">
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 col-span-full bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
           {/* Image Section */}
           <div className="relative order-2 lg:order-1 h-[300px] lg:h-auto lg:min-h-[400px]">
@@ -42,8 +42,8 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
           </div>
 
           {/* Content Section */}
-          <div className="order-1 lg:order-2 flex flex-col justify-center dark:bg-background">
-            <CardHeader className="pb-4 dark:bg-background">
+          <div className="order-1 lg:order-2 flex flex-col justify-center bg-white">
+            <CardHeader className="pb-4 bg-white">
               <div className="flex items-center gap-2 mb-2">
                 <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
                   Featured
@@ -55,7 +55,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
                 )}
               </div>
 
-              <CardTitle className="text-2xl lg:text-3xl mb-3 leading-tight dark:text-foreground">
+              <CardTitle className="text-2xl lg:text-3xl mb-3 leading-tight text-[#1f1e1c]">
                 <Link
                   href={`/blog/${slug}`}
                   className="hover:text-primary transition-colors"
@@ -64,13 +64,13 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
                 </Link>
               </CardTitle>
 
-              <CardDescription className="text-base leading-relaxed line-clamp-3 dark:text-muted-foreground">
+              <CardDescription className="text-base leading-relaxed line-clamp-3 text-[#1f1e1c]/70">
                 {excerpt}
               </CardDescription>
             </CardHeader>
 
-            <CardContent className="pt-0 dark:bg-background">
-              <div className="flex items-center justify-between text-sm text-muted-foreground dark:text-muted-foreground">
+            <CardContent className="pt-0 bg-white">
+              <div className="flex items-center justify-between text-sm text-[#1f1e1c]/60">
                 <time dateTime={publishedAt}>{formattedDate}</time>
                 <span>{readingTime} min read</span>
               </div>
@@ -82,7 +82,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
   }
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group dark:bg-background">
+    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group bg-white">
       <Link href={`/blog/${slug}`} className="block">
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
@@ -95,7 +95,7 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
           />
           {categories && categories.length > 0 && (
             <div className="absolute top-3 left-3">
-              <Badge variant="secondary" className="bg-background/90 text-foreground dark:bg-card/90 dark:text-card-foreground">
+              <Badge variant="secondary" className="bg-white/90 text-[#1f1e1c]">
                 {categories[0].name}
               </Badge>
             </div>
@@ -103,18 +103,18 @@ export default function BlogPostCard({ post, featured = false }: BlogPostCardPro
         </div>
 
         {/* Content */}
-        <CardHeader className="pb-2 dark:bg-background">
-          <CardTitle className="text-xl leading-tight line-clamp-2 group-hover:text-primary transition-colors dark:text-foreground">
+        <CardHeader className="pb-2 bg-white">
+          <CardTitle className="text-xl leading-tight line-clamp-2 group-hover:text-[#c9a86a] transition-colors text-[#1f1e1c]">
             {title}
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="pt-0 dark:bg-background">
-          <CardDescription className="line-clamp-3 mb-4 dark:text-muted-foreground">
+        <CardContent className="pt-0 bg-white">
+          <CardDescription className="line-clamp-3 mb-4 text-[#1f1e1c]/70">
             {excerpt}
           </CardDescription>
 
-          <div className="flex items-center justify-between text-sm text-muted-foreground dark:text-muted-foreground">
+          <div className="flex items-center justify-between text-sm text-[#1f1e1c]/60">
             <time dateTime={publishedAt}>{formattedDate}</time>
             <span>{readingTime} min read</span>
           </div>

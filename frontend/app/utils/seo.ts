@@ -31,7 +31,7 @@ export function generateOrganizationSchema(): string {
     "name": "Honeycomb Socials",
     "url": SITE_URL,
     "logo": `${SITE_URL}/logo.jpg`,
-    "description": "Strategic talent investment firm specializing in executive search and leadership solutions.",
+    "description": "Social media management for beauty and wellness businesses that value aesthetics as much as results.",
     "foundingDate": "2017",
     "numberOfEmployees": "10-50",
     "areaServed": ["United States", "Europe"],
@@ -49,45 +49,33 @@ export function generateOrganizationSchema(): string {
       "contactType": "customer service",
       "email": process.env.CONTACT_EMAIL || process.env.EMAIL_USER || "contact@honeycombsocials.com"
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/kersten-talent-capital/",
-      "https://twitter.com/kerstentalent"
-    ],
-    // Additional properties Google looks for
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${SITE_URL}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    },
+    "sameAs": [],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Executive Search Services",
+      "name": "Social Media Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Executive Search",
-            "url": `${SITE_URL}/services/executive-search`
+            "name": "Full Social Media Management",
+            "url": `${SITE_URL}/services/full-management`
           }
         },
         {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "Service",
-            "name": "Fractional Hiring",
-            "url": `${SITE_URL}/services/fractional-hiring`
+            "name": "Content Creation",
+            "url": `${SITE_URL}/services/content-creation`
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service", 
-            "name": "Contingency Hiring",
-            "url": `${SITE_URL}/services/contingency-hiring`
+            "name": "Brand Identity",
+            "url": `${SITE_URL}/services/brand-identity`
           }
         }
       ]
@@ -188,7 +176,7 @@ export function generateArticleSchema(post: {
       "dateModified": post.updatedAt || new Date().toISOString(),
       "author": {
         "@type": "Organization",
-        "name": "Kersten Talent Capital"
+        "name": "Honeycomb Socials"
       },
       "publisher": {
         "@type": "Organization",
@@ -202,8 +190,8 @@ export function generateArticleSchema(post: {
         "@type": "WebPage",
         "@id": SITE_URL
       },
-      "articleSection": post.categories?.[0]?.name || "Executive Search",
-      "keywords": post.categories?.map(cat => cat.name).join(", ") || "executive search, talent acquisition, leadership"
+      "articleSection": post.categories?.[0]?.name || "Social Media",
+      "keywords": post.categories?.map(cat => cat.name).join(", ") || "social media, content creation, marketing"
     };
 
     return JSON.stringify(articleSchema);
@@ -214,7 +202,7 @@ export function generateArticleSchema(post: {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Blog Post",
-      "description": "Insights on leadership and talent acquisition",
+      "description": "Insights on social media marketing and content strategy",
       "author": {
         "@type": "Organization",
         "name": "Kersten Talent Capital"
@@ -245,11 +233,11 @@ export function generateServiceSchema(service: {
       "name": "Honeycomb Socials",
       "url": SITE_URL
     },
-    "serviceType": service.category || "Executive Search",
-    "areaServed": ["United States", "Europe"],
+    "serviceType": service.category || "Social Media Management",
+    "areaServed": ["United States"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Executive Talent Services"
+      "name": "Social Media Services"
     }
   };
 
@@ -272,7 +260,7 @@ export function generateWebPageSchema(page: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": page.title || "Industry Page",
-      "description": page.description || "Specialized recruitment expertise",
+      "description": page.description || "Social media services for beauty and wellness businesses",
       "url": `${SITE_URL}${page.url}`,
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -285,7 +273,7 @@ export function generateWebPageSchema(page: {
       },
       "mainEntity": {
         "@type": "Organization",
-        "name": "Kersten Talent Capital"
+        "name": "Honeycomb Socials"
       }
     };
 
@@ -300,7 +288,7 @@ export function generateWebPageSchema(page: {
       "description": "Specialized recruitment expertise",
       "mainEntity": {
         "@type": "Organization",
-        "name": "Kersten Talent Capital"
+        "name": "Honeycomb Socials"
       }
     });
   }

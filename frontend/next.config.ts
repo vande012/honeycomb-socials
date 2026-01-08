@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Configure site URL for production and development
   env: {
-    NEXT_PUBLIC_STRAPI_API_URL: process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://perpetual-motivation-production.up.railway.app',
+    NEXT_PUBLIC_STRAPI_API_URL: process.env.NEXT_PUBLIC_STRAPI_API_URL,
     S3_BUCKET_URL: process.env.S3_BUCKET_URL || 'https://honeycomb-socials.s3.us-east-1.amazonaws.com',
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com',
   },
@@ -99,12 +99,6 @@ const nextConfig: NextConfig = {
   // Configure image domains and optimization
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'perpetual-motivation-production.up.railway.app',
-        port: '',
-        pathname: '/uploads/**',
-      },
       {
         protocol: 'https',
         hostname: 'honeycomb-socials.s3.us-east-1.amazonaws.com',

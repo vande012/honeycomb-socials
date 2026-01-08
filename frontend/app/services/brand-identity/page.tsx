@@ -13,7 +13,7 @@ import {
 
 export const metadata = {
   title: 'Brand Identity & Aesthetic Design | Visual Branding Services | Honeycomb Socials',
-  description: 'Professional brand identity and aesthetic design for social media. Custom color palettes, typography, mood boards, and visual style guides for beauty and wellness businesses.',
+  description: 'Brand identity and aesthetic design for social media. Custom color palettes, typography, and style guides for beauty businesses. Create a cohesive brand today.',
   keywords: 'brand identity design, aesthetic design, visual branding, brand kit, color palette design, social media branding, brand style guide',
 }
 
@@ -21,7 +21,7 @@ export default function BrandIdentityPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] dark:from-[#331D08] dark:to-[#6D3710] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Image Section */}
@@ -270,26 +270,26 @@ export default function BrandIdentityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#5C3D2E] to-[#331D08] dark:from-[#331D08] dark:to-[#0A0A0A]">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#fafafa] to-[#f2e9d0]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F2DEA9] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-6">
               Ready to Elevate Your Brand?
             </h2>
-            <p className="text-xl md:text-2xl text-[#F2DEA9]/90 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#1f1e1c]/80 mb-8 leading-relaxed">
               Let's create a brand identity that makes your business instantly recognizable and attracts your ideal clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#DAA755] hover:bg-[#DAA755]/90 text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Book Your Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#F2DEA9] hover:bg-[#F2DEA9]/10 text-[#F2DEA9] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
               >
                 View Other Services
               </Link>
