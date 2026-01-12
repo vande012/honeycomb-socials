@@ -69,7 +69,7 @@ export default function ConsultingPage() {
                   href="/audit"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
                 >
-                  Get Free Audit
+                  Get Free Consultation
                 </Link>
               </div>
             </div>

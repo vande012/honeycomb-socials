@@ -199,7 +199,7 @@ export default async function Home() {
             {/* CTAs - Enhanced prominence and visual hierarchy */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 md:gap-6 animate-fade-in-up animation-delay-500">
               <Link
-                href="/contact"
+                href="/audit"
                 className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden"
                 aria-label="Book a free consultation"
               >
@@ -209,9 +209,9 @@ export default async function Home() {
               <Link
                 href="/audit"
                 className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-white/90 backdrop-blur-sm border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg"
-                aria-label="Get a free social media audit"
+                aria-label="Get a free consultation"
               >
-                Get Free Audit
+                Get Free Consultation
               </Link>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default async function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
                 <a
-                  href="/contact"
+                  href="/audit"
                   className="px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                   aria-label="Book a free consultation"
                 >
@@ -333,7 +333,7 @@ export default async function Home() {
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                      href="/contact"
+                      href="/audit"
                       className="px-6 py-3 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
                       aria-label="Book a free consultation"
                     >
@@ -342,9 +342,9 @@ export default async function Home() {
                     <a
                       href="/audit"
                       className="px-6 py-3 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
-                      aria-label="Get a free audit"
+                      aria-label="Get a free consultation"
                     >
-                      Get Free Audit
+                      Get Free Consultation
                     </a>
                   </div>
                 </div>

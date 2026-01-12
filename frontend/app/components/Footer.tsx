@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 // Social media links
 const socialLinks = [
@@ -38,7 +38,6 @@ const footerNav = {
     { label: 'My Process', href: '/process' },
     { label: 'Portfolio', href: '/portfolio' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
   ],
   industries: {
     title: 'Industries',
@@ -89,6 +88,17 @@ export function Footer() {
             <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-md font-sans">
               Social media management for beauty and wellness businesses that value aesthetics as much as results.
             </p>
+            
+            {/* Email Contact */}
+            <div className="mb-6">
+              <a
+                href="mailto:contact@honeycombsocials.com"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors duration-300 font-sans text-sm md:text-base"
+              >
+                <Mail className="w-4 h-4 md:w-5 md:h-5" />
+                <span>contact@honeycombsocials.com</span>
+              </a>
+            </div>
             
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">

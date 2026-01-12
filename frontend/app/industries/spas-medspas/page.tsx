@@ -41,7 +41,7 @@ export default function SpasMedSpasPage() {
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Audit</Button>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>

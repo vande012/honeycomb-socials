@@ -58,10 +58,6 @@ const navItems: NavItem[] = [
     label: "Blog",
     href: "/blog",
   },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
 ]
 
 interface NavbarProps {
@@ -144,10 +140,10 @@ export function Navbar({ className }: NavbarProps) {
 
           {/* Right side - CTA and mobile menu */}
           <div className="flex items-center gap-3">
-            {/* Free Audit CTA - Desktop only */}
+            {/* Free Consultation CTA - Desktop only */}
             <Link href="/audit" className="hidden lg:inline-block">
               <Button className="bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold">
-                Free Audit
+                Free Consultation
               </Button>
             </Link>
 
@@ -223,7 +219,7 @@ export function Navbar({ className }: NavbarProps) {
                     className="block mx-4 px-4 py-3 bg-[#1f1e1c] text-white font-semibold text-center rounded-2xl hover:bg-[#1f1e1c]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2 focus:ring-offset-white"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Free Audit
+                    Free Consultation
                   </Link>
                 </li>
               </ul>
