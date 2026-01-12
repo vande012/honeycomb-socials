@@ -199,11 +199,11 @@ export default async function Home() {
             {/* CTAs - Enhanced prominence and visual hierarchy */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 md:gap-6 animate-fade-in-up animation-delay-500">
               <Link
-                href="/audit"
+                href="/process"
                 className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden"
                 aria-label="Book a free consultation"
               >
-                <span className="relative z-10">Work With Us</span>
+                <span className="relative z-10">View Our Process</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link

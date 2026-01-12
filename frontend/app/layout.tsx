@@ -5,6 +5,7 @@ import { Navbar } from "./components/navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { FAQ } from "./components/FAQ";
+import FAQSchema from "./components/FAQSchema";
 import { getFAQs, getGlobalData } from "./api/api";
 import { generateIconMetadata } from "./utils/favicon";
 import { logger } from "./utils/logger";
@@ -144,12 +145,21 @@ export default async function RootLayout({
 
   const faqs = faqData?.data || [];
 
+  // Transform FAQs for schema component (only include FAQs with both Question and Answer)
+  const faqsForSchema = faqs
+    .filter((faq: any) => faq.Question && faq.Answer)
+    .map((faq: any) => ({
+      Question: faq.Question,
+      Answer: faq.Answer,
+    }));
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${redHatDisplay.variable} ${dancingScript.variable} antialiased`}
         suppressHydrationWarning
       >
+        {faqsForSchema.length > 0 && <FAQSchema faqs={faqsForSchema} />}
         <div className="min-h-screen bg-background flex flex-col">
           <Navbar />
           <main className="flex-1">
