@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getBlogPosts } from '@/app/api/blog/api';
 import { getS3URL } from '@/app/api/api';
 import ArticleSchema from '@/app/components/ArticleSchema';
-import { generateHreflangTags, generateOptimalMetaTitle, generateOptimalMetaDescription } from '@/app/utils/seo';
+import { generateHreflangTags, generateOptimalMetaTitle } from '@/app/utils/seo';
+import { generateConsistentOgImages } from '@/app/utils/metadata';
 import { logger } from '@/app/utils/logger';
 import qs from 'qs';
 import BlogPostClient from './BlogPostClient';
@@ -13,6 +14,8 @@ type Params = Promise<{ slug: string }>;
 
 // Revalidate blog posts every hour - content changes less frequently
 export const revalidate = 3600;
+export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 /**
  * Generate metadata for the page
@@ -36,16 +39,17 @@ export async function generateMetadata(
       };
     }
 
-    const { title, excerpt, seo, publishedAt, content, markdownContent, coverImage, categories } = post.data;
+    const { title, excerpt, seo, publishedAt, updatedAt, content, markdownContent, coverImage, categories } = post.data;
 
-    // Base URL from environment or default
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    // Base URL from environment - required
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+    if (!baseUrl) {
+      logger.error('NEXT_PUBLIC_SITE_URL environment variable is required');
+      throw new Error('NEXT_PUBLIC_SITE_URL environment variable is required');
+    }
 
     // Canonical URL for this blog post
     const canonicalUrl = `${baseUrl}/blog/${slug}`;
-
-    // Generate hreflang tags for this page
-    const hreflangTags = generateHreflangTags(`/blog/${slug}`, baseUrl);
 
     // Generate optimal meta title and description
     const metaTitle = generateOptimalMetaTitle(
@@ -54,28 +58,12 @@ export async function generateMetadata(
 
     // Format blog post title as "Title | Blog"
     const blogPostTitle = title ? `${title} | Blog` : 'Blog Post | Blog';
-    const metaDescription = generateOptimalMetaDescription(
-      seo?.metaDescription || excerpt || 'Read this article'
-    );
+    // Use full metaDescription from Strapi without truncation
+    const metaDescription = seo?.metaDescription || excerpt || 'Read this article';
 
-    // Handle SEO image URL in a more flexible way
-    let imageUrl = undefined;
-    if (seo?.metaImage) {
-      const metaImage = seo.metaImage as any;
-      if (typeof metaImage === 'string') {
-        imageUrl = metaImage.startsWith('http') ? metaImage : getS3URL(metaImage);
-      } else if (metaImage.url) {
-        imageUrl = metaImage.url.startsWith('http') ? metaImage.url : getS3URL(metaImage.url);
-      } else if (metaImage.data?.attributes?.url) {
-        // Handle nested data format
-        imageUrl = metaImage.data.attributes.url.startsWith('http')
-          ? metaImage.data.attributes.url
-          : getS3URL(metaImage.data.attributes.url);
-      }
-    }
-
-    // Ensure we always have an image URL
-    const finalImageUrl = imageUrl || '';
+    // Use global shareImage from Strapi (cached via getGlobalData)
+    // This ensures consistent OG images across all blog posts
+    const ogImages = await generateConsistentOgImages(blogPostTitle || 'Blog Post');
 
     return {
       title: blogPostTitle,
@@ -83,28 +71,38 @@ export async function generateMetadata(
       alternates: {
         canonical: canonicalUrl,
         languages: {
-          'en-US': canonicalUrl,
-          'en-CA': canonicalUrl,
-          'en-GB': canonicalUrl,
-          'en-AU': canonicalUrl,
+          'en': canonicalUrl,
           'x-default': canonicalUrl,
         },
       },
       openGraph: {
-        images: [{
-          url: finalImageUrl,
-          width: 1200,
-          height: 630,
-          alt: blogPostTitle || 'Blog Post',
-        }],
+        images: ogImages,
         type: 'article',
         url: canonicalUrl,
         title: blogPostTitle,
         description: metaDescription,
+        publishedTime: publishedAt,
+        modifiedTime: updatedAt || publishedAt,
+        authors: ['Honeycomb Socials'],
+        section: categories?.[0]?.name || 'Blog',
+        tags: categories?.map(c => c.name) || [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        images: ogImages.map(img => img.url),
+        title: blogPostTitle,
+        description: metaDescription,
+      },
+      other: {
+        'article:published_time': publishedAt,
+        'article:modified_time': updatedAt || publishedAt,
+        'article:author': 'Honeycomb Socials',
+        'article:section': categories?.[0]?.name || 'Blog',
+        'article:tag': categories?.map(c => c.name).join(',') || '',
       },
     };
   } catch (error) {
-    console.error('Error generating metadata:', error);
+    logger.error('Error generating metadata:', error);
     return {
       title: 'Blog Post',
       description: 'Read this article',
@@ -123,19 +121,27 @@ export async function generateStaticParams() {
       },
     }).catch(error => {
       logger.error('Error fetching posts for static params:', error);
+      // Return empty array to allow dynamic rendering, but log for monitoring
       return { data: [] };
     });
 
     if (!posts || !posts.data || !Array.isArray(posts.data)) {
-      logger.warn('No posts data available for static params generation');
+      logger.warn('No posts data available for static params generation - will use dynamic rendering');
+      // Return empty array to allow dynamic rendering
       return [];
     }
 
-    return posts.data.map((post) => ({
-      slug: post.slug,
-    }));
+    const slugs = posts.data
+      .filter(post => post.slug) // Ensure slug exists
+      .map((post) => ({
+        slug: post.slug,
+      }));
+
+    logger.log(`Generated ${slugs.length} static params for blog posts`);
+    return slugs;
   } catch (error) {
     logger.error('Error generating static params:', error);
+    // Return empty to allow dynamic rendering, but alert monitoring
     return [];
   }
 }
@@ -197,7 +203,7 @@ async function fetchPostDirectly(slug: string) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.STRAPI_API_TOKEN || ''}`,
           },
-          next: { revalidate: 300 }, // Cache for 5 minutes instead of no-store
+          next: { revalidate: 3600 }, // Match page-level revalidation (1 hour)
         });
 
         if (!response.ok) {
@@ -238,7 +244,7 @@ async function fetchPostDirectly(slug: string) {
         logger.log(`Trying proxy API: ${proxyUrl}`);
 
         const response = await fetch(proxyUrl, {
-          next: { revalidate: 300 }, // Cache for 5 minutes instead of no-store
+          next: { revalidate: 3600 }, // Match page-level revalidation (1 hour)
         });
 
         if (response.ok) {
@@ -304,6 +310,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     const {
       title = 'Untitled Post',
       publishedAt = new Date().toISOString(),
+      updatedAt = publishedAt,
       excerpt = '',
       content = null,
       markdownContent = null,
@@ -333,8 +340,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             content: content || markdownContent || '',
             coverImage: coverImage?.url ? { url: coverImage.url } : undefined,
             publishedAt,
-            updatedAt: publishedAt,
-            categories
+            updatedAt: updatedAt || publishedAt,
+            categories,
+            slug: postSlug
           }}
         />
         <BlogPostClient post={postData} />

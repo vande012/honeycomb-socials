@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
 import { 
   Sparkles,
   CheckCircle2,
@@ -12,15 +13,68 @@ import {
   FileText
 } from 'lucide-react'
 
-export const metadata = {
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+const ogImageUrl = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+export const metadata: Metadata = {
   title: 'Full Social Media Management | Done-For-You Social Media | Honeycomb Socials',
   description: 'Complete done-for-you social media management. We handle strategy, content creation, and scheduling for beauty businesses. Monthly calendars included. Book your consultation.',
-  keywords: 'full social media management, done for you social media, monthly social media management, social media management service, complete social media management',
+  alternates: {
+    canonical: `${baseUrl}/services/full-management`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${baseUrl}/services/full-management`,
+    title: 'Full Social Media Management | Honeycomb Socials',
+    description: 'Complete done-for-you social media management. We handle strategy, content creation, and scheduling for beauty businesses.',
+    siteName: 'Honeycomb Socials',
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'Full Social Media Management - Honeycomb Socials',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Full Social Media Management | Honeycomb Socials',
+    description: 'Complete done-for-you social media management for beauty businesses.',
+    images: [ogImageUrl],
+  },
 }
 
 export default function FullManagementPage() {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Full Social Media Management",
+    "description": "Complete done-for-you social media management including strategy, content creation, and scheduling for beauty and wellness businesses.",
+    "url": `${baseUrl}/services/full-management`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Honeycomb Socials",
+      "url": baseUrl
+    },
+    "serviceType": "Social Media Management",
+    "areaServed": "United States",
+    "category": "Social Media Marketing"
+  };
+
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -322,6 +376,7 @@ export default function FullManagementPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }
 

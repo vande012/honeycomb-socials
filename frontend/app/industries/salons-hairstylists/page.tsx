@@ -1,19 +1,93 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
-export const metadata = {
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+const ogImageUrl = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+export const metadata: Metadata = {
   title: 'Social Media Marketing for Salons & Hairstylists | Honeycomb Socials',
   description: 'Grow your salon or hairstyling business with strategic social media content. Showcase transformations, attract clients, and keep your books full with aesthetic content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/salons-hairstylists`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${baseUrl}/industries/salons-hairstylists`,
+    title: 'Social Media Marketing for Salons & Hairstylists | Honeycomb Socials',
+    description: 'Grow your salon or hairstyling business with strategic social media content.',
+    siteName: 'Honeycomb Socials',
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'Social Media Marketing for Salons & Hairstylists',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Social Media Marketing for Salons & Hairstylists',
+    description: 'Grow your salon or hairstyling business with strategic social media content.',
+    images: [ogImageUrl],
+  },
 };
 
 // Revalidate every hour - static content
 export const revalidate = 3600;
 
 export default function SalonsHairstylistsPage() {
+  // WebPage Schema for industry page
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Social Media Marketing for Salons & Hairstylists",
+    "description": "Specialized social media management services for salons and hairstylists. Showcase transformations and attract clients with strategic content.",
+    "url": `${baseUrl}/industries/salons-hairstylists`,
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": baseUrl
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": `${baseUrl}/industries`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Salons & Hairstylists",
+          "item": `${baseUrl}/industries/salons-hairstylists`
+        }
+      ]
+    },
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Honeycomb Socials"
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background Image */}
@@ -196,6 +270,7 @@ export default function SalonsHairstylistsPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

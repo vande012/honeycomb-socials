@@ -296,6 +296,7 @@ export function generateWebPageSchema(page: {
 
 /**
  * Generates hreflang tags for international SEO
+ * Simplified to just English and default since we don't have multi-language support
  * @param currentUrl The current page URL
  * @param siteUrl The base site URL
  * @returns Array of hreflang objects for Next.js metadata
@@ -304,20 +305,13 @@ export function generateHreflangTags(currentUrl: string, siteUrl: string = 'http
   // Remove trailing slash for consistency
   const cleanCurrentUrl = currentUrl.replace(/\/$/, '');
   const cleanSiteUrl = siteUrl.replace(/\/$/, '');
+  const fullUrl = `${cleanSiteUrl}${cleanCurrentUrl}`;
   
-  // Define the languages/regions you want to target
-  const hreflangConfig = [
-    { lang: 'en', region: 'US', url: `${cleanSiteUrl}${cleanCurrentUrl}` },
-    { lang: 'en', region: 'CA', url: `${cleanSiteUrl}${cleanCurrentUrl}` },
-    { lang: 'en', region: 'GB', url: `${cleanSiteUrl}${cleanCurrentUrl}` },
-    { lang: 'en', region: 'AU', url: `${cleanSiteUrl}${cleanCurrentUrl}` },
-    { lang: 'x-default', url: `${cleanSiteUrl}${cleanCurrentUrl}` },
-  ];
-
-  return hreflangConfig.map(({ lang, region, url }) => ({
-    hreflang: region ? `${lang}-${region}` : lang,
-    href: url,
-  }));
+  // Simplified: Just English and default fallback
+  return {
+    'en': fullUrl,
+    'x-default': fullUrl,
+  };
 } 
 
 /**

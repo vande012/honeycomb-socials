@@ -40,16 +40,14 @@ const processSteps: ProcessStep[] = [
     image: '/process/call.jpg',
     imageAlt: 'Social media discovery call for beauty businesses',
     whatHappens: [
-      'We start with a discovery call to make sure we\'re the right fit for your beauty or wellness business.',
-      'During this social media consultation, we discuss your business goals, current challenges, and what success looks like for your brand on social media.',
-      'I\'ll ask about your target audience, your brand personality, and what platforms you\'re most interested in growing.',
-      'This is your chance to ask questions about my social media management process, pricing, and how I work with beauty professionals like salons, stylists, estheticians, and wellness brands.'
+      'We discuss your business goals, current challenges, and what success looks like for your beauty or wellness brand on social media.',
+      'I\'ll ask about your target audience, brand personality, and preferred platforms.',
+      'Ask questions about my social media management process, pricing, and how I work with beauty professionals.'
     ],
     whyItMatters: [
-      'This discovery session ensures we\'re completely aligned before moving forward with any social media strategy.',
-      'For small businesses, especially in the beauty industry, it\'s crucial that your social media manager understands your unique aesthetic and clientele.',
-      'No one gets locked into something that isn\'t right. If we\'re not a good match, I\'ll tell you honestly and may even refer you to someone better suited to your needs.',
-      'This transparent approach to social media onboarding builds trust from day one.'
+      'Ensures we\'re aligned before moving forward with any social media strategy.',
+      'Your social media manager must understand your unique aesthetic and clientele.',
+      'If we\'re not a good fit, I\'ll tell you honestly and may refer you to someone better suited.'
     ],
     outcome: [
       'Clear understanding of your business goals and social media objectives',
@@ -67,16 +65,14 @@ const processSteps: ProcessStep[] = [
     image: '/process/contract.jpg',
     imageAlt: 'Social media management contract and proposal',
     whatHappens: [
-      'After our discovery call, you\'ll receive a customized proposal outlining exactly what\'s included in your social media management package.',
-      'Your service agreement details the scope of work, content deliverables, revision rounds, and communication expectations.',
-      'You\'ll receive a professional invoice with clear payment terms and options.',
-      'Everything is documented to protect both of us and ensure we\'re on the same page about deliverables.'
+      'Receive a customized proposal outlining your social media management package.',
+      'Service agreement details scope, content deliverables, revisions, and communication expectations.',
+      'Professional invoice with clear payment terms.'
     ],
     whyItMatters: [
-      'Clear contracts eliminate confusion and set professional boundaries for our social media management relationship.',
-      'You\'ll know exactly what to expect: how many posts per month, what platforms we\'re managing, response times, and more.',
-      'This level of transparency is essential for done-for-you social media services—you deserve to know what you\'re paying for.',
-      'Professional documentation builds credibility and trust, especially important when you\'re entrusting someone with your brand\'s online presence.'
+      'Clear contracts eliminate confusion about posts per month, platforms managed, and response times.',
+      'Transparency is essential for done-for-you social media services.',
+      'Professional documentation builds credibility and trust for your brand\'s online presence.'
     ],
     outcome: [
       'Signed service agreement confirming our partnership',
@@ -94,20 +90,18 @@ const processSteps: ProcessStep[] = [
     image: '/process/onboarding.jpg',
     imageAlt: 'Social media onboarding and strategy session',
     whatHappens: [
-      'This comprehensive onboarding call is where the real social media strategy work begins.',
-      'We dive deep into your brand goals: Are you focused on growth, booking inquiries, building authority, or increasing visibility for your beauty business?',
-      'We define your target audience in detail—not just demographics, but psychographics. Who are your dream clients? What do they value? What makes them choose you over competitors?',
-      'We establish your brand tone and personality: Are you luxurious and refined? Fun and approachable? Educational and expert? This guides all content creation.',
-      'We discuss content direction across platforms—what performs well on Instagram vs. TikTok vs. Pinterest, and which platforms make the most sense for your business.',
-      'We set clear KPIs (key performance indicators) and expectations so we can measure success.',
-      'We review any upcoming launches, seasonal promotions, events, or important dates to incorporate into your content calendar.'
+      'We define your brand goals: growth, booking inquiries, building authority, or increasing visibility.',
+      'Identify your target audience—demographics, psychographics, and what makes them choose you.',
+      'Establish brand tone: luxurious, approachable, educational. This guides all content creation.',
+      'Determine platform priorities and content direction for Instagram, TikTok, Pinterest.',
+      'Set clear KPIs to measure success.',
+      'Review upcoming launches, promotions, and events for your content calendar.'
     ],
     whyItMatters: [
-      'This strategy session is what separates professional social media management from random posting.',
-      'Beauty businesses need social media with intention—every post should attract your ideal clients and support your business goals.',
-      'Understanding your brand voice ensures content feels authentically YOU, not generic templates.',
-      'Setting KPIs means we can track what\'s working and adjust our social media strategy accordingly.',
-      'Planning for launches and events in advance ensures your social content supports your business objectives.'
+      'Separates professional social media management from random posting.',
+      'Every post should attract your ideal clients and support business goals.',
+      'Brand voice ensures content feels authentic, not generic templates.',
+      'KPIs let us track performance and adjust strategy accordingly.'
     ],
     outcome: [
       'Comprehensive brand strategy documented',
@@ -127,19 +121,16 @@ const processSteps: ProcessStep[] = [
     image: '/process/mood board.jpg',
     imageAlt: 'Social media brand kit and mood board for beauty businesses',
     whatHappens: [
-      'Using the insights from our strategy call, I create a comprehensive brand kit for your social media.',
-      'This includes a carefully curated color palette that reflects your brand\'s personality and appeals to your target audience.',
-      'I select font pairings that are both on-brand and optimized for social media readability.',
-      'I develop visual direction guidelines: photo styles, graphic treatments, filter preferences, and overall aesthetic.',
-      'I create a mood board showcasing the content style, vibe, and visual consistency you can expect.',
-      'Brand guidelines are documented for social media use—ensuring everything posted stays cohesive and elevated.'
+      'Create a comprehensive brand kit including color palette, font pairings, and visual guidelines.',
+      'Develop photo styles, graphic treatments, and overall aesthetic.',
+      'Mood board showcases content style and visual consistency.',
+      'Brand guidelines ensure everything stays cohesive and elevated.'
     ],
     whyItMatters: [
-      'Visual branding is EVERYTHING for beauty and wellness businesses. Your social media should look as polished as your services.',
-      'A cohesive aesthetic builds instant brand recognition. When someone scrolls past your post, they should know it\'s you before even reading the caption.',
-      'Professional brand identity design elevates your business above competitors using generic Canva templates.',
-      'Clear visual guidelines ensure consistency across all platforms and content types.',
-      'For Instagram, Pinterest, and TikTok especially, beautiful branding is what stops the scroll.'
+      'Visual branding is essential for beauty and wellness businesses.',
+      'Cohesive aesthetic builds instant brand recognition on social media.',
+      'Professional brand identity elevates you above competitors using generic templates.',
+      'Beautiful branding stops the scroll on Instagram, Pinterest, and TikTok.'
     ],
     outcome: [
       'Custom color palette for your brand',
@@ -159,19 +150,17 @@ const processSteps: ProcessStep[] = [
     image: '/process/calendar.jpg',
     imageAlt: 'Monthly social media content calendar',
     whatHappens: [
-      'Once your branding is approved, I create your first 30-day content calendar—the blueprint for your monthly social media.',
-      'Each piece of content is strategically planned with purpose: educate, inspire, promote, connect, or convert.',
-      'Your content calendar includes: content type (Reel, carousel, static post, Story, etc.), specific topic and angle, content purpose and goal, full caption copy with strategic hashtags, and any assets or photos needed from you.',
-      'Content is planned to support your business goals while keeping your audience engaged and growing.',
-      'The calendar incorporates trending topics, seasonal relevance, and platform-specific best practices.',
-      'Everything is mapped out in an easy-to-review format, typically delivered via Google Sheets or Notion.'
+      'Create your 30-day content calendar with strategic planning for each post.',
+      'Include content type (Reel, carousel, Story), topics, captions with hashtags, and required assets.',
+      'Plan content to support business goals and audience engagement.',
+      'Incorporate trending topics, seasonal relevance, and platform best practices.',
+      'Delivered via Google Sheets or Notion for easy review.'
     ],
     whyItMatters: [
-      'A monthly social media content calendar eliminates the stress of "what should I post today?" for beauty businesses.',
-      'Strategic content planning ensures variety—you\'re not just posting service promotions, you\'re also educating, entertaining, and building community.',
-      'Planning content in batches is more efficient and allows for better storytelling and campaign cohesion.',
-      'For salons, spas, and beauty professionals, having content planned around your booking schedule and promotions is essential.',
-      'This proactive approach to social media management means you\'re always ahead, never scrambling for content ideas.'
+      'Monthly content calendar eliminates posting stress for beauty businesses.',
+      'Ensures variety: promotions, education, entertainment, and community building.',
+      'Batch planning enables better storytelling and campaign cohesion.',
+      'Proactive approach means you\'re always ahead, never scrambling for content ideas.'
     ],
     outcome: [
       'Complete 30-day content calendar',
@@ -191,19 +180,17 @@ const processSteps: ProcessStep[] = [
     image: '/process/content-creation.jpg',
     imageAlt: 'Social media content creation for beauty brands',
     whatHappens: [
-      'After your content calendar is approved, I move into full content creation mode.',
-      'I create all approved posts: designing graphics, editing videos, formatting carousels, and writing final captions.',
-      'Every piece of content is optimized for its specific platform—Instagram-native dimensions, TikTok trending sounds, Pinterest vertical formats.',
-      'Content is brand-consistent, aesthetically beautiful, and strategically designed to achieve the stated goal for each post.',
-      'I format captions for readability, add strategic hashtags, and include clear calls-to-action where appropriate.',
-      'All content is compiled and prepared for your review before scheduling.'
+      'Create all approved posts: graphics, videos, carousels, and final captions.',
+      'Optimize content for each platform—Instagram dimensions, TikTok sounds, Pinterest formats.',
+      'Ensure brand consistency and strategic design for each post goal.',
+      'Format captions with hashtags and clear calls-to-action.',
+      'Compile content for your review before scheduling.'
     ],
     whyItMatters: [
-      'Quality content creation is what separates professional social media management from DIY posting.',
-      'Platform-specific optimization ensures your content performs its best—the algorithm rewards native content.',
-      'Beautiful, strategic visuals are essential for beauty and wellness brands where aesthetics drive purchasing decisions.',
-      'Professional content creation saves you HOURS every week while maintaining consistency and quality.',
-      'Well-crafted captions with strategic CTAs convert followers into clients.'
+      'Quality content creation separates professional management from DIY posting.',
+      'Platform-specific optimization maximizes performance—algorithms reward native content.',
+      'Beautiful visuals are essential where aesthetics drive purchasing decisions.',
+      'Saves hours weekly while maintaining consistency and quality.'
     ],
     outcome: [
       'All agreed-upon content created',
@@ -223,19 +210,16 @@ const processSteps: ProcessStep[] = [
     image: '/process/scheduling.jpg',
     imageAlt: 'Social media scheduling and posting workflow',
     whatHappens: [
-      'Once all content is approved, I schedule everything for the month using professional scheduling tools.',
-      'Posts are scheduled at optimal times based on your audience insights and platform best practices.',
-      'Your content automatically publishes according to the approved calendar—no more manual posting.',
-      'I monitor performance metrics throughout the month and track engagement.',
-      'Any scheduled Stories, Reels, or platform-specific features are handled seamlessly.',
-      'You receive regular updates on performance and insights.'
+      'Schedule all content for the month using professional scheduling tools.',
+      'Posts publish at optimal times based on audience insights and platform best practices.',
+      'Monitor performance metrics and track engagement throughout the month.',
+      'Receive regular updates on performance and insights.'
     ],
     whyItMatters: [
-      'Consistent posting is THE most important factor in social media growth—scheduling ensures you never miss a post.',
-      'Posting at optimal times increases visibility and engagement with your ideal clients.',
-      'Automation frees you to focus on serving your clients and running your beauty or wellness business.',
-      'Done-for-you social media management means your online presence stays active even during your busiest weeks.',
-      'Regular monitoring allows for real-time optimization and performance tracking.'
+      'Consistent posting is crucial for social media growth—scheduling ensures you never miss a post.',
+      'Optimal timing increases visibility and engagement with ideal clients.',
+      'Automation frees you to focus on running your beauty or wellness business.',
+      'Done-for-you management keeps your presence active during your busiest weeks.'
     ],
     outcome: [
       'All content scheduled for the month',
@@ -326,7 +310,7 @@ export default function ProcessPage() {
                       />
                     </div>
                     {/* Decorative step number */}
-                    <div className="absolute -top-6 -left-6 w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-xl transform -rotate-12">
+                    <div className="absolute -top-6 -left-6 w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-xl">
                       <span className="text-4xl font-bold text-primary-foreground">{step.number}</span>
                     </div>
                   </div>

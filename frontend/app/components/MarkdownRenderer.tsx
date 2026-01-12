@@ -233,67 +233,145 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
 
   // Process bold and italic text formatting
   const processTextFormatting = (text: string): React.ReactNode => {
-    const elements: React.ReactNode[] = [];
-    let lastIndex = 0;
+    let processedText = text;
+    let keyCounter = 0;
 
-    // Process bold text (**text**)
+    // Collect all bold matches first
+    const boldMatches: Array<{ match: string; content: string; index: number }> = [];
     const boldRegex = /\*\*(.*?)\*\*/g;
     let match;
-
-    boldRegex.lastIndex = 0;
-
     while ((match = boldRegex.exec(text)) !== null) {
-      // Add text before the match
-      if (match.index > lastIndex) {
-        elements.push(text.slice(lastIndex, match.index));
+      boldMatches.push({
+        match: match[0],
+        content: match[1],
+        index: match.index
+      });
+    }
+
+    // Replace bold matches in reverse order to preserve indices
+    const boldPlaceholders: Array<{ placeholder: string; content: React.ReactNode }> = [];
+    for (let i = boldMatches.length - 1; i >= 0; i--) {
+      const boldMatch = boldMatches[i];
+      const placeholder = `__BOLD_${i}__`;
+      boldPlaceholders.push({
+        placeholder,
+        content: (
+          <strong key={`bold-${keyCounter++}`} className="font-bold">
+            {boldMatch.content}
+          </strong>
+        )
+      });
+      processedText = processedText.substring(0, boldMatch.index) + 
+                     placeholder + 
+                     processedText.substring(boldMatch.index + boldMatch.match.length);
+    }
+
+    // Collect all underscore italic matches
+    // Match underscores for italics - handle cases like _"text"_, _text_, and _still_
+    // This regex matches _text_ patterns, avoiding word-internal underscores when possible
+    const italicUnderscoreMatches: Array<{ match: string; content: string; index: number }> = [];
+    // Simple regex that matches _text_ - we'll filter out word-internal matches by checking context
+    const italicUnderscoreRegex = /_(.+?)_/g;
+    // Reset regex lastIndex and reuse existing match variable
+    italicUnderscoreRegex.lastIndex = 0;
+    while ((match = italicUnderscoreRegex.exec(processedText)) !== null) {
+      const fullMatch = match[0];
+      const content = match[1];
+      const matchIndex = match.index;
+      
+      // Check if this is a valid italic match (not part of a word)
+      // Valid if: at start/end of string, or surrounded by non-word characters/whitespace
+      const beforeChar = matchIndex > 0 ? processedText[matchIndex - 1] : '';
+      const afterChar = matchIndex + fullMatch.length < processedText.length 
+        ? processedText[matchIndex + fullMatch.length] 
+        : '';
+      
+      const isWordCharBefore = /[a-zA-Z0-9]/.test(beforeChar);
+      const isWordCharAfter = /[a-zA-Z0-9]/.test(afterChar);
+      
+      // Only add if not part of a word (i.e., not surrounded by word characters)
+      // This allows: _"text"_, _text_, _still_ but avoids: word_with_underscores
+      if (!isWordCharBefore && !isWordCharAfter && content && content.trim().length > 0) {
+        italicUnderscoreMatches.push({
+          match: fullMatch,
+          content: content,
+          index: matchIndex
+        });
       }
-
-      // Add bold text
-      elements.push(
-        <strong key={`bold-${match.index}`} className="font-bold">
-          {match[1]}
-        </strong>
-      );
-
-      lastIndex = match.index + match[0].length;
     }
 
-    // Add remaining text
-    if (lastIndex < text.length) {
-      elements.push(text.slice(lastIndex));
-    }
-
-    // If no bold text found, try italic
-    if (elements.length === 0) {
-      const italicRegex = /\*(.*?)\*/g;
-      italicRegex.lastIndex = 0;
-      lastIndex = 0;
-
-      while ((match = italicRegex.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-          elements.push(text.slice(lastIndex, match.index));
-        }
-
-        elements.push(
-          <em key={`italic-${match.index}`} className="italic">
-            {match[1]}
+    // Replace underscore italic matches in reverse order
+    const italicUnderscorePlaceholders: Array<{ placeholder: string; content: React.ReactNode }> = [];
+    for (let i = italicUnderscoreMatches.length - 1; i >= 0; i--) {
+      const italicMatch = italicUnderscoreMatches[i];
+      const placeholder = `__ITALIC_UNDERSCORE_${i}__`;
+      italicUnderscorePlaceholders.push({
+        placeholder,
+        content: (
+          <em key={`italic-underscore-${keyCounter++}`} className="italic">
+            {italicMatch.content}
           </em>
-        );
-
-        lastIndex = match.index + match[0].length;
-      }
-
-      if (lastIndex < text.length) {
-        elements.push(text.slice(lastIndex));
-      }
+        )
+      });
+      processedText = processedText.substring(0, italicMatch.index) + 
+                     placeholder + 
+                     processedText.substring(italicMatch.index + italicMatch.match.length);
     }
 
-    // If no formatting found, return original text
-    if (elements.length === 0) {
-      return text;
+    // Collect all asterisk italic matches (single *, not **)
+    const italicAsteriskMatches: Array<{ match: string; content: string; index: number }> = [];
+    const italicAsteriskRegex = /(?<!\*)\*(?!\*)(.*?)(?<!\*)\*(?!\*)/g;
+    // Reset regex lastIndex and reuse existing match variable
+    italicAsteriskRegex.lastIndex = 0;
+    while ((match = italicAsteriskRegex.exec(processedText)) !== null) {
+      italicAsteriskMatches.push({
+        match: match[0],
+        content: match[1],
+        index: match.index
+      });
     }
 
-    return elements;
+    // Replace asterisk italic matches in reverse order
+    const italicAsteriskPlaceholders: Array<{ placeholder: string; content: React.ReactNode }> = [];
+    for (let i = italicAsteriskMatches.length - 1; i >= 0; i--) {
+      const italicMatch = italicAsteriskMatches[i];
+      const placeholder = `__ITALIC_ASTERISK_${i}__`;
+      italicAsteriskPlaceholders.push({
+        placeholder,
+        content: (
+          <em key={`italic-asterisk-${keyCounter++}`} className="italic">
+            {italicMatch.content}
+          </em>
+        )
+      });
+      processedText = processedText.substring(0, italicMatch.index) + 
+                     placeholder + 
+                     processedText.substring(italicMatch.index + italicMatch.match.length);
+    }
+
+    // Split the processed text and replace placeholders
+    const parts = processedText.split(/(__\w+_\d+__)/g);
+    
+    return parts.map((part, index) => {
+      // Check if this part is a placeholder
+      const boldPlaceholder = boldPlaceholders.find(p => p.placeholder === part);
+      if (boldPlaceholder) {
+        return <React.Fragment key={`part-${index}`}>{boldPlaceholder.content}</React.Fragment>;
+      }
+
+      const italicUnderscorePlaceholder = italicUnderscorePlaceholders.find(p => p.placeholder === part);
+      if (italicUnderscorePlaceholder) {
+        return <React.Fragment key={`part-${index}`}>{italicUnderscorePlaceholder.content}</React.Fragment>;
+      }
+
+      const italicAsteriskPlaceholder = italicAsteriskPlaceholders.find(p => p.placeholder === part);
+      if (italicAsteriskPlaceholder) {
+        return <React.Fragment key={`part-${index}`}>{italicAsteriskPlaceholder.content}</React.Fragment>;
+      }
+
+      // Regular text
+      return <React.Fragment key={`part-${index}`}>{part}</React.Fragment>;
+    });
   };
 
   return (

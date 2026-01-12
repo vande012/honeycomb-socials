@@ -9,20 +9,45 @@ interface ArticleSchemaProps {
     publishedAt: string;
     updatedAt: string;
     categories?: { name: string }[];
+    slug?: string;
   };
 }
 
 const ArticleSchema: React.FC<ArticleSchemaProps> = ({ post }) => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!baseUrl) {
+    console.error('NEXT_PUBLIC_SITE_URL environment variable is required');
+    return null;
+  }
+
+  // Validate required Schema.org Article fields
+  const validateSchema = (schema: any) => {
+    const required = ['@context', '@type', 'headline', 'datePublished'];
+    const missing = required.filter(field => !schema[field]);
+    if (missing.length > 0) {
+      console.warn('ArticleSchema missing required fields:', missing);
+    }
+    return schema;
+  };
+
+  // Build canonical URL for the article
+  const articleUrl = post.slug 
+    ? `${baseUrl}/blog/${post.slug}`
+    : baseUrl;
   
-  const schema = {
+  const schema = validateSchema({
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    image: post.coverImage?.url ? [post.coverImage.url] : undefined,
+    image: post.coverImage?.url ? [{
+      '@type': 'ImageObject',
+      url: post.coverImage.url,
+      width: 1200,
+      height: 630,
+    }] : undefined,
     datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
+    dateModified: post.updatedAt || post.publishedAt,
     author: {
       '@type': 'Organization',
       name: 'Honeycomb Socials',
@@ -34,16 +59,18 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({ post }) => {
       url: baseUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/logo.png`,
+        url: `${baseUrl}/logo-dark.png`,
+        width: 600,
+        height: 600,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': baseUrl,
+      '@id': articleUrl, // Use actual article URL instead of base URL
     },
     articleSection: post.categories?.[0]?.name || 'Blog',
     keywords: post.categories?.map(cat => cat.name).join(', ') || undefined,
-  };
+  });
 
   return (
     <script

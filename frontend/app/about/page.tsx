@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
 import { 
   Instagram, 
   Facebook, 
@@ -15,9 +16,41 @@ import {
   Video
 } from 'lucide-react'
 
-export const metadata = {
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+const ogImageUrl = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+export const metadata: Metadata = {
   title: 'About Maggie Vandehey | Honeycomb Socials',
   description: 'Meet Maggie Vandehey, social media strategist helping beauty and wellness businesses grow online. Authentic content that converts. View portfolio and book a consultation.',
+  alternates: {
+    canonical: `${baseUrl}/about`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${baseUrl}/about`,
+    title: 'About Maggie Vandehey | Honeycomb Socials',
+    description: 'Meet Maggie Vandehey, social media strategist helping beauty and wellness businesses grow online.',
+    siteName: 'Honeycomb Socials',
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'About Maggie Vandehey - Honeycomb Socials',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Maggie Vandehey | Honeycomb Socials',
+    description: 'Meet Maggie Vandehey, social media strategist helping beauty and wellness businesses grow online.',
+    images: [ogImageUrl],
+  },
 }
 
 export default function AboutPage() {

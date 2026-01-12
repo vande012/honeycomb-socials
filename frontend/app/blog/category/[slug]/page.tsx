@@ -58,10 +58,7 @@ export async function generateMetadata(
       alternates: {
         canonical: canonicalUrl,
         languages: {
-          'en-US': canonicalUrl,
-          'en-CA': canonicalUrl,
-          'en-GB': canonicalUrl,
-          'en-AU': canonicalUrl,
+          'en': canonicalUrl,
           'x-default': canonicalUrl,
         },
       },

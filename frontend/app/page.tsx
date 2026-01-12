@@ -1,9 +1,101 @@
+import { Metadata } from 'next'
 import { getGlobalData } from './api/api'
 import { getBlogPosts } from './api/blog/api'
 import { logger } from './utils/logger'
 
 // Revalidate homepage every 5 minutes
 export const revalidate = 300;
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const globalData = await getGlobalData();
+    const global = globalData?.data;
+
+    const metaTitle = global?.metadata?.metaTitle || 'Honeycomb Socials | Social Media Management for Beauty & Wellness';
+    const metaDescription =
+      global?.metadata?.metaDescription ||
+      'Social media management for beauty and wellness businesses. Aesthetic, strategic content that attracts the clients you actually want. Done-for-you social media without the burnout.';
+
+    // Generate OG images from shareImage or fallback to default
+    const shareImage = global?.metadata?.shareImage;
+    const ogImageUrl = shareImage?.url 
+      ? (shareImage.url.startsWith('http') ? shareImage.url : `${process.env.NEXT_PUBLIC_STRAPI_API_URL?.replace('/api', '')}${shareImage.url}`)
+      : 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
+    return {
+      title: metaTitle,
+      description: metaDescription,
+      alternates: {
+        canonical: baseUrl,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+      openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: baseUrl,
+        title: metaTitle,
+        description: metaDescription,
+        siteName: 'Honeycomb Socials',
+        images: [
+          {
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+            alt: metaTitle,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: metaTitle,
+        description: metaDescription,
+        images: [ogImageUrl],
+      },
+    };
+  } catch (e) {
+    const fallbackOgImage = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+    
+    return {
+      title: 'Honeycomb Socials | Social Media Management for Beauty & Wellness',
+      description: 'Social media management for beauty and wellness businesses. Aesthetic, strategic content that attracts the clients you actually want. Done-for-you social media without the burnout.',
+      alternates: {
+        canonical: baseUrl,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+      openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: baseUrl,
+        title: 'Honeycomb Socials | Social Media Management for Beauty & Wellness',
+        description: 'Social media management for beauty and wellness businesses. Aesthetic, strategic content that attracts the clients you actually want.',
+        siteName: 'Honeycomb Socials',
+        images: [
+          {
+            url: fallbackOgImage,
+            width: 1200,
+            height: 630,
+            alt: 'Honeycomb Socials - Social Media Management for Beauty & Wellness',
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Honeycomb Socials | Social Media Management for Beauty & Wellness',
+        description: 'Social media management for beauty and wellness businesses. Aesthetic, strategic content.',
+        images: [fallbackOgImage],
+      },
+    };
+  }
+}
 import { Button } from './components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
 import Link from 'next/link'
@@ -35,8 +127,33 @@ export default async function Home() {
     logger.error('Failed to fetch blog posts:', error)
   }
 
+  // Organization Schema for homepage
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Honeycomb Socials",
+    "url": "https://honeycombsocials.com",
+    "logo": "https://honeycombsocials.com/logo-dark.png",
+    "description": "Social media management for beauty and wellness businesses that value aesthetics as much as results.",
+    "sameAs": [],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@honeycombsocials.com"
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-[#fafafa]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <main className="min-h-screen bg-[#fafafa]">
       {/* Hero Section - Enhanced UX & Design */}
       <section className="relative w-full min-h-[900px] sm:min-h-[700px] lg:min-h-[900px] overflow-hidden bg-[#fafafa] -mb-px">
         {/* Full Width Image Background with Subtle Animation */}
@@ -254,6 +371,7 @@ export default async function Home() {
 
       {/* Recent Blog Posts Section */}
       <RecentBlogPosts posts={blogPosts} />
-    </main>
+      </main>
+    </>
   )
 }

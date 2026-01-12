@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Clock, ArrowLeft, Share2, Linkedin } from 'lucide-react';
@@ -8,7 +8,6 @@ import { getS3URL } from '../../api/api';
 import { formatDate, getReadingTime } from '../../utils/blog-helpers';
 import RichTextRenderer from '../../components/RichTextRenderer';
 import MarkdownRenderer from '../../components/MarkdownRenderer';
-import TableOfContents from '../../components/TableOfContents';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
 
@@ -26,12 +25,6 @@ interface BlogPostClientProps {
 }
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   // Get cover image URL
   const getCoverImageUrl = () => {
     if (!post.coverImage) return null;
@@ -101,6 +94,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
               className="object-cover opacity-30"
               priority
               sizes="100vw"
+              quality={85}
             />
           </div>
         )}
@@ -174,28 +168,26 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
               </div>
             </div>
 
-            {/* Table of Contents */}
-            {(post.markdownContent || (post.content && typeof post.content === 'string')) && (
-              <TableOfContents
-               className='mb-12' content={post.markdownContent || (typeof post.content === 'string' ? post.content : '')}
-              />
-            )}
-
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
               {(() => {
-                if (post.markdownContent && typeof post.markdownContent === 'string' && post.markdownContent.trim()) {
-                  return <MarkdownRenderer content={post.markdownContent} />;
-                }
-
+                // Priority 1: Rich text content (Strapi v5 richtext field)
+                // Rich text comes as an array of blocks from Strapi
                 if (post.content && Array.isArray(post.content) && post.content.length > 0) {
                   return <RichTextRenderer content={post.content} />;
                 }
 
+                // Priority 2: Markdown content (if explicitly provided)
+                if (post.markdownContent && typeof post.markdownContent === 'string' && post.markdownContent.trim()) {
+                  return <MarkdownRenderer content={post.markdownContent} />;
+                }
+
+                // Priority 3: String content (fallback to markdown renderer)
                 if (post.content && typeof post.content === 'string' && post.content.trim()) {
                   return <MarkdownRenderer content={post.content} />;
                 }
 
+                // Priority 4: Object content (try to extract text)
                 if (post.content && typeof post.content === 'object' && !Array.isArray(post.content)) {
                   const textContent = post.content.text || post.content.content || post.content.body;
                   if (textContent && typeof textContent === 'string') {

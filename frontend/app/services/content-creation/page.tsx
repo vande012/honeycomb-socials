@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
 import { 
   Sparkles,
   CheckCircle2,
@@ -11,15 +12,63 @@ import {
   Hash
 } from 'lucide-react'
 
-export const metadata = {
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+const ogImageUrl = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+export const metadata: Metadata = {
   title: 'Content Creation Services | Social Media Graphics & Videos | Honeycomb Socials',
   description: 'Professional social media content creation for beauty businesses. Custom graphics, Reels, and captions that convert followers into clients. Get started today.',
-  keywords: 'social media content creation, instagram content creation, reel creation, social media graphics, video content creation, content creation service',
+  alternates: {
+    canonical: `${baseUrl}/services/content-creation`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${baseUrl}/services/content-creation`,
+    title: 'Content Creation Services | Honeycomb Socials',
+    description: 'Professional social media content creation for beauty businesses. Custom graphics, Reels, and captions that convert.',
+    siteName: 'Honeycomb Socials',
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: 'Content Creation Services - Honeycomb Socials',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Content Creation Services | Honeycomb Socials',
+    description: 'Professional social media content creation for beauty businesses.',
+    images: [ogImageUrl],
+  },
 }
 
 export default function ContentCreationPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Content Creation Services",
+    "description": "Professional social media content creation including custom graphics, Reels, and captions for beauty and wellness businesses.",
+    "url": `${baseUrl}/services/content-creation`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Honeycomb Socials",
+      "url": baseUrl
+    },
+    "serviceType": "Content Creation",
+    "areaServed": "United States"
+  };
+
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F2E9D0] to-[#F2DEA9] overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -300,6 +349,7 @@ export default function ContentCreationPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }
 

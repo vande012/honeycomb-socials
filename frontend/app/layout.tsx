@@ -58,16 +58,73 @@ export async function generateMetadata(): Promise<Metadata> {
 
     const icons = generateIconMetadata(global?.favicon || null);
 
+    // Generate OG images from shareImage or favicon
+    const shareImage = global?.metadata?.shareImage;
+    const ogImageUrl = shareImage?.url 
+      ? (shareImage.url.startsWith('http') ? shareImage.url : `${process.env.NEXT_PUBLIC_STRAPI_API_URL?.replace('/api', '')}${shareImage.url}`)
+      : 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
     return {
       title: metaTitle,
       description: metaDescription,
       icons,
+      metadataBase: new URL(baseUrl),
+      openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: baseUrl,
+        title: metaTitle,
+        description: metaDescription,
+        siteName: 'Honeycomb Socials',
+        images: [
+          {
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+            alt: metaTitle,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: metaTitle,
+        description: metaDescription,
+        images: [ogImageUrl],
+      },
     };
   } catch (e) {
+    const fallbackOgImage = 'https://honeycomb-socials.s3.us-east-1.amazonaws.com/OG_Image_ff4eaa3237.png';
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+    
     return {
       title: "Honeycomb Socials",
       description:
         "Social media management for beauty and wellness businesses. Aesthetic content that converts followers into clients. Book your free consultation today.",
+      metadataBase: new URL(baseUrl),
+      openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: baseUrl,
+        title: 'Honeycomb Socials',
+        description: 'Social media management for beauty and wellness businesses',
+        siteName: 'Honeycomb Socials',
+        images: [
+          {
+            url: fallbackOgImage,
+            width: 1200,
+            height: 630,
+            alt: 'Honeycomb Socials',
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Honeycomb Socials',
+        description: 'Social media management for beauty and wellness businesses',
+        images: [fallbackOgImage],
+      },
     };
   }
 }
