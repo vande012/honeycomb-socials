@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
 
 // Social media links
 const socialLinks = [
@@ -28,6 +28,11 @@ const socialLinks = [
         <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
       </svg>
     ),
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/maggie-vandehey-910579330/',
+    icon: Linkedin,
   },
 ];
 
@@ -81,12 +86,12 @@ export function Footer() {
                 alt="Honeycomb Socials"
                 width={300}
                 height={102}
-                className="h-24 md:h-28 w-auto object-contain"
+                className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
                 priority
               />
             </Link>
             <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-md font-sans">
-              Social media management for beauty and wellness businesses that value aesthetics as much as results.
+              Strategy-first social media for beauty and wellness brands.
             </p>
             
             {/* Email Contact */}

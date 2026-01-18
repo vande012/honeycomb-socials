@@ -244,6 +244,9 @@ export default function PrivacyPage() {
                     <li>Provide personalized content and advertising</li>
                   </ul>
                   <p>
+                    Where required by law, we obtain user consent before placing non-essential cookies on their device.
+                  </p>
+                  <p>
                     You can control cookies through your browser settings. However, disabling cookies may limit your ability to use certain features of our website. We may use both session cookies (which expire when you close your browser) and persistent cookies (which remain on your device until deleted or expired).
                   </p>
                 </div>
@@ -341,18 +344,26 @@ export default function PrivacyPage() {
                 </div>
               </div>
 
+              {/* Governing Law */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">14. Governing Law</h2>
+                <div className="space-y-4 text-foreground/90 leading-relaxed">
+                  <p>
+                    This Privacy Policy is governed by the laws of the State of Wisconsin, United States.
+                  </p>
+                </div>
+              </div>
+
               {/* Contact Information */}
               <div className="bg-primary/10 rounded-xl p-6 md:p-8 border-l-4 border-primary">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">14. Contact Information</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">15. Contact Information</h2>
                 <div className="space-y-2 text-foreground/90 leading-relaxed">
                   <p>
                     If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
                   </p>
                   <p>
                     <strong>Honeycomb Socials</strong><br />
-                    Email: <a href="mailto:contact@honeycombsocials.com" className="text-primary hover:underline">contact@honeycombsocials.com</a><br />
-                    Address: 8310 South Valley Highway, Suite 300, Englewood, CO 80112<br />
-                    Phone: +1-303-414-2057
+                    Email: <a href="mailto:contact@honeycombsocials.com" className="text-primary hover:underline">contact@honeycombsocials.com</a>
                   </p>
                   <p className="mt-4">
                     We will respond to your inquiry within a reasonable timeframe and in accordance with applicable law.

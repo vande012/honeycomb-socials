@@ -29,7 +29,7 @@ export default function ConsultingPage() {
             <div className="order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/consulting.jpg"
+                  src="/services/consulting.jpeg"
                   alt="Social Media Consulting and Coaching Services"
                   fill
                   className="object-cover"

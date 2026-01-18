@@ -28,7 +28,7 @@ export default function StrategyPage() {
             <div className="order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/strategy.jpg"
+                  src="/services/strategy.jpeg"
                   alt="Social Media Strategy Services"
                   fill
                   className="object-cover"

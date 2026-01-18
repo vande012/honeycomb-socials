@@ -183,7 +183,7 @@ export function SocialStats() {
               Real Results, Real Growth
             </h2>
             <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
-              We've helped businesses grow across every major platform—with content that converts and strategy that sticks.
+              I've helped businesses grow across every major platform with content that converts and strategy that sticks.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
@@ -206,7 +206,7 @@ export function SocialStats() {
             Real Results, Real Growth
           </h2>
           <p className="text-base md:text-lg text-foreground max-w-3xl mx-auto">
-            We've helped businesses grow across every major platform—with content that converts and strategy that sticks.
+            I've helped businesses grow across every major platform with content that converts and strategy that sticks.
           </p>
         </div>
 

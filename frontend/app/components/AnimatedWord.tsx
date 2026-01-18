@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
-const words = ['MANAGEMENT', 'GROWTH', 'MARKETING', 'ANALYTICS', 'STRATEGY'];
+const words = ['that feels clear', 'that feels intentional', 'that supports your business', "that doesn't drain you"];
 const wordDisplayDuration = 2500; // 2.5 seconds per word visible
 const transitionDuration = 500; // 500ms for fade transition
+
+// Find the longest phrase to reserve space
+const longestPhrase = words.reduce((a, b) => a.length > b.length ? a : b);
 
 export function AnimatedWord() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,15 +32,21 @@ export function AnimatedWord() {
   }, []);
 
   return (
+    <span className="inline-block relative">
+      {/* Invisible placeholder to reserve space for the longest phrase */}
+      <span className="invisible inline-block" aria-hidden="true">
+        {longestPhrase}
+      </span>
+      {/* Actual animated text */}
     <span 
-      className={`inline-block transition-all duration-500 ease-in-out ${
+        className={`absolute left-0 top-0 inline-block transition-all duration-500 ease-in-out ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 -translate-y-2'
       }`}
-      style={{ minWidth: 'fit-content' }}
     >
       {words[currentIndex]}
+      </span>
     </span>
   );
 }

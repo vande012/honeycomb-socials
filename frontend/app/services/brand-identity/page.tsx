@@ -28,7 +28,7 @@ export default function BrandIdentityPage() {
             <div className="order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/brand.jpg"
+                  src="/services/beautybrands.jpeg"
                   alt="Brand Identity and Aesthetic Design Services"
                   fill
                   className="object-cover"

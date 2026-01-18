@@ -19,7 +19,7 @@ export default function NailSalonsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/nail.jpeg"
+            src="/industries/nails2.jpeg"
             alt="Nail salon background"
             fill
             className="object-cover"
@@ -31,10 +31,10 @@ export default function NailSalonsPage() {
         <div className="relative z-20 container mx-auto px-4 md:px-8 max-w-4xl text-center">
           <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Social Media Marketing for Nail Technicians & Salons
+              Social Media Marketing For nail artists whose work is strong but marketing feels unclear.
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your nail artistry deserves content that showcases your skills and attracts the clients you want. We create strategic social media that turns followers into bookings.
+              Your nail artistry deserves content that showcases your skills and attracts the clients you want. I create strategic social media that turns followers into bookings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -53,7 +53,7 @@ export default function NailSalonsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Nail Technicians & Salons
+              What I Offer Nail Technicians & Salons
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Specialized social media strategies designed for nail artists who want to grow their client base and showcase their work authentically.
@@ -62,101 +62,85 @@ export default function NailSalonsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Nail Art Showcase Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Content That Positions Your Expertise</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight your best work with content that stops the scroll and drives appointments.
+                Social media that helps clients recognize your skill and trust your work before they ever book.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Before & after transformations</span>
+                  <span className="text-foreground/90">Education-led content that builds confidence</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trending nail art features</span>
+                  <span className="text-foreground/90">Messaging that attracts the right type of clients</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Process videos & tutorials</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Platform-optimized formats</span>
+                  <span className="text-foreground/90">A balance of showing and explaining your work</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Client Education & Engagement</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Content That Builds Trust</h3>
               <p className="text-muted-foreground mb-4">
-                Build trust and authority with content that educates and inspires your audience.
+                Not louder content. Clearer content.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Nail care tips & maintenance</span>
+                  <span className="text-foreground/90">Service-focused education</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trend forecasting content</span>
+                  <span className="text-foreground/90">Honest, straightforward messaging</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Behind-the-scenes salon content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Client testimonials & reviews</span>
+                  <span className="text-foreground/90">Engagement rooted in clarity, not just trends</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Booking & Promotion Strategy</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Content That Supports Bookings</h3>
               <p className="text-muted-foreground mb-4">
-                Convert followers into clients with strategic promotions and booking-focused content.
+                Social media that guides clients toward booking without relying on discounts or pressure.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Service package highlights</span>
+                  <span className="text-foreground/90">Messaging that highlights services clearly</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Limited-time offers & promotions</span>
+                  <span className="text-foreground/90">Intentional prompts that make booking obvious</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Booking call-to-actions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Gift card & holiday campaigns</span>
+                  <span className="text-foreground/90">Promotion used sparingly and with purpose</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Aesthetic Development</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Keeping Your Brand True to You</h3>
               <p className="text-muted-foreground mb-4">
-                Create a cohesive visual identity that makes your salon instantly recognizable.
+                Your social media should feel familiar to your clients, not forced.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Custom color palette & templates</span>
+                  <span className="text-foreground/90">Collaborative visual direction</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consistent visual branding</span>
+                  <span className="text-foreground/90">Messaging that reflects your personality and services</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Brand voice & messaging</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Instagram feed curation</span>
+                  <span className="text-foreground/90">Consistency without losing creative control</span>
                 </li>
               </ul>
             </div>
@@ -172,10 +156,10 @@ export default function NailSalonsPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In today's beauty industry, your social media presence is often the first impression potential clients have of your work. With platforms like Instagram and TikTok driving discovery, having a strategic content plan isn't optional—it's essential for growth.
+              In today's beauty industry, your social media presence is often the first impression potential clients have of your work. With platforms like Instagram and TikTok driving discovery, having a strategic content plan isn't optional, it's essential for growth.
             </p>
             <p>
-              We understand that running a nail salon means you're focused on your craft, not creating content. That's where we come in. We handle the strategy, content creation, and posting so you can focus on what you do best: creating beautiful nails.
+              I understand that running a nail salon means you're focused on your craft, not creating content. That's where I come in. I handle the strategy, content creation, and posting so you can focus on what you do best: creating beautiful nails.
             </p>
             <p>
               Our approach combines aesthetic content with real strategy—no generic templates or one-size-fits-all solutions. Every piece of content is designed to showcase your unique style, attract your ideal clients, and drive bookings.

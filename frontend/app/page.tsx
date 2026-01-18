@@ -178,22 +178,27 @@ export default async function Home() {
         {/* Content Overlay with Improved Spacing */}
         <div className="relative z-10 h-full min-h-[600px] sm:min-h-[700px] lg:min-h-[900px] container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center">
           <div className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl py-12 sm:py-16 md:py-20 lg:py-24">
+            {/* SEO-optimized H1 - Hidden but readable by crawlers */}
+            <h1 className="sr-only">
+              Social Media Management That Supports Your Beauty and Wellness Business
+            </h1>
+
             {/* Decorative Script Text - Refined sizing and spacing */}
             <p className="script-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#c9a86a] mb-3 sm:mb-4 md:mb-5 animate-fade-in-up font-medium">
               welcome!
             </p>
             
-            {/* Main Headline - Enhanced typography and spacing */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6 md:mb-8 text-[#1f1e1c] animate-fade-in-up animation-delay-100 tracking-tight">
-              <span className="block mb-1 sm:mb-2">SOCIAL MEDIA</span>
-              <span className="block text-[#c9a86a]">
+            {/* Visual Headline - Presentation layer for design */}
+            <div aria-hidden="true" className="font-playfair-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6 md:mb-8 text-[#1f1e1c] animate-fade-in-up animation-delay-100 tracking-tight">
+              <span className="block mb-1 sm:mb-2">SOCIAL MEDIA </span>
+              <span className="block text-[#c9a86a] md:whitespace-nowrap">
                 <AnimatedWord />
               </span>
-            </h1>
+            </div>
             
             {/* Subheadline - Improved readability and visual weight */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#1f1e1c]/85 max-w-2xl mb-8 sm:mb-10 md:mb-12 leading-relaxed animate-fade-in-up animation-delay-300 font-medium">
-              We create aesthetic, strategic social media content that attracts the clients you actually want—no burnout, no guesswork, just beautiful results.
+              I help salons, spas, and beauty brands show up online with clarity, consistency, and intention so your content actually supports your business instead of draining it.
             </p>
             
             {/* CTAs - Enhanced prominence and visual hierarchy */}
@@ -203,7 +208,7 @@ export default async function Home() {
                 className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden"
                 aria-label="Book a free consultation"
               >
-                <span className="relative z-10">View Our Process</span>
+                <span className="relative z-10">View My Process</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link
@@ -224,7 +229,7 @@ export default async function Home() {
           {/* Image Side */}
           <div className="relative h-[500px] lg:h-[750px] overflow-hidden order-2 lg:order-1">
             <Image
-              src="/salon.jpg"
+              src="/salon.jpeg"
               alt="Beauty salon workspace with elegant styling"
               fill
               className="object-cover"
@@ -247,15 +252,15 @@ export default async function Home() {
               
               <div className="space-y-6 text-[#1f1e1c]/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  Your beauty business deserves socials that feel intentional, on-brand, and actually work for you.
+                  Working with Honeycomb Socials, strategy always comes first. My motto is simple: if you don't know where you want to go, how are you supposed to get there?
                 </p>
                 
                 <p>
-                  At Honeycomb Socials, we create platform-specific content with real strategy—no copy-paste templates, no burnout, no guesswork. Just aesthetic, strategic social media marketing that attracts the clients you actually want.
+                  Once I understand your goals, I create a custom roadmap to guide your social media in a clear, intentional direction. From there, we support that plan with platform-specific content and systems that make showing up online feel easier, not heavier.
                 </p>
                 
                 <p className="font-medium text-[#1f1e1c]">
-                  Ready for support that's both beautiful and effective? Let's talk.
+                  Ready to bring clarity to your social media?
                 </p>
               </div>
 
@@ -297,57 +302,25 @@ export default async function Home() {
             <div className="order-2 lg:order-1">
               {/* Decorative Script Text */}
               <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
-                hi, there! I'm Maggie Vandehey
+                Hi, I'm Maggie
               </p>
-              
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f1e1c] mb-8 leading-tight">
-                About Honeycomb Socials
-              </h2>
               
               <div className="space-y-6 text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed">
                 <p>
-                  I help salons, stylists, estheticians, injectors, and beauty brands grow with aesthetic content and real strategy—without the burnout or guesswork.
+                  I help beauty and wellness brands bring clarity and direction to their social media so they can attract the right clients without the overwhelm.
                 </p>
 
                 <p>
-                  Because posting random Canva templates ≠ marketing. Your business deserves content with intention, not pressure.
+                  With a background in cosmetology, I understand the pace, pressure, and expectations of the beauty industry, which is why everything here starts with strategy, not trends.
                 </p>
 
                 <p>
-                  If you're tired of posting just to post, if you want your social media to actually attract clients, and if you're ready for a strategy that feels as good as it looks—I'm your girl.
-                </p>
-
-                <p>
-                  Stick around for branding tips, content ideas, and done-for-you strategies that actually work.
+                  If you're posting without strategy, or just trying to keep up with trends, it's easy to burn out, and easy to miss what actually moves your business forward.
                 </p>
 
                 <p className="font-semibold text-[#1f1e1c]">
-                  Want to work together? Send me a DM or book a free consultation below.
+                  Here, we start with goals, not templates.
                 </p>
-
-                {/* Soft rounded card */}
-                <div className="bg-white border border-[#e5e5e5] rounded-2xl p-6 md:p-8 shadow-sm">
-                  <p className="text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed mb-6">
-                    <strong className="text-[#1f1e1c]">Feeling stuck with your Instagram?</strong> I'm offering free social media audits to help you figure out what's working, what's not, and how to start attracting the clients you want. It's quick, helpful, and tailored to your business.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="/audit"
-                      className="px-6 py-3 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
-                      aria-label="Book a free consultation"
-                    >
-                      Book Free Consultation
-                    </a>
-                    <a
-                      href="/audit"
-                      className="px-6 py-3 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
-                      aria-label="Get a free consultation"
-                    >
-                      Get Free Consultation
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -355,7 +328,7 @@ export default async function Home() {
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <Image
-                  src="/about.jpg"
+                  src="/about.png"
                   alt="Maggie Vandehey, founder of Honeycomb Socials"
                   width={500}
                   height={650}

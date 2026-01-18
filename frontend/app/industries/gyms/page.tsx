@@ -19,7 +19,7 @@ export default function GymsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/gym.jpg"
+            src="/industries/gymsfitness.jpeg"
             alt="Gym fitness background"
             fill
             className="object-cover"

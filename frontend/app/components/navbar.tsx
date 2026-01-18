@@ -72,16 +72,16 @@ export function Navbar({ className }: NavbarProps) {
   return (
     <header className={cn("border-b border-[#e5e5e5] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50", className)} role="banner">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex h-20 md:h-20 items-center justify-between">
+        <div className="flex h-24 md:h-28 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             {/* Logo */}
             <Image
-              src="/logo-gold.png?=v2"
+              src="/logo-gold.png"
               alt="Honeycomb Socials"
-              width={300}
-              height={102}
-              className="h-16 md:h-20 w-auto object-contain"
+              width={350}
+              height={120}
+              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
               priority
             />
           </Link>

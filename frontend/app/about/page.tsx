@@ -65,7 +65,7 @@ export default function AboutPage() {
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/MaggieVandehey.jpg?v=2"
+                    src="/about.png"
                     alt="Maggie Vandehey - Social Media Strategist"
                     fill
                     className="object-cover"
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   Maggie <span className="italic font-serif">Vandehey</span>
                 </h1>
                 <p className="text-2xl md:text-3xl text-primary font-semibold mb-6">
-                  Social Media Strategist + Content Creator
+                  Social Media Strategist + Manager
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 <div className="relative w-full max-w-md">
                   <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
-                      src="/MaggieVandehey.jpg?v=2"
+                      src="/about.png"
                       alt="Maggie Vandehey - Social Media Strategist"
                       fill
                       className="object-cover"
@@ -116,17 +116,17 @@ export default function AboutPage() {
               </div>
 
               <div className="space-y-6 text-base md:text-lg text-foreground/90 leading-relaxed">
-                <p className="text-xl md:text-2xl font-medium text-foreground">
-                  I'm a social media manager and strategist with a passion for helping small businesses thrive and grow online.
+                <p>
+                  I help beauty and wellness brands bring clarity and direction to their social media so it can actually support their business, not drain it.
                 </p>
                 <p>
-                  I have extensive experience managing and growing brands across TikTok, Pinterest, Facebook, LinkedIn, and YouTube Shorts. My approach combines strategic thinking with creative execution, helping businesses create content that looks good, performs well, and feels authentic.
+                  I'm a licensed cosmetologist, and doing hair was my first love. That experience gave me insight into the beauty industry and the realities of running a service-based business, which shapes how I approach marketing today.
                 </p>
                 <p>
-                  I specialize in short-form video, branded content, and platform-specific strategy. Every brand is unique, and I believe your social media should reflect that—not generic templates or one-size-fits-all solutions.
+                  My work is strategy-first. Before content comes clarity around goals, messaging, and direction. From there, I help brands show up online in a way that feels intentional, aligned, and sustainable, not rushed or trend-driven.
                 </p>
                 <p>
-                  What drives me? Seeing small businesses succeed. There's nothing more rewarding than watching a client's engagement grow, their community expand, and their brand come to life through thoughtful, strategic content.
+                  Honeycomb Socials is a faith-led business. I believe this work is something God called me into, and I pray over every call and every client. What drives me most is helping small businesses grow with confidence, purpose, and a clear path forward.
                 </p>
               </div>
 
@@ -179,7 +179,7 @@ export default function AboutPage() {
                       <span className="text-sm md:text-base">August 2024 - October 2025</span>
                     </div>
                     <p className="text-foreground/90 leading-relaxed">
-                      Managed social media strategy and content creation for multiple brands, focusing on platform-specific optimization and authentic brand storytelling. Developed and executed campaigns that increased engagement and grew online communities across Instagram, TikTok, and Pinterest.
+                      Managed social media strategy and content creation for 15+ brands across multiple platforms, including Instagram, TikTok, Pinterest, Facebook, LinkedIn, and YouTube Shorts. Focused on platform-specific execution, consistent brand voice, and content that supported engagement and community growth.
                     </p>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                 <div className="relative w-full max-w-md mx-auto">
                   <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
-                      src="/MaggieVandehey1.jpg"
+                      src="/about2.png"
                       alt="Maggie Vandehey"
                       fill
                       className="object-cover"
@@ -397,10 +397,10 @@ export default function AboutPage() {
                 Customized Social Media Support
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-8">
-                I offer customized social media support tailored to each client's goals and budget. My pricing and packages are customized to each individual client, because I believe every business deserves a strategy that fits their unique needs—not a one-size-fits-all approach.
+                I don't offer one-size-fits-all packages. Every client needs something slightly different.
               </p>
               <p className="text-base md:text-lg text-foreground/80 mb-8">
-                Whether you're just starting out or looking to scale your existing presence, I work with you to create a plan that makes sense for where you are now and where you want to go.
+                All work begins with a clear strategy and a minimum level of support, then the scope is built around what will actually move the business forward. What's included depends on your goals, your stage of business, and the type of support you need most.
               </p>
               <Link
                 href="/contact"

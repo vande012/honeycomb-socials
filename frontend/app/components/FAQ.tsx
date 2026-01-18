@@ -39,7 +39,7 @@ export function FAQ({ faqs }: FAQProps) {
             Frequently Asked Questions
           </h2>
           <p className="text-lg md:text-xl text-[#1f1e1c]/80">
-            We've got answers.
+            I've got answers and I'm here to help
           </p>
         </div>
 

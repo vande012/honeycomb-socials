@@ -19,7 +19,7 @@ export default function FloristWeddingPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/florist.jpg"
+            src="/industries/florists.jpeg"
             alt="Florist wedding background"
             fill
             className="object-cover"

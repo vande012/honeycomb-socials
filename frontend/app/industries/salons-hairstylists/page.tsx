@@ -93,7 +93,7 @@ export default function SalonsHairstylistsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/salon-2.jpg"
+            src="/industries/salon2.jpeg"
             alt="Salon background"
             fill
             className="object-cover"
@@ -108,7 +108,7 @@ export default function SalonsHairstylistsPage() {
               Social Media Marketing for Salons & Hairstylists
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your work is stunning. Your social media should reflect that. We create content and strategy that attracts your dream clients and keeps your books full.
+            Social media shouldn’t be harder than doing hair.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -127,91 +127,91 @@ export default function SalonsHairstylistsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Salons & Stylists
+              What I Offer Salons & Stylists
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Before & After Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Clear Direction</h3>
               <p className="text-muted-foreground mb-4">
-                Showcase transformations that stop the scroll and book appointments.
+                Social media that's built around why you're posting, not just what you're posting.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Platform-optimized content</span>
+                  <span className="text-foreground/90">Defined content pillars tied to your booking goals</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Strategic posting schedule</span>
+                  <span className="text-foreground/90">Messaging that attracts the clients you actually want</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Hashtag research & strategy</span>
+                  <span className="text-foreground/90">A plan that makes posting feel purposeful instead of reactive</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Development</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Alignment</h3>
               <p className="text-muted-foreground mb-4">
-                Create a cohesive look that makes your salon instantly recognizable.
+                Your social media should feel like you, not a template.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Visual branding & aesthetic</span>
+                  <span className="text-foreground/90">Collaborative visual direction that builds consistency over time</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Brand voice development</span>
+                  <span className="text-foreground/90">Brand voice refinement so your captions sound natural, not forced</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Custom templates & graphics</span>
+                  <span className="text-foreground/90">Guidelines that support your look</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Reel & Video Production</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Short-Form Video Support</h3>
               <p className="text-muted-foreground mb-4">
-                Short-form video content that showcases your skills and personality.
+                You don't need to be a content creator. You need direction.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trending audio & formats</span>
+                  <span className="text-foreground/90">Simple guidance on what to film and how to film it</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Professional editing</span>
+                  <span className="text-foreground/90">Short shot lists based on your services and schedule</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Hook-driven storytelling</span>
+                  <span className="text-foreground/90">Edited short-form videos that align with your strategy</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Client Attraction Strategy</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Booking-Focused Content Strategy</h3>
               <p className="text-muted-foreground mb-4">
-                Convert followers into paying clients with strategic content.
+                Content with a job to do.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Audience targeting</span>
+                  <span className="text-foreground/90">Clear calls to action that make booking obvious</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Call-to-action optimization</span>
+                  <span className="text-foreground/90">Education-led posts that build trust before the appointment</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Engagement tactics</span>
+                  <span className="text-foreground/90">Content structured to support inquiries, not just engagement</span>
                 </li>
               </ul>
             </div>
@@ -227,13 +227,19 @@ export default function SalonsHairstylistsPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In today's beauty industry, your social media presence is often the first impression potential clients have of your work. With platforms like Instagram and TikTok driving discovery, having a strategic content plan isn't optional—it's essential for growth.
+              For most salons and stylists, social media is the first place potential clients go to decide if they want to book with you. Not to admire your work, but to understand your vibe, your expertise, and whether you feel like the right fit.
             </p>
             <p>
-              We understand that running a salon means you're focused on your craft, not creating content. That's where we come in. We handle the strategy, content creation, and posting so you can focus on what you do best: creating beautiful transformations.
+              Without a clear strategy, it's easy to post consistently and still feel stuck. Content starts to feel random, trends feel exhausting, and bookings feel unpredictable.
             </p>
             <p>
-              Our approach combines aesthetic content with real strategy—no generic templates or one-size-fits-all solutions. Every piece of content is designed to showcase your unique style, attract your ideal clients, and drive bookings.
+              That's where a strategy-first approach changes everything.
+            </p>
+            <p>
+              Instead of leading with aesthetics or copying what everyone else is doing, I focus on clarity. Clear messaging. Clear positioning. Clear direction. From there, your content supports your business goals, builds trust with the right clients, and makes booking feel like the natural next step.
+            </p>
+            <p>
+              The goal isn't to post more or chase trends. It's to use social media intentionally so it works for you while you focus on your clients.
             </p>
           </div>
         </div>

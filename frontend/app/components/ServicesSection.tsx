@@ -18,13 +18,13 @@ const services: Service[] = [
     id: 'full-management',
     title: 'Full Social Media Management',
     description: 'Full-service social media management to keep your brand active, consistent, and growing.',
-    image: '/full-service.jpg',
+    image: '/services/full-service.jpeg',
     imageAlt: 'Full Social Media Management'
   },
   {
     id: 'content-creation',
     title: 'Content Creation',
-    description: 'Beautiful, on-brand photo and video content tailored to your aesthetic.',
+    description: 'Content with purpose, not just posts.',
     image: '/content.jpg',
     imageAlt: 'Content Creation'
   },
@@ -32,21 +32,21 @@ const services: Service[] = [
     id: 'brand-identity',
     title: 'Brand Identity & Aesthetic Design',
     description: 'Visual branding that gives your business a cohesive, elevated look.',
-    image: '/brand.jpg',
+    image: '/services/beautybrands.jpeg',
     imageAlt: 'Brand Identity & Aesthetic Design'
   },
   {
     id: 'strategy',
     title: 'Social Media Strategy',
     description: 'Custom strategy built around your goals, audience, and brand voice.',
-    image: '/strategy.jpg',
+    image: '/services/strategy.jpeg',
     imageAlt: 'Social Media Strategy'
   },
   {
     id: 'consulting',
     title: 'Consulting & 1:1 Guidance',
     description: 'Hands-on support to help you improve your content and grow confidently.',
-    image: '/consulting.jpg',
+    image: '/services/consulting.jpeg',
     imageAlt: 'Consulting & 1:1 Guidance'
   },
   {

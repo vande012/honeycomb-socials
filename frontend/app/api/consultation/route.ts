@@ -234,14 +234,15 @@ ${sanitizedData.message}
     `;
 
     // Email to client (confirmation)
+    const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com'}/blog`;
     const clientEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1f1e1c;">Thank You for Your Interest!</h2>
         <p>Hi ${sanitizedData.name},</p>
-        <p>Thank you for reaching out to Honeycomb Socials. We've received your consultation request and we're excited to learn more about ${sanitizedData.businessName}.</p>
-        <p>We'll review your information and get back to you within 24-48 hours to schedule a call and discuss how we can help elevate your social media presence.</p>
-        <p>In the meantime, feel free to check out our <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com'}/blog" style="color: #c9a86a;">blog</a> for tips and inspiration!</p>
-        <p>Best regards,<br>The Honeycomb Socials Team</p>
+        <p>Thank you for reaching out to Honeycomb Socials. I've received your consultation request and I'm excited to learn more about ${sanitizedData.businessName}.</p>
+        <p>I'll review your information and get back to you within 24-48 hours to schedule a call and discuss how I can help elevate your social media presence.</p>
+        <p>In the meantime, feel free to check out my <a href="${blogUrl}" style="color: #c9a86a;">blog at honeycombsocials.com/blog</a> for tips and inspiration!</p>
+        <p>Best regards,<br>Maggie Vandehey</p>
       </div>
     `;
 
@@ -250,12 +251,14 @@ Thank You for Your Interest!
 
 Hi ${sanitizedData.name},
 
-Thank you for reaching out to Honeycomb Socials. We've received your consultation request and we're excited to learn more about ${sanitizedData.businessName}.
+Thank you for reaching out to Honeycomb Socials. I've received your consultation request and I'm excited to learn more about ${sanitizedData.businessName}.
 
-We'll review your information and get back to you within 24-48 hours to schedule a call and discuss how we can help elevate your social media presence.
+I'll review your information and get back to you within 24-48 hours to schedule a call and discuss how I can help elevate your social media presence.
+
+In the meantime, feel free to check out my blog at honeycombsocials.com/blog for tips and inspiration!
 
 Best regards,
-The Honeycomb Socials Team
+Maggie Vandehey
     `;
 
     // Send emails

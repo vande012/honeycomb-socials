@@ -19,7 +19,7 @@ export default function BoutiqueLifestylePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/botique.jpg"
+            src="/industries/boutique.jpeg"
             alt="Boutique lifestyle background"
             fill
             className="object-cover"

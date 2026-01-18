@@ -26,25 +26,25 @@ interface Industry {
 const industries: Industry[] = [
   {
     id: 'salons',
-    title: 'Salons & Hairstylists',
+    title: 'Salons & HairStylists',
     href: '/industries/salons-hairstylists',
-    benefit: 'Showcase your work and book more clients',
+    benefit: 'Attract the right clients and book with intention',
     icon: Scissors,
     image: '/industries/salon.jpeg'
   },
   {
     id: 'nail-salons',
-    title: 'Nail Technicians & Salons',
+    title: 'Nail Technicians & Nail Salons',
     href: '/industries/nail-salons',
-    benefit: 'Turn your nail art into client bookings',
+    benefit: 'Consistent content that leads to appointments',
     icon: Sparkles,
-    image: '/industries/nail.jpeg'
+    image: '/industries/nails.jpeg'
   },
   {
     id: 'beauty-brands',
     title: 'Beauty Brands & Products',
     href: '/industries/beauty-brands',
-    benefit: 'Build brand loyalty through authentic content',
+    benefit: 'Content that supports long-term brand growth',
     icon: Package,
     image: '/industries/beauty.jpg'
   },
@@ -52,7 +52,7 @@ const industries: Industry[] = [
     id: 'lash-brow',
     title: 'Lash & Brow Artists',
     href: '/industries/lash-brow',
-    benefit: 'Transform before/afters into repeat bookings',
+    benefit: 'Clear positioning that turns views into bookings',
     icon: Eye,
     image: '/industries/eyebrow.jpg'
   },
@@ -60,39 +60,39 @@ const industries: Industry[] = [
     id: 'makeup-artists',
     title: 'Makeup Artists',
     href: '/industries/makeup-artists',
-    benefit: 'Portfolio that attracts your ideal clients',
+    benefit: 'Turn visibility into intentional bookings.',
     icon: Palette,
-    image: '/industries/makeup.jpg'
+    image: '/industries/makeup.jpeg'
   },
   {
     id: 'florist-wedding',
-    title: 'Florist & Wedding',
+    title: 'Florists & Wedding Businesses',
     href: '/industries/florist-wedding',
-    benefit: 'Capture the beauty of every arrangement',
+    benefit: 'Show up clearly in a crowded wedding market.',
     icon: Flower2,
-    image: '/industries/florist.jpg'
+    image: '/industries/florists.jpeg'
   },
   {
     id: 'boutique-lifestyle',
-    title: 'Boutique & Lifestyle',
+    title: 'Boutique & Lifestyle Brands',
     href: '/industries/boutique-lifestyle',
-    benefit: 'Curated style that drives sales',
+    benefit: 'Create content that reflects your brand and supports sales.',
     icon: ShoppingBag,
-    image: '/industries/botique.jpg'
+    image: '/industries/boutique.jpeg'
   },
   {
     id: 'gyms',
     title: 'Gyms & Fitness',
     href: '/industries/gyms',
-    benefit: 'Build community and attract members',
+    benefit: 'Show up consistently without burning out.',
     icon: Dumbbell,
-    image: '/industries/gym.jpg'
+    image: '/industries/gymsfitness.jpeg'
   },
   {
     id: 'spas-medspas',
-    title: 'Spas & MedSpas',
+    title: 'Spas & Medspas',
     href: '/industries/spas-medspas',
-    benefit: 'Attract clients seeking relaxation and professional treatments',
+    benefit: 'Create confidence and consistency across your online presence.',
     icon: Heart,
     image: '/industries/spa.jpeg'
   }
@@ -119,14 +119,14 @@ export function IndustriesSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-3 h-3 rounded-full bg-primary"></div>
             <p className="text-sm md:text-base font-medium text-foreground uppercase tracking-wider">
-              Industries We Support
+              Industries I Support
             </p>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-3xl">
-            Tailored Solutions for Diverse Sectors
+            Strategy-first social media for female-forward brands
           </h2>
           <p className="text-lg md:text-xl text-foreground/90 max-w-3xl">
-            We specialize in beauty and wellness businesses that value aesthetics as much as results.
+            I partner with beauty and wellness brands to build thoughtful, strategy-led social media.
           </p>
         </div>
 
@@ -191,14 +191,14 @@ export function IndustriesSection() {
         {/* Bottom CTA */}
         <div className="text-center bg-gradient-to-br from-card via-[#faf8f0] to-[#f5eed5] backdrop-blur-sm rounded-3xl p-8 md:p-12 border-2 border-primary/20 max-w-4xl mx-auto shadow-lg">
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-            If you're in the beauty industry and your socials don't reflect the quality of your work, we're here to change that.
+            See what social media looks like when it's built with intention
           </p>
           <Link
             href="/portfolio"
             className="inline-block px-8 py-4 bg-gradient-to-r from-primary via-[#d4b87a] to-[#c9a86a] hover:from-primary/95 hover:via-[#d4b87a]/95 hover:to-[#c9a86a]/95 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="View our portfolio"
+            aria-label="View my portfolio"
           >
-            See Our Work
+            See My Work
           </Link>
         </div>
       </div>

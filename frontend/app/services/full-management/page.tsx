@@ -83,7 +83,7 @@ export default function FullManagementPage() {
             <div className="order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/full-service.jpg"
+                  src="/services/full-service.jpeg"
                   alt="Full Social Media Management Service"
                   fill
                   className="object-cover"
