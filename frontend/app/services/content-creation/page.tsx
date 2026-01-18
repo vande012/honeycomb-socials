@@ -278,7 +278,7 @@ export default function ContentCreationPage() {
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl mb-8">
               <Image
-                src="/process/content-creation.jpg"
+                src="/process/Step 7.jpg"
                 alt="Content creation process and workflow"
                 fill
                 className="object-cover"
