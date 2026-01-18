@@ -167,7 +167,7 @@ export default function ConsultationPage() {
               Ready to take your social media to the next level?
             </p>
             <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed">
-              Let's discuss your goals and see how we can help your business grow with strategic, beautiful social media content.
+              Let's discuss your goals and see how I can help your business grow with strategic, beautiful social media content.
             </p>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function ConsultationPage() {
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl text-center">Get Started</CardTitle>
                 <CardDescription className="text-center">
-                  Fill out the form below and we'll get back to you soon
+                  Fill out the form below and I'll get back to you soon
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -324,7 +324,7 @@ export default function ConsultationPage() {
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Tell us about your goals <span className="text-destructive">*</span>
+                      Tell me about your goals <span className="text-destructive">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -361,7 +361,7 @@ export default function ConsultationPage() {
                     <div className="p-4 bg-success/10 border border-success/20 rounded-lg">
                       <p className="text-sm text-success-foreground flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4" />
-                        Thank you! We've received your request and will get back to you soon.
+                        Thank you! I've received your request and will get back to you soon.
                       </p>
                     </div>
                   )}
@@ -400,9 +400,9 @@ export default function ConsultationPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">📧</span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">We'll Review</h3>
+                <h3 className="font-semibold text-foreground mb-2">I'll Review</h3>
                 <p className="text-sm text-muted-foreground">
-                  We'll review your information and understand your goals
+                  I'll review your information and understand your goals
                 </p>
               </div>
               
@@ -410,9 +410,9 @@ export default function ConsultationPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">💬</span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">We'll Reach Out</h3>
+                <h3 className="font-semibold text-foreground mb-2">I'll Reach Out</h3>
                 <p className="text-sm text-muted-foreground">
-                  We'll get in touch within 24-48 hours to schedule a call
+                  I'll get in touch within 24-48 hours to schedule a call
                 </p>
               </div>
               
@@ -422,7 +422,7 @@ export default function ConsultationPage() {
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Let's Collaborate</h3>
                 <p className="text-sm text-muted-foreground">
-                  We'll discuss how we can help elevate your social media presence
+                  I'll see how I can help elevate your social media presence
                 </p>
               </div>
             </div>
