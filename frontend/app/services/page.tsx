@@ -21,7 +21,7 @@ const services = [
   {
     id: 'full-management',
     title: 'Full Social Media Management',
-    description: 'Complete done-for-you social media management. We handle strategy, content creation, scheduling, and optimization so you can focus on your business.',
+    description: 'Complete done-for-you social media management. I handle strategy, content creation, scheduling, and optimization so you can focus on your business.',
     image: '/services/full-service.jpeg',
     imageAlt: 'Full Social Media Management Services',
     href: '/services/full-management',
@@ -126,18 +126,18 @@ export default function ServicesPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-3 h-3 rounded-full bg-primary"></div>
               <p className="text-sm md:text-base font-medium text-foreground uppercase tracking-wider">
-                Our Services
+                My Services
               </p>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
-              Services <span className="italic font-serif">We Offer</span>
+              Services <span className="italic font-serif">I Offer</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-8">
               Customized social media support tailored to your beauty or wellness business. From full management to strategic consulting, we offer solutions that fit your goals and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/audit"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Book Free Consultation
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                 href="/process"
                 className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
               >
-                View Our Process
+                View My Process
               </Link>
             </div>
           </div>
@@ -222,16 +222,16 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              How Our Services Work
+              How My Services Work
             </h2>
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-8">
-              Every service follows our proven 7-step process—from initial discovery to ongoing optimization. Whether you choose full management or a single service, you'll experience the same level of strategy, quality, and professionalism.
+              Every service follows my proven 7-step process—from initial discovery to ongoing optimization. Whether you choose full management or a single service, you'll experience the same level of strategy, quality, and professionalism.
             </p>
             <Link
               href="/process"
               className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
-              Explore Our Process
+              Explore My Process
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
@@ -250,7 +250,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/audit"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Book Your Free Consultation
@@ -260,7 +260,7 @@ export default function ServicesPage() {
                 href="/portfolio"
                 className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
               >
-                See Our Work
+                See My Work
               </Link>
             </div>
           </div>

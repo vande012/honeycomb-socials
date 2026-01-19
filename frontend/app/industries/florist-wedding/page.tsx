@@ -37,7 +37,7 @@ export default function FloristWeddingPage() {
               Your floral artistry deserves content that captures its beauty and attracts brides and event planners. We create dreamy, strategic social media that turns inspiration into bookings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function FloristWeddingPage() {
               Let's create a social media strategy that showcases your artistry and fills your event calendar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

@@ -37,7 +37,7 @@ export default function MakeupArtistsPage() {
               Your artistry deserves content that showcases your talent and attracts the clients you want. We create strategic social media that turns followers into bookings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function MakeupArtistsPage() {
               Let's create a social media strategy that showcases your artistry and attracts the clients you want.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

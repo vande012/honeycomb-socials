@@ -100,12 +100,13 @@ export function Navbar({ className }: NavbarProps) {
                       onMouseEnter={() => setOpenDropdown(item.label)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
-                      <button
+                      <Link
+                        href={item.href}
                         className="text-base font-medium text-[#1f1e1c]/90 hover:text-[#c9a86a] transition-colors duration-200 flex items-center gap-1 group"
                       >
                         {item.label}
                         <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-                      </button>
+                      </Link>
                       
                       {/* Dropdown Menu */}
                       {openDropdown === item.label && (
@@ -153,6 +154,8 @@ export function Navbar({ className }: NavbarProps) {
               size="icon"
               className="lg:hidden text-[#1f1e1c] hover:text-[#1f1e1c]/80 hover:bg-[#fafafa]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className="h-5 w-5" />
@@ -172,16 +175,25 @@ export function Navbar({ className }: NavbarProps) {
                   <li key={item.label}>
                     {item.children ? (
                       <>
-                        <button
-                          onClick={() => setMobileOpenDropdown(mobileOpenDropdown === item.label ? null : item.label)}
-                          className="w-full flex items-center justify-between px-4 py-3 text-[#1f1e1c]/90 hover:text-[#c9a86a] hover:bg-[#fafafa] rounded-2xl border border-[#c9a86a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#c9a86a] focus:ring-offset-2 focus:ring-offset-white"
-                        >
-                          <span>{item.label}</span>
-                          <ChevronDown className={cn(
-                            "w-4 h-4 transition-transform duration-200",
-                            mobileOpenDropdown === item.label && "rotate-180"
-                          )} />
-                        </button>
+                        <div className="flex items-center gap-2">
+                          <Link
+                            href={item.href}
+                            className="flex-1 px-4 py-3 text-[#1f1e1c]/90 hover:text-[#c9a86a] hover:bg-[#fafafa] rounded-2xl border border-[#c9a86a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#c9a86a] focus:ring-offset-2 focus:ring-offset-white"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                          <button
+                            onClick={() => setMobileOpenDropdown(mobileOpenDropdown === item.label ? null : item.label)}
+                            className="px-3 py-3 text-[#1f1e1c]/90 hover:text-[#c9a86a] hover:bg-[#fafafa] rounded-2xl border border-[#c9a86a] transition-colors focus:outline-none focus:ring-2 focus:ring-[#c9a86a] focus:ring-offset-2 focus:ring-offset-white"
+                            aria-label={`Toggle ${item.label} submenu`}
+                          >
+                            <ChevronDown className={cn(
+                              "w-4 h-4 transition-transform duration-200",
+                              mobileOpenDropdown === item.label && "rotate-180"
+                            )} />
+                          </button>
+                        </div>
                         
                         {/* Mobile Submenu */}
                         {mobileOpenDropdown === item.label && (

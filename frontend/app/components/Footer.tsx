@@ -146,9 +146,11 @@ export function Footer() {
 
           {/* Industries */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-base md:text-lg uppercase tracking-wider">
-              {footerNav.industries.title}
-            </h3>
+            <Link href="/industries">
+              <h3 className="font-semibold text-white hover:text-primary mb-4 text-base md:text-lg uppercase tracking-wider transition-colors duration-300 cursor-pointer">
+                {footerNav.industries.title}
+              </h3>
+            </Link>
             <ul className="space-y-2.5">
               {footerNav.industries.links.map((link) => (
                 <li key={link.href}>
@@ -165,9 +167,11 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-base md:text-lg uppercase tracking-wider">
-              {footerNav.services.title}
-            </h3>
+            <Link href="/services">
+              <h3 className="font-semibold text-white hover:text-primary mb-4 text-base md:text-lg uppercase tracking-wider transition-colors duration-300 cursor-pointer">
+                {footerNav.services.title}
+              </h3>
+            </Link>
             <ul className="space-y-2.5">
               {footerNav.services.links.map((link) => (
                 <li key={link.href}>

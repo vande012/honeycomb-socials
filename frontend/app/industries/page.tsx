@@ -74,10 +74,10 @@ export default function IndustriesPage() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Industries We Serve
+            Industries I Serve
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We specialize in beauty and wellness businesses that value aesthetics as much as results.
+            I specialize in beauty and wellness businesses that value aesthetics as much as results.
           </p>
         </div>
 

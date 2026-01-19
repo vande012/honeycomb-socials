@@ -37,7 +37,7 @@ export default function GymsPage() {
               Build a strong community and attract members with motivating content. We create strategic social media that drives membership sales and keeps your community engaged.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function GymsPage() {
               Let's create a social media strategy that attracts members and builds a strong, engaged community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

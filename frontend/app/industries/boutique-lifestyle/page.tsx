@@ -37,7 +37,7 @@ export default function BoutiqueLifestylePage() {
               Grow your boutique with content that converts browsers into buyers. We create aesthetic, strategic social media that drives sales and builds a loyal community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function BoutiqueLifestylePage() {
               Let's create a social media strategy that drives sales and builds a loyal customer community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

@@ -37,7 +37,7 @@ export default function BeautyBrandsPage() {
               Build a beauty brand that stands out. We create aesthetic content and strategic marketing that connects with your audience and drives sales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function BeautyBrandsPage() {
             Let's create a social media strategy that grows your brand and drives product sales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/audit">
               <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
             </Link>
             <Link href="/services/brand-identity">

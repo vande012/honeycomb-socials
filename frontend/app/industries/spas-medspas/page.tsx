@@ -37,7 +37,7 @@ export default function SpasMedSpasPage() {
               Your spa or medspa deserves content that builds trust and attracts clients. We create strategic social media that showcases your services, whether you offer relaxation treatments or medical-grade aesthetic services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -204,7 +204,7 @@ export default function SpasMedSpasPage() {
               Let's create a social media strategy that builds trust and drives bookings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

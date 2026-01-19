@@ -139,7 +139,7 @@ export default function AboutPage() {
                   View Portfolio
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/audit"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
                 >
                   Let's Work Together
@@ -403,7 +403,7 @@ export default function AboutPage() {
                 All work begins with a clear strategy and a minimum level of support, then the scope is built around what will actually move the business forward. What's included depends on your goals, your stage of business, and the type of support you need most.
               </p>
               <Link
-                href="/contact"
+                href="/audit"
                 className="inline-block px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Get a Custom Quote
@@ -425,7 +425,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/audit"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Book a Consultation

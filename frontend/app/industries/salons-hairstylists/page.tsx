@@ -111,7 +111,7 @@ export default function SalonsHairstylistsPage() {
             Social media shouldn’t be harder than doing hair.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/audit">
@@ -265,7 +265,7 @@ export default function SalonsHairstylistsPage() {
               Let's create a social media strategy that brings in clients and showcases your talent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
               </Link>
               <Link href="/services">

@@ -93,7 +93,7 @@ export function FAQ({ faqs }: FAQProps) {
             We're here to help!
           </p>
           <a
-            href="/contact"
+            href="/audit"
             className="inline-block px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Get in Touch
