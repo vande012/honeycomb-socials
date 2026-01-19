@@ -19,7 +19,7 @@ export default function BeautyBrandsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
             <Image
-              src="/industries/beauty.jpg"
+              src="/services/beautybrands.jpeg"
               alt="Beauty brands background"
               fill
               className="object-cover object-top"

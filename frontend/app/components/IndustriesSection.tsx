@@ -46,7 +46,7 @@ const industries: Industry[] = [
     href: '/industries/beauty-brands',
     benefit: 'Content that supports long-term brand growth',
     icon: Package,
-    image: '/industries/beauty.jpg'
+    image: '/services/beautybrands.jpeg'
   },
   {
     id: 'lash-brow',
