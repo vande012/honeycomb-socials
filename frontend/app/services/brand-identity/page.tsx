@@ -48,13 +48,13 @@ export default function BrandIdentityPage() {
                 </p>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Brand Identity & <span className="italic font-serif">Aesthetic Design</span>
+                Brand Alignment for <span className="italic font-serif">Social Media</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-6 italic">
-                Visual branding that elevates your business
+                Visual direction that supports consistency, not a full rebrand.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                Create a cohesive, elevated brand aesthetic that makes your business instantly recognizable. Professional visual branding designed specifically for social media—because your online presence should reflect the quality of your services.
+                This service is designed for businesses who already have a brand foundation but want their social media to look more cohesive and intentional. Instead of a full branding overhaul, this focuses on aligning colors, fonts, and visual direction so your content feels consistent across platforms and easier to maintain over time.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -66,7 +66,7 @@ export default function BrandIdentityPage() {
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   View Process
                 </Link>
@@ -82,66 +82,60 @@ export default function BrandIdentityPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                What's Included in Your Brand Kit
+                What's Included
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
-                A comprehensive brand identity package designed specifically for social media. Everything you need for visual consistency across all platforms.
+                This is a lightweight brand alignment package, created specifically to support social media content. It is not a full branding kit or logo design service.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* Color Palette */}
+              {/* Color Direction */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Palette className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Color Palette</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Color Direction</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Simple, usable color guidance for social media.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Custom color selection</span>
+                    <span className="text-foreground/90">Primary and supporting color selections</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Primary & secondary colors</span>
+                    <span className="text-foreground/90">Guidance on how colors are used across content</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Accent color options</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Hex codes & RGB values</span>
+                    <span className="text-foreground/90">Easy reference for consistency</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Typography */}
+              {/* Typography Guidance */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Type className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Typography & Fonts</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Typography Guidance</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Font direction for captions and graphics.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Font pairings & selections</span>
+                    <span className="text-foreground/90">Recommended font pairings for social media use</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Heading & body font choices</span>
+                    <span className="text-foreground/90">Guidance on headings vs body text</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Typography hierarchy guidelines</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Social media optimization</span>
+                    <span className="text-foreground/90">Direction that supports readability and consistency</span>
                   </li>
                 </ul>
               </div>
@@ -154,50 +148,44 @@ export default function BrandIdentityPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Visual Direction</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Clarity around how your content should look and feel.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Photo style & aesthetic</span>
+                    <span className="text-foreground/90">Photo and video style guidance</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Graphic treatment guidelines</span>
+                    <span className="text-foreground/90">Editing and filter preferences if applicable</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Filter & editing preferences</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Visual consistency rules</span>
+                    <span className="text-foreground/90">Simple rules to maintain cohesion</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Mood Board & Guidelines */}
+              {/* Mood Board & Reference Guide */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Layers className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Mood Board & Guidelines</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Mood Board & Reference Guide</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">A visual reference to guide future content.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Comprehensive mood board</span>
+                    <span className="text-foreground/90">Mood board showing overall direction</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand guidelines document</span>
+                    <span className="text-foreground/90">Simple guidelines for social media usage</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Social media usage rules</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Do's and don'ts guide</span>
+                    <span className="text-foreground/90">Clear do's and don'ts to avoid inconsistency</span>
                   </li>
                 </ul>
               </div>
@@ -212,11 +200,8 @@ export default function BrandIdentityPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Our Brand Identity Process
+                My Brand Alignment Process
               </h2>
-              <p className="text-lg md:text-xl text-foreground/90">
-                Creating your brand kit follows Step 4 of our proven workflow, ensuring everything aligns with your business goals and aesthetic vision.
-              </p>
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl mb-8">
@@ -234,35 +219,35 @@ export default function BrandIdentityPage() {
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">1. Brand Discovery</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We start by understanding your business, target audience, and aesthetic preferences. This ensures your brand identity resonates with your ideal clients and reflects your unique style.
+                  We start with a focused conversation around your business, audience, and current brand presence. This helps clarify what already works and what needs alignment.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">2. Visual Development</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">2. Visual Direction</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  Using insights from your strategy session, we develop color palettes, select fonts, and define your visual direction. Every choice is intentional and aligned with your brand goals.
+                  Based on your strategy and preferences, I provide direction around colors, fonts, and visual style that make sense for your social media presence.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">3. Mood Board Creation</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We create a comprehensive mood board showcasing your aesthetic direction, photo styles, and visual consistency. This serves as a reference for all future content creation.
+                  A simple mood board is created to visually communicate your direction and act as a reference point for content moving forward.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">4. Guidelines & Approval</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  Your complete brand guidelines document is delivered for review. Up to 2 rounds of refinements are included to ensure everything is perfect before moving forward.
+                  You receive a concise brand alignment guide for review. Up to two rounds of refinements are included to ensure it feels right and usable.
                 </p>
               </div>
             </div>
 
             <div className="mt-8 bg-primary/10 border-l-4 border-primary rounded-r-lg p-4">
               <p className="text-sm md:text-base text-foreground/90 italic">
-                <strong>Important Note:</strong> Logo creation is not included in brand identity services. However, we'll beautifully integrate your existing logo into all branded content and provide guidelines for its usage on social media.
+                <strong>Important Note:</strong> This service does not include logo creation, full brand research, naming, or foundational brand strategy. It is intended to support social media consistency only. Your existing logo and brand elements will be integrated thoughtfully into your content.
               </p>
             </div>
           </div>
@@ -289,7 +274,7 @@ export default function BrandIdentityPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 View Other Services
               </Link>

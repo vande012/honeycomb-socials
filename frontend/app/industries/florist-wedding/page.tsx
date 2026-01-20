@@ -34,14 +34,11 @@ export default function FloristWeddingPage() {
               Social Media Marketing for Florists & Wedding Businesses
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your floral artistry deserves content that captures its beauty and attracts brides and event planners. We create dreamy, strategic social media that turns inspiration into bookings.
+              Your work is beautiful, but your social media should do more than inspire. It should help couples and planners understand your style, your experience, and whether you're the right fit before they ever inquire.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,110 +50,94 @@ export default function FloristWeddingPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Florists & Wedding Businesses
+              What I Offer Florists & Wedding Businesses
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Specialized social media strategies designed to showcase your floral artistry and attract brides, event planners, and clients who value beautiful design.
+              Strategy-first social media support designed to help couples and planners understand your style, your process, and whether you're the right fit before they ever inquire.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Wedding & Event Showcase</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Work That Sets Expectations</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight your best work with content that captures the beauty and emotion of your floral designs.
+                Content that shows what it's like to work with you, not just what the final result looks like.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Bridal bouquet features</span>
+                  <span className="text-foreground/90">Real examples of weddings and events you support</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Ceremony & reception installations</span>
+                  <span className="text-foreground/90">Context around scale, style, and scope of your work</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Event styling showcases</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Behind-the-scenes content</span>
+                  <span className="text-foreground/90">Messaging that helps couples self-select before reaching out</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Bridal & Event Planning Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Clarity Around Your Services</h3>
               <p className="text-muted-foreground mb-4">
-                Attract brides and event planners with content that speaks to their vision and needs.
+                Helping potential clients understand what you offer and how to work with you.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Seasonal inspiration content</span>
+                  <span className="text-foreground/90">Content that explains your services and approach</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Color palette features</span>
+                  <span className="text-foreground/90">Thoughtful visibility into your consultation or booking process</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consultation process highlights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Package & pricing transparency</span>
+                  <span className="text-foreground/90">Messaging that answers common questions before they're asked</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Aesthetic & Visual Branding</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Alignment & Consistency</h3>
               <p className="text-muted-foreground mb-4">
-                Create a cohesive visual identity that makes your brand instantly recognizable and memorable.
+                Making sure your social media feels cohesive without forcing a specific look.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Dreamy, on-brand aesthetic</span>
+                  <span className="text-foreground/90">Visual direction that supports recognition, not perfection</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consistent color palette & filters</span>
+                  <span className="text-foreground/90">Consistent tone and messaging across platforms</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Custom templates & graphics</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Instagram feed curation</span>
+                  <span className="text-foreground/90">Alignment that evolves naturally as your business grows</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Seasonal & Trending Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Seasonal & Ongoing Content Direction</h3>
               <p className="text-muted-foreground mb-4">
-                Stay relevant and inspire clients with seasonal trends and timely content.
+                Content planned with intention, not trends for the sake of trends.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Seasonal arrangement features</span>
+                  <span className="text-foreground/90">Seasonal planning tied to booking cycles and demand</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Holiday & special occasion content</span>
+                  <span className="text-foreground/90">Content that reflects real offerings and availability</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trend forecasting & inspiration</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Client testimonials & reviews</span>
+                  <span className="text-foreground/90">Social proof shared thoughtfully, not overused</span>
                 </li>
               </ul>
             </div>
@@ -172,13 +153,13 @@ export default function FloristWeddingPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In the wedding and event industry, your social media is often the first impression brides and event planners have of your work. With platforms like Instagram and Pinterest driving discovery, having beautiful, strategic content isn't optional—it's essential for bookings.
+              In the wedding and event industry, social media is often where couples and planners decide if your work feels like the right fit. They are not just looking for beautiful visuals. They are looking for clarity around your style, your experience, and what it's like to work with you.
             </p>
             <p>
-              We understand that running a florist business means you're focused on creating beautiful arrangements, not managing social media. That's where we come in. We handle the content strategy, photography guidance, and posting schedule so you can focus on what you do best.
+              Without a clear strategy, social media can become a stream of pretty posts that still lead to inconsistent inquiries. When content lacks direction, potential clients may admire your work without understanding whether you are right for their wedding or event.
             </p>
             <p>
-              Our approach combines dreamy, aesthetic content with real strategy. We help you showcase your work in a way that captures attention, builds trust, and drives inquiries from your ideal clients.
+              That's why a strategy-first approach matters. Instead of focusing only on aesthetics or trends, I help shape content that clearly communicates your offerings, your process, and your positioning. The goal is to build trust, set expectations, and support inquiries from couples and planners who already feel aligned before they reach out.
             </p>
           </div>
         </div>

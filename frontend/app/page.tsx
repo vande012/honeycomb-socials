@@ -272,13 +272,6 @@ export default async function Home() {
                 >
                   Book Free Consultation
                 </a>
-                <a
-                  href="/audit"
-                  className="px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
-                  aria-label="Get a free Instagram audit"
-                >
-                  Get Free Instagram Audit
-                </a>
               </div>
             </div>
           </div>

@@ -34,14 +34,14 @@ export default function SpasMedSpasPage() {
               Social Media Marketing for Spas & MedSpas
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your spa or medspa deserves content that builds trust and attracts clients. We create strategic social media that showcases your services, whether you offer relaxation treatments or medical-grade aesthetic services.
+              For spas and medspas, social media is often where potential clients decide if they trust you before booking. They are looking for professionalism, credibility, and a clear understanding of your services, not just visuals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
+              This approach focuses on clarity, consistency, and messaging that helps the right clients feel confident reaching out, whether you offer relaxation treatments, wellness services, or medical-grade aesthetics.
+            </p>
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,110 +53,94 @@ export default function SpasMedSpasPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Spas & MedSpas
+              What I Offer Spas & MedSpas
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Specialized social media strategies designed to showcase your services, build trust, and attract clients seeking relaxation, wellness, or medical-grade aesthetic treatments.
+              Strategy-first social media support designed to help clients understand your services, trust your expertise, and feel confident booking the next step.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Service & Treatment Showcase</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Service & Treatment Clarity</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight your services and treatments with content that builds trust and drives bookings.
+                Helping potential clients understand what you offer and what to expect.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Treatment & service features</span>
+                  <span className="text-foreground/90">Clear explanations of services and treatment categories</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Before & after transformations (medspas)</span>
+                  <span className="text-foreground/90">Content that sets realistic expectations and outcomes</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Facility & ambiance content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Technology & equipment highlights</span>
+                  <span className="text-foreground/90">Messaging that helps clients self-select before booking</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Trust & Authority Building</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Trust & Professional Positioning</h3>
               <p className="text-muted-foreground mb-4">
-                Build confidence in your services with content that establishes your expertise and credibility.
+                Building credibility through consistency and clarity.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Provider & staff features</span>
+                  <span className="text-foreground/90">Content that highlights expertise, experience, and care standards</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Certifications & credentials (medspas)</span>
+                  <span className="text-foreground/90">Educational posts that explain treatments without overwhelming</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Client testimonials & reviews</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Educational treatment content</span>
+                  <span className="text-foreground/90">Social proof shared thoughtfully, not excessively</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Booking & Consultation Strategy</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Booking & Consultation Support</h3>
               <p className="text-muted-foreground mb-4">
-                Convert followers into clients with strategic content that drives consultations and bookings.
+                Guiding clients toward the right next step.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Service package highlights</span>
+                  <span className="text-foreground/90">Clear calls to action around consultations and booking</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Seasonal & special promotions</span>
+                  <span className="text-foreground/90">Content that explains how to get started</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Gift card & membership content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consultation call-to-actions</span>
+                  <span className="text-foreground/90">Messaging that reduces hesitation and confusion</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Wellness & Brand Aesthetic</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Alignment & Atmosphere</h3>
               <p className="text-muted-foreground mb-4">
-                Create a cohesive visual identity that reflects your spa or medspa's atmosphere and professionalism.
+                Ensuring your online presence reflects the level of care you provide.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Calming, professional aesthetic</span>
+                  <span className="text-foreground/90">Visual direction that feels calm, professional, and credible</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consistent visual branding</span>
+                  <span className="text-foreground/90">Consistent tone and messaging across platforms</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Wellness & relaxation messaging</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Custom templates & graphics</span>
+                  <span className="text-foreground/90">Alignment that supports trust rather than trends</span>
                 </li>
               </ul>
             </div>
@@ -172,13 +156,13 @@ export default function SpasMedSpasPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In the wellness and aesthetic industry, your social media presence is crucial for building trust and attracting clients. Whether you offer relaxation treatments or medical-grade services, having strategic, professional content isn't optional—it's essential for growth.
+              In the wellness and aesthetic space, clients rarely book on impulse. They want to feel informed, comfortable, and confident before committing to a treatment or consultation.
             </p>
             <p>
-              We understand that running a spa or medspa means you're focused on providing exceptional treatments and patient care, not managing social media. That's where we come in. We handle the content strategy, compliance considerations, and posting schedule so you can focus on what you do best.
+              Without a clear strategy, social media can become a mix of service posts and promotions that still leave clients unsure. When messaging lacks direction, interest does not always turn into bookings.
             </p>
             <p>
-              Our approach combines professional, results-driven content with real booking strategy. We help you showcase your spa or medspa in a way that builds trust, drives consultations, and attracts clients seeking relaxation, wellness, or aesthetic treatments.
+              That's why a strategy-first approach matters. Instead of focusing on trends or constant promotions, I help shape content that clearly communicates your services, your standards, and what clients can expect. The goal is to build trust, set expectations, and support bookings from clients who already feel aligned before they reach out.
             </p>
           </div>
         </div>

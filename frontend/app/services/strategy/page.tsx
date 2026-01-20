@@ -51,10 +51,10 @@ export default function StrategyPage() {
                 Social Media <span className="italic font-serif">Strategy</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-6 italic">
-                Custom strategy built around your goals
+                Clear direction for what to post and why.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                Data-driven social media strategy designed specifically for your business. We research your audience, develop content pillars, create strategic calendars, and set measurable goals. Perfect for businesses ready to execute their own content with a solid plan in place.
+                This service is for business owners who want clarity before execution. Instead of guessing what content will work or posting inconsistently, this strategy gives you a clear plan built around your goals, your audience, and how social media should support your business. You execute the content yourself, but with direction that actually makes sense.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -66,7 +66,7 @@ export default function StrategyPage() {
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   View Process
                 </Link>
@@ -85,119 +85,111 @@ export default function StrategyPage() {
                 What's Included
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
-                A comprehensive strategy package that gives you the roadmap to social media success. Research, planning, and actionable insights you can implement.
+                This strategy service provides a clear, usable roadmap for your social media. It's designed to be implemented, not sit in a folder.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* Audience Research */}
+              {/* Audience & Direction */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Target className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Audience Research</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Audience & Direction</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Understanding who you're talking to and what they need to hear.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Target audience profiling</span>
+                    <span className="text-foreground/90">Clarification of your ideal audience</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Demographic & psychographic analysis</span>
+                    <span className="text-foreground/90">Insight into what your audience looks for on social media</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Competitor research & analysis</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Platform-specific audience insights</span>
+                    <span className="text-foreground/90">Platform focus based on your goals, not trends</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Content Strategy */}
+              {/* Content Direction */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Lightbulb className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Content Strategy</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Content Direction</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Defining what your content should consistently communicate.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content pillar development</span>
+                    <span className="text-foreground/90">Content pillars aligned with your business goals</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Topic ideation & themes</span>
+                    <span className="text-foreground/90">Topic direction and messaging themes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand voice & tone guidelines</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content mix & variety planning</span>
+                    <span className="text-foreground/90">Guidance around tone and voice for social media</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Content Calendar */}
+              {/* 30-Day Content Plan */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <CalendarIcon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">30-Day Content Calendar</h3>
+                  <h3 className="text-2xl font-bold text-foreground">30-Day Content Plan</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">A clear plan you can follow immediately.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Strategic post planning</span>
+                    <span className="text-foreground/90">30-day content calendar with post ideas</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content type & format recommendations</span>
+                    <span className="text-foreground/90">Recommended content types and formats</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Posting schedule & timing</span>
+                    <span className="text-foreground/90">Purpose and intent for each post</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Topic & purpose for each post</span>
+                    <span className="text-foreground/90">Notes on what to share and why</span>
                   </li>
                 </ul>
               </div>
 
-              {/* KPIs & Tracking */}
+              {/* Goals & Measurement */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <BarChart3 className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">KPIs & Tracking</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Goals & Measurement</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Knowing what to pay attention to.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Goal setting & KPIs</span>
+                    <span className="text-foreground/90">Clear goals tied to your strategy</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Metrics to track</span>
+                    <span className="text-foreground/90">Guidance on which metrics matter and which don't</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Analytics setup guidance</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Review & optimization recommendations</span>
+                    <span className="text-foreground/90">Direction for reviewing performance without overanalyzing</span>
                   </li>
                 </ul>
               </div>
@@ -212,10 +204,10 @@ export default function StrategyPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Our Strategy Development Process
+                My Strategy Development Process
               </h2>
               <p className="text-lg md:text-xl text-foreground/90">
-                Strategy services combine Steps 3 and 5 of our process—deep onboarding and comprehensive content calendar planning.
+                Strategy follows the same intentional workflow used across all Honeycomb Socials services, with a focus on clarity and alignment.
               </p>
             </div>
 
@@ -234,35 +226,35 @@ export default function StrategyPage() {
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">1. Strategy Session</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We start with a comprehensive strategy call where we dive deep into your business goals, target audience, brand personality, and content direction. This foundational session informs all strategy decisions.
+                  I start with a focused strategy call to understand your business, goals, audience, and current challenges. This sets the direction for everything that follows.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">2. Research & Analysis</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">2. Research & Review</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We conduct thorough audience research, competitor analysis, and platform-specific research to understand where your ideal clients are and what content resonates with them.
+                  I review your current social media presence, industry context, and audience behavior to identify what needs clarity and what should be prioritized.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">3. Strategy Development</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  Using insights from research and your goals, we develop content pillars, define your brand voice, and create a strategic framework for your social media presence.
+                  Based on your goals and insights, I define your content pillars, messaging direction, and overall approach to social media.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">4. Content Calendar Creation</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We create your 30-day content calendar with strategic post planning, topics, content types, and purposes. This calendar serves as your roadmap for the month ahead.
+                  You receive a 30-day content calendar outlining what to post, the purpose of each post, and how it supports your goals.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">5. Review & Refinement</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  You review the complete strategy package and content calendar. Up to 2 rounds of revisions are included to ensure everything aligns perfectly with your vision.
+                  You review the full strategy and calendar. Up to two rounds of revisions are included to ensure the plan feels aligned and realistic to implement.
                 </p>
               </div>
             </div>
@@ -290,7 +282,7 @@ export default function StrategyPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 View Other Services
               </Link>

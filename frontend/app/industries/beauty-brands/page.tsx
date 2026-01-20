@@ -34,14 +34,10 @@ export default function BeautyBrandsPage() {
               Social Media Marketing for Beauty Brands & Products
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Build a beauty brand that stands out. We create aesthetic content and strategic marketing that connects with your audience and drives sales.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            Content that clarifies your value, builds trust, and supports long-term growth.</p>
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,35 +49,31 @@ export default function BeautyBrandsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Beauty Brands
+              What I Offer Beauty Brands
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive social media strategies designed to build brand awareness, drive product sales, and create a loyal community around your beauty products.
+            Strategy-first social media support designed to clarify your messaging, position your products, and support consistent sales.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Product Launch Campaigns</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Social Media Strategy & Direction</h3>
               <p className="text-muted-foreground mb-4">
-                Strategic campaigns that build anticipation and drive sales for new product launches.
+              A clear plan for how your brand shows up online.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Pre-launch teaser content</span>
+                  <span className="text-foreground/90">Platform priorities based on your goals</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Launch day content strategy</span>
+                  <span className="text-foreground/90">Content pillars tied to the customer journey</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Influencer collaboration planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Multi-platform rollout strategy</span>
+                  <span className="text-foreground/90">Guidance on what to post and why</span>
                 </li>
               </ul>
             </div>
@@ -175,10 +167,10 @@ export default function BeautyBrandsPage() {
               The beauty industry is crowded, and standing out requires more than just great products. Your social media presence needs to tell a story, build trust, and create desire—all while maintaining an aesthetic that reflects your brand values.
             </p>
             <p>
-              We specialize in helping beauty brands create content that doesn't just look good—it performs. From product launches to community building, we develop strategies that align with your brand goals and drive measurable results.
+              I specialize in helping beauty brands create content that doesn't just look good—it performs. From product launches to community building, I develop strategies that align with your brand goals and drive measurable results.
             </p>
             <p>
-              Whether you're launching a new line or looking to scale your existing presence, we create customized social media support that fits your unique needs and budget. No cookie-cutter templates, just strategic content that works.
+              Whether you're launching a new line or looking to scale your existing presence, I create customized social media support that fits your unique needs and budget. No cookie-cutter templates, just strategic content that works.
             </p>
           </div>
         </div>

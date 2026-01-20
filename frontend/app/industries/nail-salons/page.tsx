@@ -19,7 +19,7 @@ export default function NailSalonsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/nails2.jpeg"
+            src="/industries/nails.jpeg"
             alt="Nail salon background"
             fill
             className="object-cover"
@@ -36,12 +36,9 @@ export default function NailSalonsPage() {
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
               Your nail artistry deserves content that showcases your skills and attracts the clients you want. I create strategic social media that turns followers into bookings.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -173,7 +170,7 @@ export default function NailSalonsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="relative w-full h-64 md:h-80 mb-8 rounded-xl overflow-hidden">
             <Image
-              src="/analytics.jpg"
+              src="/industries/nails2.jpeg"
               alt="Analytics dashboard"
               fill
               className="object-cover"

@@ -100,10 +100,10 @@ export default function ContentCreationPage() {
                 Content <span className="italic font-serif">Creation</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-6 italic">
-                Beautiful, on-brand content that converts
+                Strategy-led content, created with intention.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                Professional content creation tailored to your aesthetic. We create graphics, videos, Reels, and captions that showcase your brand and attract your ideal clients. Perfect for businesses that want high-quality content without the time investment.
+                This service is for businesses who want consistent, high-quality content without guessing what to post or why. Instead of just making things look good, content is created from a clear plan so every piece supports your goals. You get thoughtful execution without having to manage the details yourself.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -115,7 +115,7 @@ export default function ContentCreationPage() {
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   View Process
                 </Link>
@@ -131,130 +131,110 @@ export default function ContentCreationPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                What We Create
+                What I Create
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
-                Every piece of content is designed with your brand aesthetic and business goals in mind. Platform-optimized, strategic, and beautiful.
+                Content is created with both clarity and consistency in mind. Every piece has a purpose, and nothing is posted just to fill space.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {/* Graphics & Static Posts */}
+              {/* Graphics & Static Content */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <ImageIcon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Graphics & Static Posts</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Graphics & Static Content</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Visual content that supports recognition and understanding.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand-consistent visual designs</span>
+                    <span className="text-foreground/90">Brand-aligned static posts and carousels</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Instagram feed posts</span>
+                    <span className="text-foreground/90">Visuals that support your messaging, not distract from it</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Carousel graphics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Pinterest-optimized pins</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Custom templates</span>
+                    <span className="text-foreground/90">Platform-appropriate formatting when needed</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Video Content */}
+              {/* Short-Form Video Content */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Video className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Video Content & Reels</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Short-Form Video Content</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Edited, intentional video built from a clear direction.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Instagram Reels</span>
+                    <span className="text-foreground/90">Short-form video editing for Instagram, TikTok, and Shorts</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">TikTok videos</span>
+                    <span className="text-foreground/90">Guidance on what to film so content feels manageable</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">YouTube Shorts</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Professional video editing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Trending audio integration</span>
+                    <span className="text-foreground/90">Videos created to support your strategy, not chase trends</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Captions & Copy */}
+              {/* Captions & Messaging */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <FileText className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Captions & Copywriting</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Captions & Messaging</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Words that explain, position, and guide.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Strategic, engaging captions</span>
+                    <span className="text-foreground/90">Captions written to align with your brand voice</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand voice alignment</span>
+                    <span className="text-foreground/90">Messaging that supports clarity and trust</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Call-to-action optimization</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Story captions & text overlays</span>
+                    <span className="text-foreground/90">Clear calls to action where they make sense</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Hashtags & Optimization */}
+              {/* Content Optimization */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Hash className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Optimization & Strategy</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Content Optimization</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Ensuring content fits the platform and the goal.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Hashtag research & strategy</span>
+                    <span className="text-foreground/90">Platform-specific formatting where needed</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Platform-specific formatting</span>
+                    <span className="text-foreground/90">Clear intent behind each post</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content purpose & goals</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Performance-driven design</span>
+                    <span className="text-foreground/90">Design and structure aligned with your strategy</span>
                   </li>
                 </ul>
               </div>
@@ -269,16 +249,13 @@ export default function ContentCreationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Our Content Creation Process
+                How Content Creation Works
               </h2>
-              <p className="text-lg md:text-xl text-foreground/90">
-                Content creation follows our proven workflow to ensure every piece aligns with your brand and goals.
-              </p>
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl mb-8">
               <Image
-                src="/process/Step 7.jpg"
+                src="/services/content.jpeg"
                 alt="Content creation process and workflow"
                 fill
                 className="object-cover"
@@ -289,30 +266,30 @@ export default function ContentCreationPage() {
 
             <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50 space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">1. Strategy & Planning</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">1. Strategy & Direction</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We start with understanding your brand, goals, and target audience. This informs every content decision, ensuring each piece serves a purpose and aligns with your business objectives.
+                  Before anything is created, we clarify your goals, audience, and content direction. This ensures every piece of content has a reason for existing.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">2. Content Calendar Approval</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  You'll receive a 30-day content calendar outlining every post, its purpose, and the assets needed. You approve the plan before creation begins, ensuring alignment and avoiding revisions.
+                  You receive a 30-day content plan outlining each post, its purpose, and what is needed from you, if anything. The plan is approved before creation begins.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">3. Professional Creation</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">3. Content Creation</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  We create all approved content using your brand guidelines, ensuring visual consistency and professional quality. Every graphic, video, and caption is optimized for its platform and purpose.
+                  All approved content is created based on the strategy and direction we've set. This includes editing videos, creating graphics when needed, and refining captions.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">4. Review & Approval</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">4. Review & Delivery</h3>
                 <p className="text-foreground/90 leading-relaxed">
-                  Final approval is required before content is delivered. Minor tweaks are included; this ensures you're confident in every piece representing your brand.
+                  You review the final content before delivery. Minor adjustments are included so you feel confident in everything representing your brand.
                 </p>
               </div>
             </div>
@@ -340,7 +317,7 @@ export default function ContentCreationPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 View Other Services
               </Link>

@@ -106,10 +106,10 @@ export default function FullManagementPage() {
                 Full Social Media <span className="italic font-serif">Management</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-6 italic">
-                Complete done-for-you social media management
+                Strategy-led, done-for-you social media support.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                The most comprehensive service we offer. We handle everything from strategy and content creation to scheduling and optimization. You focus on your business while we grow your online presence with strategic, beautiful content.
+                This is for business owners who want their social media handled with intention, clarity, and consistency. Instead of juggling content ideas, trends, and posting schedules, this service provides a clear strategy and ongoing execution that supports your business goals. Everything is planned, created, and managed with purpose so your social media works in the background while you focus on running your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -121,7 +121,7 @@ export default function FullManagementPage() {
                 </Link>
                 <Link
                   href="/process"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   View Process
                 </Link>
@@ -140,7 +140,7 @@ export default function FullManagementPage() {
                 What's Included
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
-                Full social media management includes our complete 7-step process plus ongoing monthly management. Everything you need to grow your online presence.
+                Full social media management includes my complete strategy-first process followed by ongoing monthly support. This is not about posting more. It's about posting with direction.
               </p>
             </div>
 
@@ -153,106 +153,106 @@ export default function FullManagementPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Discovery & Strategy</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Every partnership starts with clarity.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Comprehensive onboarding call</span>
+                    <span className="text-foreground/90">In-depth onboarding and strategy call</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand goals & audience definition</span>
+                    <span className="text-foreground/90">Clear definition of goals, audience, and priorities</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Custom content strategy development</span>
+                    <span className="text-foreground/90">Platform focus based on what makes sense for your business</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Platform prioritization</span>
+                    <span className="text-foreground/90">Content direction built around long-term objectives</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Brand Identity */}
+              {/* Brand Alignment */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Palette className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Brand Identity</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Brand Alignment</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Ensuring your social media feels like a natural extension of your business.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Custom color palette</span>
+                    <span className="text-foreground/90">Collaborative visual direction, not a full rebrand</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Typography & font selection</span>
+                    <span className="text-foreground/90">Consistent tone and messaging across content</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Visual style guide & mood board</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand consistency guidelines</span>
+                    <span className="text-foreground/90">Guidelines that support cohesion without boxing you in</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Content Creation */}
+              {/* Content Planning & Creation */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Sparkles className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Content Creation</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Content Planning & Creation</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Intentional content built from strategy, not trends.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Monthly 30-day content calendar</span>
+                    <span className="text-foreground/90">Custom 30-day content calendar</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Professional graphics & visuals</span>
+                    <span className="text-foreground/90">Edited short-form videos and designed graphics as needed</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Reels, carousels, & static posts</span>
+                    <span className="text-foreground/90">Captions written to support clarity, trust, and action</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Strategic captions & hashtags</span>
+                    <span className="text-foreground/90">Clear notes on any assets needed from you</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Scheduling & Management */}
+              {/* Scheduling & Ongoing Management */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Clock className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Scheduling & Management</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Scheduling & Ongoing Management</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Execution that follows the plan.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Automated scheduling at optimal times</span>
+                    <span className="text-foreground/90">Content scheduled according to the monthly strategy</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Platform management & monitoring</span>
+                    <span className="text-foreground/90">Hands-off posting once content is approved</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Performance tracking & analytics</span>
+                    <span className="text-foreground/90">Monthly performance review to guide future content</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Monthly strategy refinement</span>
+                    <span className="text-foreground/90">Ongoing refinement based on patterns, not daily fluctuations</span>
                   </li>
                 </ul>
               </div>
@@ -367,7 +367,7 @@ export default function FullManagementPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 View Other Services
               </Link>

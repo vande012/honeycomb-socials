@@ -161,13 +161,10 @@ export default function ConsultationPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              ✨ Free Consultation ✨
+              Free <span className="italic font-serif">Consultation</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-6">
-              Ready to take your social media to the next level?
-            </p>
-            <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed">
-              Let's discuss your goals and see how I can help your business grow with strategic, beautiful social media content.
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+              Ready to take your social media to the next level? Let's discuss your goals and create a strategic plan to help your business grow with beautiful, high-performing content.
             </p>
           </div>
         </div>
@@ -177,11 +174,13 @@ export default function ConsultationPage() {
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto">
-            <Card className="border-2 border-primary/20 shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl text-center">Get Started</CardTitle>
-                <CardDescription className="text-center">
-                  Fill out the form below and I'll get back to you soon
+            <Card className="border-2 border-primary/20 shadow-xl bg-card">
+              <CardHeader className="border-b border-border/50 pb-6">
+                <CardTitle className="text-2xl md:text-3xl text-center font-bold">
+                  Get <span className="italic font-serif text-primary">Started</span>
+                </CardTitle>
+                <CardDescription className="text-center text-base">
+                  Fill out the form below and I'll get back to you within 24-48 hours
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -393,12 +392,12 @@ export default function ConsultationPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              What Happens Next?
+              What Happens <span className="italic font-serif text-primary">Next?</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📧</span>
+                <div className="w-16 h-16 border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">I'll Review</h3>
                 <p className="text-sm text-muted-foreground">
@@ -407,8 +406,8 @@ export default function ConsultationPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">💬</span>
+                <div className="w-16 h-16 border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">2</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">I'll Reach Out</h3>
                 <p className="text-sm text-muted-foreground">
@@ -417,12 +416,12 @@ export default function ConsultationPage() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">✨</span>
+                <div className="w-16 h-16 border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">3</span>
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Let's Collaborate</h3>
                 <p className="text-sm text-muted-foreground">
-                  I'll see how I can help elevate your social media presence
+                  We'll discuss how to elevate your social media presence
                 </p>
               </div>
             </div>

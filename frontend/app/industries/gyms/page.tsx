@@ -34,14 +34,11 @@ export default function GymsPage() {
               Social Media Marketing for Gyms & Fitness Businesses
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Build a strong community and attract members with motivating content. We create strategic social media that drives membership sales and keeps your community engaged.
+              Growing a gym isn't about posting workouts every day. It's about helping the right people understand your environment, your programs, and whether your gym fits their goals. This approach focuses on clarity, consistency, and messaging that supports both new member decisions and long-term retention.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,110 +50,94 @@ export default function GymsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Gyms & Fitness Businesses
+              What I Offer Gyms & Fitness Businesses
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive social media strategies designed to build community, drive membership sales, and keep your members engaged and motivated.
+              Strategy-first social media support designed to help potential members understand what makes your gym different and feel confident walking through the door.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Community Building Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Community-Focused Content</h3>
               <p className="text-muted-foreground mb-4">
-                Build a strong, engaged community around your gym with content that motivates and connects.
+                Content that reflects the culture of your gym, not just the workouts.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Member spotlights & success stories</span>
+                  <span className="text-foreground/90">Messaging that highlights your environment and values</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Behind-the-scenes gym content</span>
+                  <span className="text-foreground/90">Real context around who your gym is for</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Community events & challenges</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Instructor & trainer features</span>
+                  <span className="text-foreground/90">Content that supports belonging and long-term commitment</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Membership & Sales Strategy</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Membership Clarity & Positioning</h3>
               <p className="text-muted-foreground mb-4">
-                Convert followers into members with strategic content that highlights your gym's value.
+                Helping potential members understand what they're signing up for.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Membership package highlights</span>
+                  <span className="text-foreground/90">Clear communication around programs, classes, and training options</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">New member promotions</span>
+                  <span className="text-foreground/90">Content that explains who your gym is best suited for</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Class schedule & program features</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Free trial & tour content</span>
+                  <span className="text-foreground/90">Messaging that reduces hesitation before joining</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Motivational & Educational Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Educational & Trust-Building Content</h3>
               <p className="text-muted-foreground mb-4">
-                Keep your community engaged with valuable fitness tips and motivational content.
+                Content that supports confidence, not overwhelm.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Workout tips & tutorials</span>
+                  <span className="text-foreground/90">Simple explanations around training approaches and expectations</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Nutrition & wellness content</span>
+                  <span className="text-foreground/90">Educational content tied to your programs, not trends</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Transformation stories</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Motivational quotes & inspiration</span>
+                  <span className="text-foreground/90">Messaging that builds credibility without overposting</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Facility & Program Showcase</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Facility & Program Context</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight what makes your gym unique and attract members who align with your offerings.
+                Helping people visualize the experience before they visit.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Facility tours & equipment features</span>
+                  <span className="text-foreground/90">Clear representation of your space and offerings</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Class & program highlights</span>
+                  <span className="text-foreground/90">Content that sets realistic expectations</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Specialty training features</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Amenities & perks showcase</span>
+                  <span className="text-foreground/90">Direction that supports informed decisions</span>
                 </li>
               </ul>
             </div>
@@ -172,13 +153,13 @@ export default function GymsPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In the fitness industry, your social media presence is crucial for attracting new members and keeping current members engaged. With platforms like Instagram and TikTok driving discovery, having strategic, community-focused content isn't optional—it's essential for growth.
+              For gyms and fitness businesses, social media is often where potential members decide if they feel comfortable showing up. They are not just looking for motivation. They are looking for clarity around your culture, your coaching style, and whether your gym fits their lifestyle.
             </p>
             <p>
-              We understand that running a gym means you're focused on training, programming, and member experience, not creating content. That's where we come in. We handle the content strategy, video production guidance, and posting schedule so you can focus on what you do best.
+              Without a clear strategy, social media can become a mix of workouts, quotes, and announcements that still leave people unsure about joining. When content lacks direction, interest doesn't always turn into memberships.
             </p>
             <p>
-              Our approach combines motivational content with real membership strategy. We help you showcase your gym in a way that builds community, drives membership sales, and keeps your members engaged and motivated.
+              That's why a strategy-first approach matters. Instead of focusing on constant motivation or trends, I help shape content that clearly communicates what your gym offers, who it's for, and what members can expect. The goal is to support confident decisions, stronger retention, and a community that grows intentionally.
             </p>
           </div>
         </div>

@@ -34,14 +34,11 @@ export default function MakeupArtistsPage() {
               Social Media Marketing for Makeup Artists
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your artistry deserves content that showcases your talent and attracts the clients you want. We create strategic social media that turns followers into bookings.
+              Your work is beautiful, but your social media should do more than display final looks. It should help the right clients understand your skill, your style, and your process before they reach out.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,110 +50,94 @@ export default function MakeupArtistsPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Makeup Artists
+              What I Offer Makeup Artists
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Specialized social media strategies designed for makeup artists who want to showcase their work and attract brides, special event clients, and brand collaborations.
+              Content That Positions Your Expertise - Social media that helps the right clients understand your skill and style before they reach out.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Portfolio Showcase Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Content That Positions Your Expertise</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight your best work with content that showcases your range and attracts your ideal clients.
+                Social media that helps the right clients understand your skill and style before they reach out.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Bridal makeup transformations</span>
+                  <span className="text-foreground/90">Clear visual direction that reflects your signature work</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Editorial & creative looks</span>
+                  <span className="text-foreground/90">Content that communicates your approach, not just the final look</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Before & after reveals</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Style variety showcases</span>
+                  <span className="text-foreground/90">Messaging that attracts aligned bridal and event clients</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Bridal & Special Event Marketing</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Bridal & Event Client Positioning</h3>
               <p className="text-muted-foreground mb-4">
-                Attract brides and special event clients with content that speaks to their needs and dreams.
+                Helping potential clients understand if you're the right fit for their day.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Bridal inspiration content</span>
+                  <span className="text-foreground/90">Content that explains your services and process clearly</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Wedding day timeline content</span>
+                  <span className="text-foreground/90">Messaging that sets expectations around booking, trials, and timelines</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trial session highlights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Special occasion packages</span>
+                  <span className="text-foreground/90">Posts that speak to calm, confidence, and professionalism</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Tutorial & Educational Content</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Education-Led Content</h3>
               <p className="text-muted-foreground mb-4">
-                Build authority and engage your audience with valuable makeup tips and techniques.
+                Building trust through clarity, not tutorials for the sake of tutorials.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Step-by-step tutorial videos</span>
+                  <span className="text-foreground/90">Content that answers common client questions</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Product reviews & recommendations</span>
+                  <span className="text-foreground/90">Thoughtful explanations around products, techniques, and prep</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Trend forecasting content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Behind-the-scenes process content</span>
+                  <span className="text-foreground/90">Behind-the-scenes context when it supports understanding</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Collaboration & Growth</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Alignment & Professional Growth</h3>
               <p className="text-muted-foreground mb-4">
-                Position yourself for brand partnerships and scale your business with strategic content.
+                Content that supports long-term credibility, not quick partnerships.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Brand partnership content</span>
+                  <span className="text-foreground/90">Messaging that reflects your professionalism and values</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Professional portfolio development</span>
+                  <span className="text-foreground/90">Portfolio-style content used intentionally, not constantly</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Client testimonial features</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Industry networking content</span>
+                  <span className="text-foreground/90">Social proof shared with purpose and restraint</span>
                 </li>
               </ul>
             </div>
@@ -172,13 +153,13 @@ export default function MakeupArtistsPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              For makeup artists, your social media is your digital portfolio. Brides and clients are scrolling through Instagram and TikTok looking for artists who can create the look they envision, and your content is how they make that decision.
+              For makeup artists, social media is often where potential clients decide if they trust you before reaching out. They are looking for professionalism, consistency, and a clear sense of your style and process, not just a single finished look.
             </p>
             <p>
-              We understand that your focus is on perfecting your craft and creating beautiful looks, not managing social media. That's where we come in. We handle the content strategy, posting schedule, and engagement so you can focus on what you do best.
+              Without a strategy, social media can start to feel like a never-ending portfolio update. Posting beautiful work without direction often leads to scattered messaging and inconsistent inquiries.
             </p>
             <p>
-              Our approach combines stunning portfolio content with strategic marketing that attracts your ideal clients. We help you showcase your work in a way that builds trust, drives inquiries, and keeps your calendar booked.
+              That's why a strategy-first approach matters. Instead of focusing on volume or trends, I help shape content that clearly communicates who you serve, what you offer, and what clients can expect when they book with you. The goal is to build confidence, set expectations, and support steady inquiries without social media becoming another full-time job.
             </p>
           </div>
         </div>

@@ -231,12 +231,7 @@ export default function ProcessPage() {
                 Book Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <Link
-                href="/audit"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary hover:bg-primary/10 text-foreground font-semibold rounded-lg transition-all duration-300"
-              >
-                Get Free Instagram Audit
-              </Link>
+            
             </div>
           </div>
         </div>
@@ -268,7 +263,7 @@ export default function ProcessPage() {
                   }`}
                 >
                   {/* Image Section - Sticky on desktop for better alignment */}
-                  <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} relative lg:sticky lg:top-24`}>
+                  <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} relative lg:sticky lg:top-[132px]`}>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                       <Image
                         src={step.image}

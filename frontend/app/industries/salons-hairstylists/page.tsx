@@ -110,12 +110,9 @@ export default function SalonsHairstylistsPage() {
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
             Social media shouldn’t be harder than doing hair.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>

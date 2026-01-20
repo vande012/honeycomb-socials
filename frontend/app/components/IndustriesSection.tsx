@@ -102,15 +102,15 @@ export function IndustriesSection() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-background md:bg-transparent">
       {/* Background Image - Hidden on mobile */}
-      <div className="absolute inset-0 hidden md:block">
+      <div className="absolute inset-0">
         <Image
-          src="/industries.jpg"
+          src="/industries.jpeg"
           alt="Beauty industry professional"
           fill
           className="object-cover object-center brightness-90"
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white/10" />
       </div>
 
       <div className="relative container mx-auto px-4 md:px-8">
@@ -118,14 +118,14 @@ export function IndustriesSection() {
         <div className="mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-3 h-3 rounded-full bg-primary"></div>
-            <p className="text-sm md:text-base font-medium text-foreground uppercase tracking-wider">
+            <p className="text-md md:text-base font-bold text-foreground uppercase tracking-wider">
               Industries I Support
             </p>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-3xl">
             Strategy-first social media for female-forward brands
           </h2>
-          <p className="text-lg md:text-xl text-foreground/90 max-w-3xl">
+          <p className="text-xl md:text-xl text-bold max-w-3xl">
             I partner with beauty and wellness brands to build thoughtful, strategy-led social media.
           </p>
         </div>
@@ -151,9 +151,6 @@ export function IndustriesSection() {
                     quality={90}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-
-                  {/* Bottom gradient overlay - more prominent on mobile for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent md:from-background/60 md:via-background/30 md:to-transparent" />
                   
                   {/* Icon Badge - Top Right */}
                   <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-300 z-10">

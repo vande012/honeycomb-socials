@@ -52,10 +52,10 @@ export default function ConsultingPage() {
                 Consulting & <span className="italic font-serif">1:1 Guidance</span>
               </h1>
               <p className="text-xl md:text-2xl text-primary font-semibold mb-6 italic">
-                Hands-on support to help you grow confidently
+                Support when you want direction, not delegation.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                Personalized coaching and consulting to improve your social media strategy and execution. Perfect for businesses ready to take their social media in-house or looking for expert guidance to level up their current approach.
+                This service is for business owners who want to understand their social media better and feel confident executing it themselves. Instead of done-for-you management, consulting gives you clarity, feedback, and next steps so you can move forward without second-guessing every post.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -86,7 +86,7 @@ export default function ConsultingPage() {
                 Consulting Services Available
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto">
-                Flexible consulting packages tailored to your specific needs. Choose what works best for your business goals and timeline.
+                Consulting is flexible and designed around what you actually need help with right now. There are no rigid packages or long-term commitments required.
               </p>
             </div>
 
@@ -99,22 +99,23 @@ export default function ConsultingPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Strategy Sessions</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Clear direction for what to focus on and why.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Brand goals & audience definition</span>
+                    <span className="text-foreground/90">Clarifying goals and priorities</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content strategy development</span>
+                    <span className="text-foreground/90">Audience and positioning guidance</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Platform prioritization</span>
+                    <span className="text-foreground/90">Content direction and platform focus</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Actionable roadmap creation</span>
+                    <span className="text-foreground/90">A realistic action plan you can implement</span>
                   </li>
                 </ul>
               </div>
@@ -127,50 +128,52 @@ export default function ConsultingPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Content Audits</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Honest feedback on what's working and what's not.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Account performance analysis</span>
+                    <span className="text-foreground/90">Review of current content and messaging</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content quality review</span>
+                    <span className="text-foreground/90">Identification of gaps and missed opportunities</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Improvement recommendations</span>
+                    <span className="text-foreground/90">Clear recommendations for improvement</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Written audit report</span>
+                    <span className="text-foreground/90">Written notes you can refer back to</span>
                   </li>
                 </ul>
               </div>
 
-              {/* 1-on-1 Coaching */}
+              {/* 1:1 Coaching Calls */}
               <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <MessageSquare className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">1-on-1 Coaching Calls</h3>
+                  <h3 className="text-2xl font-bold text-foreground">1:1 Coaching Calls</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Real-time guidance and problem-solving.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Personalized Q&A sessions</span>
+                    <span className="text-foreground/90">Open Q&A around your content and strategy</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Real-time feedback & guidance</span>
+                    <span className="text-foreground/90">Feedback on ideas before you post</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Troubleshooting & problem-solving</span>
+                    <span className="text-foreground/90">Help troubleshooting what feels confusing or stuck</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Custom training & education</span>
+                    <span className="text-foreground/90">Direction tailored to your business, not trends</span>
                   </li>
                 </ul>
               </div>
@@ -183,22 +186,23 @@ export default function ConsultingPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Implementation Support</h3>
                 </div>
+                <p className="text-foreground/80 mb-4">Help bridging the gap between knowing and doing.</p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Content planning assistance</span>
+                    <span className="text-foreground/90">Guidance on content planning and organization</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Tool recommendations & setup</span>
+                    <span className="text-foreground/90">Tool recommendations when helpful</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Best practices & tips</span>
+                    <span className="text-foreground/90">Best practices explained simply</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground/90">Ongoing email support</span>
+                    <span className="text-foreground/90">Follow-up support as needed</span>
                   </li>
                 </ul>
               </div>
@@ -215,9 +219,6 @@ export default function ConsultingPage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 How Consulting Works
               </h2>
-              <p className="text-lg md:text-xl text-foreground/90">
-                Consulting services are flexible and tailored to your needs. We start with understanding your goals and challenges, then provide personalized guidance and support.
-              </p>
             </div>
 
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl mb-8">
@@ -231,70 +232,13 @@ export default function ConsultingPage() {
               />
             </div>
 
-            <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50 space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">1. Discovery & Assessment</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  We start by understanding your current social media situation, goals, and challenges. This may include reviewing your existing content, analytics, and discussing what's working and what isn't.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">2. Personalized Strategy</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  Based on your assessment, we develop a customized strategy and action plan. This includes specific recommendations, content ideas, and a roadmap for improvement.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">3. Implementation Guidance</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  Through coaching calls, we provide hands-on support as you implement the strategy. You'll get real-time feedback, answers to questions, and adjustments as needed.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">4. Ongoing Support</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  Consulting packages can include ongoing support through email, follow-up calls, or regular check-ins. This ensures you have guidance as you continue to grow and evolve your social media.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who It's For Section */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Who Benefits from Consulting?
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <h3 className="text-xl font-bold text-foreground mb-3">Businesses Taking Social Media In-House</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  Perfect if you're ready to manage your own social media but want expert guidance to get started on the right foot. We'll help you build systems, create strategies, and provide training.
-                </p>
-              </div>
-
-              <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <h3 className="text-xl font-bold text-foreground mb-3">Businesses Looking to Level Up</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  If you're already posting but not seeing the results you want, consulting can help identify what's missing and provide actionable improvements. Get an outside perspective and expert recommendations.
-                </p>
-              </div>
-
-              <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <h3 className="text-xl font-bold text-foreground mb-3">Businesses with Specific Challenges</h3>
-                <p className="text-foreground/90 leading-relaxed">
-                  Whether you're struggling with engagement, conversions, brand consistency, or platform strategy, consulting provides focused guidance on your specific challenges.
-                </p>
-              </div>
+            <div className="bg-card/95 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
+              <p className="text-foreground/90 leading-relaxed">
+                I start by understanding where you are, what you're trying to achieve, and what feels overwhelming or unclear. From there, I provide direct guidance, feedback, and next steps so you can move forward with confidence.
+              </p>
+              <p className="text-foreground/90 leading-relaxed mt-4">
+                This isn't about overhauling everything or adding more to your plate. It's about creating clarity and momentum that fits your business.
+              </p>
             </div>
           </div>
         </div>
@@ -320,7 +264,7 @@ export default function ConsultingPage() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-lg transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 View Other Services
               </Link>

@@ -34,14 +34,11 @@ export default function BoutiqueLifestylePage() {
               Social Media Marketing for Boutiques & Lifestyle Brands
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Grow your boutique with content that converts browsers into buyers. We create aesthetic, strategic social media that drives sales and builds a loyal community.
+              Social media for boutiques that helps shoppers understand what you sell and why it's worth buying.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,110 +50,94 @@ export default function BoutiqueLifestylePage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Boutiques & Lifestyle Brands
+              What I Offer Boutiques & Lifestyle Brands
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive social media strategies designed to drive e-commerce sales, build brand awareness, and create a loyal customer community.
+              Strategy-first social media support designed to help customers understand your products, your brand, and why buying from you makes sense.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Product Showcase & Styling</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Product Positioning Content</h3>
               <p className="text-muted-foreground mb-4">
-                Highlight your products with content that showcases their appeal and drives sales.
+                Content that helps shoppers quickly understand what you sell and who it's for.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Product feature content</span>
+                  <span className="text-foreground/90">Clear product-focused messaging that highlights value, not just visuals</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Styling & outfit inspiration</span>
+                  <span className="text-foreground/90">Content that explains how products fit into real life</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">New arrival highlights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Shopping-friendly formats</span>
+                  <span className="text-foreground/90">Direction that supports confident buying decisions</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">E-commerce & Sales Strategy</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Sales-Supporting Strategy</h3>
               <p className="text-muted-foreground mb-4">
-                Convert followers into customers with strategic sales content and promotions.
+                Social media that supports purchasing without relying on constant promotions.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Sale & promotion campaigns</span>
+                  <span className="text-foreground/90">Clear communication around collections, drops, and availability</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Limited-time offers</span>
+                  <span className="text-foreground/90">Thoughtful calls to action that guide customers naturally</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Gift guide content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Cart abandonment reminders</span>
+                  <span className="text-foreground/90">Content planned around the buyer journey, not urgency tactics</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Lifestyle & Community Building</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Story & Lifestyle Context</h3>
               <p className="text-muted-foreground mb-4">
-                Build a loyal community around your brand with lifestyle content that resonates.
+                Helping customers connect with your brand beyond a single product.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Behind-the-scenes content</span>
+                  <span className="text-foreground/90">Messaging that reflects your values and point of view</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Customer spotlights & UGC</span>
+                  <span className="text-foreground/90">Context that helps customers feel aligned with your brand</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Brand story & values content</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Seasonal & trend content</span>
+                  <span className="text-foreground/90">Social proof used intentionally, not excessively</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Aesthetic & Visual Identity</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Brand Alignment & Consistency</h3>
               <p className="text-muted-foreground mb-4">
-                Create a cohesive visual brand that makes your boutique instantly recognizable.
+                Making sure your social media feels cohesive without locking you into a look.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Consistent brand aesthetic</span>
+                  <span className="text-foreground/90">Visual direction that supports recognition over time</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Custom templates & graphics</span>
+                  <span className="text-foreground/90">Consistent tone and messaging across platforms</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Brand voice development</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Instagram feed curation</span>
+                  <span className="text-foreground/90">Structure that allows your brand to evolve as you grow</span>
                 </li>
               </ul>
             </div>
@@ -168,17 +149,17 @@ export default function BoutiqueLifestylePage() {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-            Why Social Media Matters for Boutiques
+            Why Social Media Matters for Boutiques & Lifestyle Brands
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In today's retail landscape, your social media presence is often the first touchpoint potential customers have with your brand. With platforms like Instagram and TikTok driving discovery, having strategic, sales-focused content isn't optional—it's essential for growth.
+              For boutiques and lifestyle brands, social media is often where customers decide if they trust your brand enough to buy. They are looking for clarity around your products, your style, and what sets you apart before they ever click through to your site.
             </p>
             <p>
-              We understand that running a boutique means you're focused on inventory, customer service, and day-to-day operations, not creating content. That's where we come in. We handle the content strategy, product photography guidance, and posting schedule so you can focus on what you do best.
+              Without a clear strategy, social media can become a stream of product posts that still lead to hesitation at checkout. When messaging lacks direction, interest doesn't always turn into action.
             </p>
             <p>
-              Our approach combines aesthetic product content with real e-commerce strategy. We help you showcase your products in a way that builds desire, drives traffic to your store, and converts browsers into buyers.
+              That's why a strategy-first approach matters. Instead of focusing on constant promotions or aesthetic trends, I help shape content that explains your value, builds trust, and supports confident purchasing decisions. The goal is not just visibility, but clarity that leads to sales.
             </p>
           </div>
         </div>

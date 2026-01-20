@@ -34,14 +34,11 @@ export default function LashBrowPage() {
               Social Media Marketing for Lash & Brow Artists
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 mb-8 font-bold">
-              Your transformations speak for themselves. We create content that showcases your artistry and attracts clients who appreciate quality work.
+              Your work is excellent, but your social media should do more than show results. It should help clients understand your process, your professionalism, and whether you're the right fit before they book.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Link href="/audit">
                 <Button size="lg" className="w-full sm:w-auto">Book Free Consultation</Button>
-              </Link>
-              <Link href="/audit">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">Get Free Consultation</Button>
               </Link>
             </div>
           </div>
@@ -53,35 +50,31 @@ export default function LashBrowPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              What We Offer Lash & Brow Artists
+              What I Offer Lash & Brow Artists
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Specialized content strategies designed to showcase your transformations and attract clients who value quality artistry.
+              Strategy-first social media support designed to help your content clearly communicate what you offer and build trust with potential clients.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Before & After Showcase</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Content With a Purpose</h3>
               <p className="text-muted-foreground mb-4">
-                Transformations that stop the scroll and drive bookings with strategic before-and-after content.
+                Every post is intentional, not filler.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">High-quality transformation photos</span>
+                  <span className="text-foreground/90">Strategy-led content direction</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Video transformation reveals</span>
+                  <span className="text-foreground/90">Clear messaging around services and specialties</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Client permission & privacy protocols</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/90">Platform-optimized formats</span>
+                  <span className="text-foreground/90">Consistency without relying on transformations</span>
                 </li>
               </ul>
             </div>
@@ -172,13 +165,13 @@ export default function LashBrowPage() {
           </h2>
           <div className="space-y-6 text-foreground/90 leading-relaxed">
             <p className="text-lg">
-              In the lash and brow industry, your social media is your portfolio. Potential clients are looking for artists who can deliver the look they want, and your content is how they make that decision.
+              For lash and brow artists, social media is often where clients decide if they trust you before they ever book. They are looking for clarity, professionalism, and confidence in your work, not just a quick visual result.
             </p>
             <p>
-              We understand that your focus is on perfecting your craft, not creating content. That's why we handle the strategy, photography guidance, and posting schedule so you can focus on what you do best: creating beautiful transformations.
+              Without a clear strategy, it's easy to post consistently and still feel unsure if your content is actually helping your business. Social media should support your bookings, not add pressure or distraction from your craft.
             </p>
             <p>
-              Our approach combines stunning before-and-after content with strategic posting that attracts your ideal clients. We help you showcase your work in a way that builds trust, drives bookings, and keeps your schedule full.
+              That's where a strategy-first approach matters. Instead of relying on trends or constant transformations, I focus on helping your content clearly communicate what you offer, who it's for, and what clients can expect. The goal is to build trust, set expectations, and make booking feel like an easy next step.
             </p>
           </div>
         </div>

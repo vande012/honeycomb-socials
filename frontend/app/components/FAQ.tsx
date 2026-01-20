@@ -90,7 +90,7 @@ export function FAQ({ faqs }: FAQProps) {
             still have questions?
           </p>
           <p className="text-lg md:text-xl text-[#1f1e1c] mb-6">
-            We're here to help!
+            I'm here to help!
           </p>
           <a
             href="/audit"
