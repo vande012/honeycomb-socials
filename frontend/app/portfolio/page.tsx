@@ -13,7 +13,7 @@ import {
 
 export const metadata = {
   title: 'Portfolio | Honeycomb Socials',
-  description: 'View our portfolio of social media success stories. See how we help beauty and wellness businesses grow with strategic content that converts. Get inspired.',
+  description: 'View my portfolio of social media success stories. See how I help beauty and wellness businesses grow with strategic content that converts. Get inspired.',
 }
 
 export default function PortfolioPage() {
@@ -33,7 +33,7 @@ export default function PortfolioPage() {
               Our <span className="italic font-serif">Work</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed">
-              Real results from real businesses. See how we've helped brands improve their social media presence, grow their audience, and connect authentically with their customers.
+              Real results from real businesses. See how I've helped brands improve their social media presence, grow their audience, and connect authentically with their customers.
             </p>
           </div>
         </div>
