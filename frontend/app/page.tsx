@@ -225,7 +225,7 @@ export default async function Home() {
       </section>
 
       {/* About Section - Airy Feminine Aesthetic */}
-      <section className="relative w-full overflow-hidden bg-white pt-0 pb-16 md:pt-20 md:pb-20 lg:py-24">
+      <section className="relative w-full overflow-hidden bg-white pt-0 pb- md:pt-20 md:pb-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1400px] mx-auto gap-0">
           {/* Image Side */}
           <div className="relative h-[500px] lg:h-[750px] overflow-hidden order-2 lg:order-1">
