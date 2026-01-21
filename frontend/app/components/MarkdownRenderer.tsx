@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface MarkdownRendererProps {
   content: string;
@@ -231,16 +232,78 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
     return elements;
   };
 
+  // Helper to replace placeholders in text
+  const replacePlaceholders = (
+    text: string, 
+    allPlaceholders: Array<{ placeholder: string; content: React.ReactNode }>
+  ): React.ReactNode => {
+    const parts = text.split(/(__[\w_]+_\d+__)/g);
+    return parts.map((part, index) => {
+      const found = allPlaceholders.find(p => p.placeholder === part);
+      if (found) {
+        return <React.Fragment key={`part-${index}`}>{found.content}</React.Fragment>;
+      }
+      return <React.Fragment key={`part-${index}`}>{part}</React.Fragment>;
+    });
+  };
+
   // Process bold and italic text formatting
   const processTextFormatting = (text: string): React.ReactNode => {
     let processedText = text;
     let keyCounter = 0;
 
-    // Collect all bold matches first
+    // Collect all link matches first (process links before other formatting)
+    const linkMatches: Array<{ match: string; text: string; url: string; index: number }> = [];
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let match;
+    while ((match = linkRegex.exec(text)) !== null) {
+      linkMatches.push({
+        match: match[0],
+        text: match[1],
+        url: match[2],
+        index: match.index
+      });
+    }
+
+    // Replace link matches in reverse order to preserve indices
+    const linkPlaceholders: Array<{ placeholder: string; content: React.ReactNode }> = [];
+    for (let i = linkMatches.length - 1; i >= 0; i--) {
+      const linkMatch = linkMatches[i];
+      const placeholder = `__LINK_${i}__`;
+      const isExternal = linkMatch.url.startsWith('http://') || linkMatch.url.startsWith('https://');
+      linkPlaceholders.push({
+        placeholder,
+        content: isExternal ? (
+          <a 
+            key={`link-${keyCounter++}`} 
+            href={linkMatch.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline font-medium"
+          >
+            {linkMatch.text}
+          </a>
+        ) : (
+          <Link 
+            key={`link-${keyCounter++}`} 
+            href={linkMatch.url}
+            className="text-primary hover:underline font-medium"
+          >
+            {linkMatch.text}
+          </Link>
+        )
+      });
+      processedText = processedText.substring(0, linkMatch.index) + 
+                     placeholder + 
+                     processedText.substring(linkMatch.index + linkMatch.match.length);
+    }
+
+    // Collect all bold matches
     const boldMatches: Array<{ match: string; content: string; index: number }> = [];
     const boldRegex = /\*\*(.*?)\*\*/g;
-    let match;
-    while ((match = boldRegex.exec(text)) !== null) {
+    // Reset regex lastIndex
+    boldRegex.lastIndex = 0;
+    while ((match = boldRegex.exec(processedText)) !== null) {
       boldMatches.push({
         match: match[0],
         content: match[1],
@@ -257,7 +320,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         placeholder,
         content: (
           <strong key={`bold-${keyCounter++}`} className="font-bold">
-            {boldMatch.content}
+            {replacePlaceholders(boldMatch.content, linkPlaceholders)}
           </strong>
         )
       });
@@ -309,7 +372,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         placeholder,
         content: (
           <em key={`italic-underscore-${keyCounter++}`} className="italic">
-            {italicMatch.content}
+            {replacePlaceholders(italicMatch.content, [...linkPlaceholders, ...boldPlaceholders])}
           </em>
         )
       });
@@ -340,7 +403,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         placeholder,
         content: (
           <em key={`italic-asterisk-${keyCounter++}`} className="italic">
-            {italicMatch.content}
+            {replacePlaceholders(italicMatch.content, [...linkPlaceholders, ...boldPlaceholders])}
           </em>
         )
       });
@@ -349,29 +412,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
                      processedText.substring(italicMatch.index + italicMatch.match.length);
     }
 
-    // Split the processed text and replace placeholders
-    const parts = processedText.split(/(__\w+_\d+__)/g);
+    // Replace all placeholders in the final text
+    const allPlaceholders = [
+      ...linkPlaceholders,
+      ...boldPlaceholders,
+      ...italicUnderscorePlaceholders,
+      ...italicAsteriskPlaceholders
+    ];
     
-    return parts.map((part, index) => {
-      // Check if this part is a placeholder
-      const boldPlaceholder = boldPlaceholders.find(p => p.placeholder === part);
-      if (boldPlaceholder) {
-        return <React.Fragment key={`part-${index}`}>{boldPlaceholder.content}</React.Fragment>;
-      }
-
-      const italicUnderscorePlaceholder = italicUnderscorePlaceholders.find(p => p.placeholder === part);
-      if (italicUnderscorePlaceholder) {
-        return <React.Fragment key={`part-${index}`}>{italicUnderscorePlaceholder.content}</React.Fragment>;
-      }
-
-      const italicAsteriskPlaceholder = italicAsteriskPlaceholders.find(p => p.placeholder === part);
-      if (italicAsteriskPlaceholder) {
-        return <React.Fragment key={`part-${index}`}>{italicAsteriskPlaceholder.content}</React.Fragment>;
-      }
-
-      // Regular text
-      return <React.Fragment key={`part-${index}`}>{part}</React.Fragment>;
-    });
+    return replacePlaceholders(processedText, allPlaceholders);
   };
 
   return (
