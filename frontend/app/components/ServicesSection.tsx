@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from './ui/button'
+import { ScrollReveal } from './ScrollReveal'
 
 interface Service {
   id: string
@@ -75,14 +76,16 @@ export function ServicesSection() {
     <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-card-foreground mb-4">
-            Services <span className="italic font-serif">Offered</span>
-          </h2>
-          <p className="text-lg md:text-xl text-card-foreground/90 max-w-4xl mx-auto">
-            Helping small businesses grow through aesthetic, strategic social media.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-card-foreground mb-4">
+              Services <span className="italic font-serif">Offered</span>
+            </h2>
+            <p className="text-lg md:text-xl text-card-foreground/90 max-w-4xl mx-auto">
+              Helping small businesses grow through aesthetic, strategic social media.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Services Layout: List + Carousel */}
         <div className="max-w-7xl mx-auto">
@@ -94,10 +97,10 @@ export function ServicesSection() {
                   <button
                     key={service.id}
                     onClick={() => setSelectedService(index)}
-                    className={`w-full text-left p-5 md:p-7 rounded-3xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                    className={`w-full text-left p-5 md:p-7 rounded-3xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 gpu-accelerate ${
                       selectedService === index
                         ? 'bg-primary text-primary-foreground shadow-xl scale-[1.02]'
-                        : 'bg-card-foreground/10 hover:bg-card-foreground/20 text-card-foreground border-2 border-card-foreground/20 hover:border-card-foreground/30'
+                        : 'bg-card-foreground/10 hover:bg-card-foreground/20 text-card-foreground border-2 border-card-foreground/20 hover:border-card-foreground/30 hover:-translate-y-1'
                     }`}
                   >
                     <h3 className={`text-xl md:text-2xl font-serif ${selectedService === index ? 'font-bold' : 'font-medium'} mb-2`}>
@@ -116,7 +119,7 @@ export function ServicesSection() {
               <div className="mt-8">
                 <a
                   href="/services"
-                  className="inline-block w-full md:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="inline-block w-full md:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-2xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 gpu-accelerate"
                   aria-label="Explore all services"
                 >
                   Explore All Services

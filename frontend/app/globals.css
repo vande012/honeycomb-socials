@@ -463,6 +463,231 @@ p {
   animation-delay: 0.45s;
 }
 
+/* ============================================
+   AIRY FEMININE ANIMATION SYSTEM
+   Performance-optimized, mobile-friendly
+   ============================================ */
+
+/* Gentle breathing animation for images - creates soft, alive feeling */
+@keyframes gentle-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.animate-breathe {
+  animation: gentle-breathe 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Soft parallax effect - subtle depth on scroll */
+.parallax-soft {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Scroll reveal animations - content fades up gracefully */
+@keyframes fade-up-soft {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-soft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Base class for scroll-triggered animations */
+.scroll-reveal {
+  opacity: 0;
+  animation: fade-up-soft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.scroll-reveal-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.scroll-reveal-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.scroll-reveal-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.scroll-reveal-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.scroll-reveal-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Soft scale-in animation for images */
+@keyframes scale-in-soft {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  opacity: 0;
+  animation: scale-in-soft 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Gentle hover lift for cards - ultra subtle */
+.hover-lift-soft {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift-soft:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(201, 168, 106, 0.15);
+}
+
+/* Shimmer effect for gold accents - very subtle */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #c9a86a 0%,
+    #d4b57e 25%,
+    #e6d4b3 50%,
+    #d4b57e 75%,
+    #c9a86a 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft pulse for CTAs - draws attention gently */
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(201, 168, 106, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(201, 168, 106, 0.4);
+  }
+}
+
+.pulse-cta {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Staggered fade for multiple elements */
+.stagger-fade-1 {
+  opacity: 0;
+  animation: fade-in-soft 0.8s ease-out 0.1s forwards;
+}
+
+.stagger-fade-2 {
+  opacity: 0;
+  animation: fade-in-soft 0.8s ease-out 0.2s forwards;
+}
+
+.stagger-fade-3 {
+  opacity: 0;
+  animation: fade-in-soft 0.8s ease-out 0.3s forwards;
+}
+
+.stagger-fade-4 {
+  opacity: 0;
+  animation: fade-in-soft 0.8s ease-out 0.4s forwards;
+}
+
+/* Floating animation - more organic variation */
+@keyframes float-organic {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, -10px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-5px, -5px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(3px, -15px) rotate(0.5deg);
+  }
+}
+
+.float-organic {
+  animation: float-organic 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Gentle gradient shift for backgrounds */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Performance optimization classes */
+.gpu-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduced motion support - respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-breathe,
+  .animate-subtle-zoom,
+  .animate-float,
+  .float-organic,
+  .gradient-shift,
+  .shimmer-gold,
+  .pulse-cta {
+    animation: none !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

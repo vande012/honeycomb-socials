@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { ScrollReveal } from './ScrollReveal'
 import { 
   Scissors, 
   Sparkles, 
@@ -107,7 +108,7 @@ export function IndustriesSection() {
           src="/industries.jpeg"
           alt="Beauty industry professional"
           fill
-          className="object-cover object-center brightness-90"
+          className="object-cover object-center brightness-90 animate-breathe gpu-accelerate"
           quality={90}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white/10" />
@@ -115,20 +116,22 @@ export function IndustriesSection() {
 
       <div className="relative container mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <div className="mb-12 md:mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-3 h-3 rounded-full bg-primary"></div>
-            <p className="text-md md:text-base font-bold text-foreground uppercase tracking-wider">
-              Industries I Support
+        <ScrollReveal>
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-3 h-3 rounded-full bg-primary float-organic"></div>
+              <p className="text-md md:text-base font-bold text-foreground uppercase tracking-wider">
+                Industries I Support
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-3xl">
+              Strategy-first social media for female-forward brands
+            </h2>
+            <p className="text-xl md:text-xl text-bold max-w-3xl">
+              I partner with beauty and wellness brands to build thoughtful, strategy-led social media.
             </p>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 max-w-3xl">
-            Strategy-first social media for female-forward brands
-          </h2>
-          <p className="text-xl md:text-xl text-bold max-w-3xl">
-            I partner with beauty and wellness brands to build thoughtful, strategy-led social media.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Industries Grid - Enhanced Design */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -138,7 +141,7 @@ export function IndustriesSection() {
               <Link
                 key={industry.id}
                 href={industry.href}
-                className="group bg-gradient-to-br from-card via-[#faf8f0] to-[#f5eed5] backdrop-blur-sm rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-border/50 hover:border-primary/40 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="group bg-gradient-to-br from-card via-[#faf8f0] to-[#f5eed5] backdrop-blur-sm rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-border/50 hover:border-primary/40 block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 gpu-accelerate"
                 aria-label={`Learn more about ${industry.title}`}
               >
                 {/* Industry Image */}
@@ -186,18 +189,20 @@ export function IndustriesSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-gradient-to-br from-card via-[#faf8f0] to-[#f5eed5] backdrop-blur-sm rounded-3xl p-8 md:p-12 border-2 border-primary/20 max-w-4xl mx-auto shadow-lg">
-          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-            See what social media looks like when it's built with intention
-          </p>
-          <Link
-            href="/portfolio"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-primary via-[#d4b87a] to-[#c9a86a] hover:from-primary/95 hover:via-[#d4b87a]/95 hover:to-[#c9a86a]/95 text-primary-foreground font-semibold rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="View my portfolio"
-          >
-            See My Work
-          </Link>
-        </div>
+        <ScrollReveal delay={100}>
+          <div className="text-center bg-gradient-to-br from-card via-[#faf8f0] to-[#f5eed5] backdrop-blur-sm rounded-3xl p-8 md:p-12 border-2 border-primary/20 max-w-4xl mx-auto shadow-lg">
+            <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
+              See what social media looks like when it's built with intention
+            </p>
+            <Link
+              href="/portfolio"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-primary via-[#d4b87a] to-[#c9a86a] hover:from-primary/95 hover:via-[#d4b87a]/95 hover:to-[#c9a86a]/95 text-primary-foreground font-semibold rounded-2xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 gpu-accelerate"
+              aria-label="View my portfolio"
+            >
+              See My Work
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

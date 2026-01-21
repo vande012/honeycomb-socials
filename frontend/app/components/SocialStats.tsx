@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Instagram, Youtube } from 'lucide-react'
+import { ScrollReveal } from './ScrollReveal'
 
 // Simple TikTok and Pinterest SVG icons
 const TikTokIcon = () => (
@@ -81,7 +82,7 @@ function StatCard({ platform, icon, stats }: StatCardProps) {
   return (
     <div 
       ref={cardRef}
-      className="bg-gradient-to-br from-background via-[#faf8f0] to-[#f5eed5] border border-primary/20 rounded-3xl p-6 hover:shadow-xl transition-all duration-300 animate-fade-in-up hover:-translate-y-1 hover:border-primary/40"
+      className="bg-gradient-to-br from-background via-[#faf8f0] to-[#f5eed5] border border-primary/20 rounded-3xl p-6 hover:shadow-xl transition-all duration-500 animate-fade-in-up hover:-translate-y-1 hover:border-primary/40 gpu-accelerate"
     >
       <div className="flex items-center gap-2 mb-4">
         <div className="text-primary w-6 h-6 flex items-center justify-center">
@@ -201,14 +202,16 @@ export function SocialStats() {
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Real Results, Real Growth
-          </h2>
-          <p className="text-base md:text-lg text-foreground max-w-3xl mx-auto">
-            I've helped businesses grow across every major platform with content that converts and strategy that sticks.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Real Results, Real Growth
+            </h2>
+            <p className="text-base md:text-lg text-foreground max-w-3xl mx-auto">
+              I've helped businesses grow across every major platform with content that converts and strategy that sticks.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
           <StatCard

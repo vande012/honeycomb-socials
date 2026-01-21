@@ -105,6 +105,7 @@ import { RecentBlogPosts } from './components/RecentBlogPosts'
 import { ServicesSection } from './components/ServicesSection'
 import { IndustriesSection } from './components/IndustriesSection'
 import { AnimatedWord } from './components/AnimatedWord'
+import { ScrollReveal, ScrollFade } from './components/ScrollReveal'
 import { Palette, Target, Megaphone, Users, Search, Camera, Dumbbell } from 'lucide-react'
 
 export default async function Home() {
@@ -183,8 +184,8 @@ export default async function Home() {
               Social Media Management That Supports Your Beauty and Wellness Business
             </h1>
 
-            {/* Decorative Script Text - Refined sizing and spacing */}
-            <p className="script-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#c9a86a] mb-3 sm:mb-4 md:mb-5 animate-fade-in-up font-medium">
+            {/* Decorative Script Text - Refined sizing and spacing with shimmer */}
+            <p className="script-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#c9a86a] mb-3 sm:mb-4 md:mb-5 animate-fade-in-up font-medium shimmer-gold">
               welcome!
             </p>
             
@@ -205,15 +206,15 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 md:gap-6 animate-fade-in-up animation-delay-500">
               <Link
                 href="/process"
-                className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden"
+                className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-[#1f1e1c] hover:bg-[#1f1e1c]/95 text-white font-semibold rounded-xl transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 shadow-xl hover:shadow-2xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg relative overflow-hidden gpu-accelerate"
                 aria-label="Book a free consultation"
               >
                 <span className="relative z-10">View My Process</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#c9a86a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Link>
               <Link
                 href="/audit"
-                className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-white/90 backdrop-blur-sm border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-xl transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg"
+                className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 md:px-12 md:py-6 bg-white/90 backdrop-blur-sm border-2 border-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-white text-[#1f1e1c] font-semibold rounded-xl transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 shadow-lg hover:shadow-xl text-center focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-4 text-base sm:text-lg gpu-accelerate"
                 aria-label="Get a free consultation"
               >
                 Get Free Consultation
@@ -232,7 +233,7 @@ export default async function Home() {
               src="/salon.jpeg"
               alt="Beauty salon workspace with elegant styling"
               fill
-              className="object-cover"
+              className="object-cover animate-breathe gpu-accelerate"
               quality={90}
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -240,40 +241,42 @@ export default async function Home() {
 
           {/* Content Side */}
           <div className="bg-[#fafafa] flex items-center px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20 lg:py-24 order-1 lg:order-2">
-            <div className="max-w-2xl">
-              {/* Decorative Script Text */}
-              <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
-                your beauty business
-              </p>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f1e1c] mb-8 leading-tight">
-                Deserves Better Socials
-              </h2>
-              
-              <div className="space-y-6 text-[#1f1e1c]/80 text-base md:text-lg leading-relaxed">
-                <p>
-                  Working with Honeycomb Socials, strategy always comes first. My motto is simple: if you don't know where you want to go, how are you supposed to get there?
+            <ScrollReveal className="w-full">
+              <div className="max-w-2xl">
+                {/* Decorative Script Text */}
+                <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4 shimmer-gold">
+                  your beauty business
                 </p>
                 
-                <p>
-                  Once I understand your goals, I create a custom roadmap to guide your social media in a clear, intentional direction. From there, we support that plan with platform-specific content and systems that make showing up online feel easier, not heavier.
-                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1f1e1c] mb-8 leading-tight">
+                  Deserves Better Socials
+                </h2>
                 
-                <p className="font-medium text-[#1f1e1c]">
-                  Ready to bring clarity to your social media?
-                </p>
-              </div>
+                <div className="space-y-6 text-[#1f1e1c]/80 text-base md:text-lg leading-relaxed">
+                  <p>
+                    Working with Honeycomb Socials, strategy always comes first. My motto is simple: if you don't know where you want to go, how are you supposed to get there?
+                  </p>
+                  
+                  <p>
+                    Once I understand your goals, I create a custom roadmap to guide your social media in a clear, intentional direction. From there, we support that plan with platform-specific content and systems that make showing up online feel easier, not heavier.
+                  </p>
+                  
+                  <p className="font-medium text-[#1f1e1c]">
+                    Ready to bring clarity to your social media?
+                  </p>
+                </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <a
-                  href="/audit"
-                  className="px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-300 text-center hover:scale-[1.02] shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2"
-                  aria-label="Book a free consultation"
-                >
-                  Book Free Consultation
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                  <a
+                    href="/audit"
+                    className="px-8 py-4 bg-[#1f1e1c] hover:bg-[#1f1e1c]/90 text-white font-semibold rounded-lg transition-all duration-500 text-center hover:scale-[1.02] hover:-translate-y-1 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#1f1e1c] focus:ring-offset-2 gpu-accelerate"
+                    aria-label="Book a free consultation"
+                  >
+                    Book Free Consultation
+                  </a>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -292,45 +295,47 @@ export default async function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             {/* Text Content */}
-            <div className="order-2 lg:order-1">
-              {/* Decorative Script Text */}
-              <p className="script-font text-3xl sm:text-4xl text-[#c9a86a] mb-4">
-                Hi, I'm Maggie
-              </p>
-              
-              <div className="space-y-6 text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed">
-                <p>
-                  I help beauty and wellness brands bring clarity and direction to their social media so they can attract the right clients without the overwhelm.
+            <ScrollReveal className="order-2 lg:order-1">
+              <div>
+                {/* Decorative Script Text */}
+                <p className="script-font text-3xl sm:text-5xl text-[#c9a86a] mb-4 shimmer-gold">
+                  Hi, I'm Maggie
                 </p>
+                
+                <div className="space-y-6 text-base md:text-lg text-[#1f1e1c]/80 leading-relaxed">
+                  <p>
+                    I help beauty and wellness brands bring clarity and direction to their social media so they can attract the right clients without the overwhelm.
+                  </p>
 
-                <p>
-                  With a background in cosmetology, I understand the pace, pressure, and expectations of the beauty industry, which is why everything here starts with strategy, not trends.
-                </p>
+                  <p>
+                    With a background in cosmetology, I understand the pace, pressure, and expectations of the beauty industry, which is why everything here starts with strategy, not trends.
+                  </p>
 
-                <p>
-                  If you're posting without strategy, or just trying to keep up with trends, it's easy to burn out, and easy to miss what actually moves your business forward.
-                </p>
+                  <p>
+                    If you're posting without strategy, or just trying to keep up with trends, it's easy to burn out, and easy to miss what actually moves your business forward.
+                  </p>
 
-                <p className="font-semibold text-[#1f1e1c]">
-                  Here, we start with goals, not templates.
-                </p>
+                  <p className="font-semibold text-[#1f1e1c]">
+                    Here, we start with goals, not templates.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Image */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <ScrollFade delay={200} className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <Image
                   src="/about.png"
                   alt="Maggie Vandehey, founder of Honeycomb Socials"
                   width={500}
                   height={650}
-                  className="w-full h-auto rounded-2xl shadow-lg object-cover"
+                  className="w-full h-auto rounded-2xl shadow-lg object-cover hover-lift-soft gpu-accelerate"
                   quality={90}
                   sizes="(max-width: 1024px) 100vw, 500px"
                 />
               </div>
-            </div>
+            </ScrollFade>
           </div>
         </div>
       </section>
