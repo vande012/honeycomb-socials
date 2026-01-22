@@ -92,7 +92,7 @@ const industries: Industry[] = [
   {
     id: 'spas-medspas',
     title: 'Spas & Medspas',
-    href: '/industries/spa.jpg',
+    href: '/industries/spas-medspas',
     benefit: 'Create confidence and consistency across your online presence.',
     icon: Heart,
     image: '/industries/spa.jpg'
