@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Nail Technicians & Salons | Honeycomb Socials',
   description: 'Grow your nail salon with strategic social media content. Showcase your nail artistry, attract new clients, and build a loyal following with aesthetic content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/nail-salons`,
+  },
 };
 
 // Revalidate every hour - static content

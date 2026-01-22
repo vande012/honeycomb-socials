@@ -11,9 +11,14 @@ import {
   Youtube
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Portfolio | Honeycomb Socials',
   description: 'View my portfolio of social media success stories. See how I help beauty and wellness businesses grow with strategic content that converts. Get inspired.',
+  alternates: {
+    canonical: `${baseUrl}/portfolio`,
+  },
 }
 
 export default function PortfolioPage() {

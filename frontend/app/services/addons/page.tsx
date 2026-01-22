@@ -11,10 +11,15 @@ import {
   BarChart3
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Add-On Services | Extra Reels, Templates & Audits | Honeycomb Socials',
   description: 'Social media add-ons: extra Reels, templates, email snippets, audits, and seasonal campaigns. Perfect for supplementing your existing strategy. Learn more.',
   keywords: 'social media add-ons, extra reels, social media templates, email marketing snippets, social media audit, seasonal content, campaign content',
+  alternates: {
+    canonical: `${baseUrl}/services/addons`,
+  },
 }
 
 export default function AddOnsPage() {

@@ -11,10 +11,15 @@ import {
   Lightbulb
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Strategy Services | Custom Content Strategy | Honeycomb Socials',
   description: 'Custom social media strategy for beauty businesses. Audience research, content pillars, and 30-day calendars that convert. Get your strategic plan today.',
   keywords: 'social media strategy, content strategy, social media planning, audience research, content calendar, social media consulting, custom strategy',
+  alternates: {
+    canonical: `${baseUrl}/services/strategy`,
+  },
 }
 
 export default function StrategyPage() {

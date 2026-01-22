@@ -12,10 +12,15 @@ import {
   Video
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Consulting & 1:1 Guidance | Coaching Services | Honeycomb Socials',
   description: 'Social media consulting and 1-on-1 coaching for beauty businesses. Strategy sessions, content audits, and actionable guidance to grow your following. Book a session.',
   keywords: 'social media consulting, social media coaching, 1 on 1 guidance, content audit, social media strategy session, social media training',
+  alternates: {
+    canonical: `${baseUrl}/services/consulting`,
+  },
 }
 
 export default function ConsultingPage() {

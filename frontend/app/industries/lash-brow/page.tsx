@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Lash & Brow Artists | Honeycomb Socials',
   description: 'Grow your lash and brow business with strategic social media content. Showcase transformations, attract clients, and build a loyal following with before-and-after content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/lash-brow`,
+  },
 };
 
 // Revalidate every hour - static content

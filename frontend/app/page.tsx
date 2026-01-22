@@ -136,7 +136,11 @@ export default async function Home() {
     "url": "https://honeycombsocials.com",
     "logo": "https://honeycombsocials.com/logo-dark.png",
     "description": "Social media management for beauty and wellness businesses that value aesthetics as much as results.",
-    "sameAs": [],
+    "sameAs": [
+      "https://www.instagram.com/honeycomb.socials/",
+      "https://www.facebook.com/HoneycombSocials/",
+      "https://www.linkedin.com/company/honeycomb-socials/"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US"

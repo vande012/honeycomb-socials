@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Makeup Artists | Honeycomb Socials',
   description: 'Grow your makeup artistry business with strategic social media content. Showcase your work, attract brides and clients, and build a portfolio that books itself.',
+  alternates: {
+    canonical: `${baseUrl}/industries/makeup-artists`,
+  },
 };
 
 // Revalidate every hour - static content

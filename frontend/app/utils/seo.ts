@@ -49,7 +49,11 @@ export function generateOrganizationSchema(): string {
       "contactType": "customer service",
       "email": process.env.CONTACT_EMAIL || process.env.EMAIL_USER || "contact@honeycombsocials.com"
     },
-    "sameAs": [],
+    "sameAs": [
+      "https://www.instagram.com/honeycomb.socials/",
+      "https://www.facebook.com/HoneycombSocials/",
+      "https://www.linkedin.com/company/honeycomb-socials/"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Social Media Services",

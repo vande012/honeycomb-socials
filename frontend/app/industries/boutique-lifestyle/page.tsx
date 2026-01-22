@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Boutiques & Lifestyle Brands | Honeycomb Socials',
   description: 'Grow your boutique or lifestyle brand with strategic social media content. Convert browsers into buyers with aesthetic content and e-commerce strategies that drive sales.',
+  alternates: {
+    canonical: `${baseUrl}/industries/boutique-lifestyle`,
+  },
 };
 
 // Revalidate every hour - static content

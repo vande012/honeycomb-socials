@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Gyms & Fitness Businesses | Honeycomb Socials',
   description: 'Grow your gym or fitness business with strategic social media content. Build a strong community, attract members, and motivate your audience with content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/gyms`,
+  },
 };
 
 // Revalidate every hour - static content

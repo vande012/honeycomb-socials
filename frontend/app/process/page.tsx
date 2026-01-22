@@ -12,10 +12,15 @@ import {
   ArrowRight
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'My Process | Social Media Management Workflow | Honeycomb Socials',
   description: 'Our 7-step social media management process: discovery, strategy, content creation, and scheduling. See how we help beauty businesses grow. Book your free consultation.',
   keywords: 'social media management process, how social media management works, social media onboarding process, what to expect social media management, social media management workflow, step by step social media management, monthly social media content calendar, done for you social media',
+  alternates: {
+    canonical: `${baseUrl}/process`,
+  },
 }
 
 interface ProcessStep {

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
@@ -36,6 +36,21 @@ export default function ConsultationPage() {
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      const script = document.createElement('script');
+      script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+      
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [])
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -117,12 +132,29 @@ export default function ConsultationPage() {
     setErrors({})
 
     try {
+      // Get reCAPTCHA token
+      let recaptchaToken = '';
+      if (typeof window !== 'undefined' && (window as any).grecaptcha) {
+        try {
+          recaptchaToken = await (window as any).grecaptcha.execute(
+            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+            { action: 'submit_consultation' }
+          );
+        } catch (recaptchaError) {
+          console.error('reCAPTCHA error:', recaptchaError);
+          // Continue without reCAPTCHA token - backend will handle it
+        }
+      }
+
       const response = await fetch('/api/consultation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
       })
 
       const data = await response.json()
@@ -358,7 +390,7 @@ export default function ConsultationPage() {
                   {/* Success Message */}
                   {submitStatus === 'success' && (
                     <div className="p-4 bg-success/10 border border-success/20 rounded-lg">
-                      <p className="text-sm text-success-foreground flex items-center gap-2">
+                      <p className="text-sm text-[#06402b] flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4" />
                         Thank you! I've received your request and will get back to you soon.
                       </p>

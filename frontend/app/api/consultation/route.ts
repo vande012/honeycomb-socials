@@ -68,6 +68,56 @@ function sanitizeInput(input: string): string {
     .trim();
 }
 
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number; error?: string }> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  
+  // If reCAPTCHA is not configured at all, allow submission (development mode)
+  if (!secretKey && !siteKey) {
+    console.warn("reCAPTCHA not configured - allowing submission without verification");
+    return { success: true };
+  }
+  
+  // If configured but no token provided, this might be an issue
+  if (!token) {
+    console.warn("No reCAPTCHA token provided - allowing submission (may be development or script load failure)");
+    return { success: true }; // Graceful degradation
+  }
+
+  if (!secretKey) {
+    console.warn("RECAPTCHA_SECRET_KEY not configured - skipping verification");
+    return { success: true }; // Allow submission if secret key not configured
+  }
+
+  try {
+    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${secretKey}&response=${token}`,
+    });
+
+    const data = await response.json();
+    
+    if (!data.success) {
+      return { success: false, error: "reCAPTCHA verification failed" };
+    }
+
+    // For reCAPTCHA v3, check the score (0.0 - 1.0)
+    // Lower scores indicate likely bots, higher scores indicate likely humans
+    const score = data.score || 0;
+    if (score < 0.5) {
+      return { success: false, error: "Suspicious activity detected", score };
+    }
+
+    return { success: true, score };
+  } catch (error) {
+    console.error('reCAPTCHA verification error:', error);
+    return { success: false, error: "Failed to verify reCAPTCHA" };
+  }
+}
+
 function validateInput(data: any): { isValid: boolean; error?: string } {
   // Check required fields
   const required = ["name", "email", "businessName", "businessType", "message"];
@@ -143,6 +193,19 @@ export async function POST(request: NextRequest) {
     } catch (error) {
       return NextResponse.json(
         { ok: false, error: "Invalid request format" },
+        { status: 400 }
+      );
+    }
+
+    // Verify reCAPTCHA
+    const recaptchaResult = await verifyRecaptcha(body.recaptchaToken || '');
+    if (!recaptchaResult.success) {
+      console.warn('reCAPTCHA verification failed:', recaptchaResult.error, 'Score:', recaptchaResult.score);
+      return NextResponse.json(
+        { 
+          ok: false, 
+          error: "Security verification failed. Please try again." 
+        },
         { status: 400 }
       );
     }

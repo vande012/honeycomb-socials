@@ -11,10 +11,15 @@ import {
   Layers
 } from 'lucide-react'
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Brand Identity & Aesthetic Design | Visual Branding Services | Honeycomb Socials',
   description: 'Brand identity and aesthetic design for social media. Custom color palettes, typography, and style guides for beauty businesses. Create a cohesive brand today.',
   keywords: 'brand identity design, aesthetic design, visual branding, brand kit, color palette design, social media branding, brand style guide',
+  alternates: {
+    canonical: `${baseUrl}/services/brand-identity`,
+  },
 }
 
 export default function BrandIdentityPage() {

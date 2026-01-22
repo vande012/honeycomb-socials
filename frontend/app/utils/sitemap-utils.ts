@@ -44,13 +44,25 @@ export function getStaticPages(): SitemapEntry[] {
       url: `${SITE_URL}/process`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${SITE_URL}/audit`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: `${SITE_URL}/services`,

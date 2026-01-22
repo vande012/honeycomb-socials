@@ -31,7 +31,7 @@ const socialLinks = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/maggie-vandehey-910579330/',
+    url: 'https://www.linkedin.com/company/honeycomb-socials/',
     icon: Linkedin,
   },
 ];

@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Beauty Brands & Products | Honeycomb Socials',
   description: 'Build your beauty brand with strategic social media marketing. Aesthetic content and growth strategies for beauty product companies. Get started today.',
+  alternates: {
+    canonical: `${baseUrl}/industries/beauty-brands`,
+  },
 };
 
 // Revalidate every hour - static content

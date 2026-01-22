@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Florists & Wedding Businesses | Honeycomb Socials',
   description: 'Grow your florist and wedding business with strategic social media content. Attract brides, event planners, and clients with dreamy, on-brand content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/florist-wedding`,
+  },
 };
 
 // Revalidate every hour - static content

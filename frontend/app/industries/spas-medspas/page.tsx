@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
 import { Check } from 'lucide-react';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com';
+
 export const metadata = {
   title: 'Social Media Marketing for Spas & MedSpas | Honeycomb Socials',
   description: 'Grow your spa or medspa business with strategic social media content. Attract clients, showcase services, and build trust with relaxing, professional content that converts.',
+  alternates: {
+    canonical: `${baseUrl}/industries/spas-medspas`,
+  },
 };
 
 // Revalidate every hour - static content
@@ -19,7 +24,7 @@ export default function SpasMedSpasPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/industries/spa.jpeg"
+            src="/industries/spa.jpg"
             alt="Spa background"
             fill
             className="object-cover"
