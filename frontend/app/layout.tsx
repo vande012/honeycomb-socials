@@ -73,6 +73,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: metaDescription,
       icons,
       metadataBase: new URL(baseUrl),
+      verification: {
+        google: 'PiCARpWIU9pPH_JBRHigCXJ5uKID6IUgm1zV-Af29Hg',
+      },
       openGraph: {
         type: 'website',
         locale: 'en_US',
@@ -105,6 +108,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         "Social media management for beauty and wellness businesses. Aesthetic content that converts followers into clients. Book your free consultation today.",
       metadataBase: new URL(baseUrl),
+      verification: {
+        google: 'PiCARpWIU9pPH_JBRHigCXJ5uKID6IUgm1zV-Af29Hg',
+      },
       openGraph: {
         type: 'website',
         locale: 'en_US',
