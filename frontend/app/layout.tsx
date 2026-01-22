@@ -9,6 +9,7 @@ import FAQSchema from "./components/FAQSchema";
 import { getFAQs, getGlobalData } from "./api/api";
 import { generateIconMetadata } from "./utils/favicon";
 import { logger } from "./utils/logger";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 /* ============================================
    FONT CUSTOMIZATION
@@ -159,6 +160,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${redHatDisplay.variable} ${dancingScript.variable} antialiased`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics />
         {faqsForSchema.length > 0 && <FAQSchema faqs={faqsForSchema} />}
         <div className="min-h-screen bg-background flex flex-col">
           <Navbar />

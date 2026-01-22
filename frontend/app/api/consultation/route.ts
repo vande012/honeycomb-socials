@@ -297,7 +297,7 @@ ${sanitizedData.message}
     `;
 
     // Email to client (confirmation)
-    const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.com'}/blog`;
+    const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.honeycombsocials.com'}/blog`;
     const clientEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1f1e1c;">Thank You for Your Interest!</h2>
