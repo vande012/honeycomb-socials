@@ -16,7 +16,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://honeycombsocials.co
 
 export const metadata = {
   title: 'My Process | Social Media Management Workflow | Honeycomb Socials',
-  description: 'Our 7-step social media management process: discovery, strategy, content creation, and scheduling. See how we help beauty businesses grow. Book your free consultation.',
+  description: 'My 7-step social media management process: discovery, strategy, content creation, and scheduling. See how we help beauty businesses grow. Book your free consultation.',
   keywords: 'social media management process, how social media management works, social media onboarding process, what to expect social media management, social media management workflow, step by step social media management, monthly social media content calendar, done for you social media',
   alternates: {
     canonical: `${baseUrl}/process`,
@@ -45,7 +45,7 @@ const processSteps: ProcessStep[] = [
     image: '/process/Step 1 .jpeg',
     imageAlt: 'Social media discovery call for beauty businesses',
     whatHappens: [
-      'We start with a discovery call to make sure we\'re the right fit.',
+      'Everything starts with a discovery call to confirm we\'re the right fit for each other.',
       'We discuss your business, goals, challenges, and what success looks like for you on social media.'
     ],
     whyItMatters: [
