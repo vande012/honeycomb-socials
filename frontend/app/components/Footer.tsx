@@ -193,6 +193,20 @@ export function Footer() {
             <p className="text-sm text-white/70 text-center md:text-left font-sans">
               © {currentYear} Honeycomb Socials. All rights reserved.
             </p>
+            
+            {/* Built by link - centered */}
+            <p className="text-sm text-white/70 text-center font-sans order-first md:order-none">
+              Built by{' '}
+              <a
+                href="https://www.vande-digital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors duration-300 underline"
+              >
+                Vande Digital
+              </a>
+            </p>
+            
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
               <Link
                 href="/privacy"
