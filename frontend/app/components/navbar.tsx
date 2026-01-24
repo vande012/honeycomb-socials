@@ -50,10 +50,10 @@ const navItems: NavItem[] = [
       { label: "Add-On Services", href: "/services/addons" },
     ]
   },
-  {
+  /*{
     label: "Portfolio",
     href: "/portfolio",
-  },
+  },*/
   {
     label: "Blog",
     href: "/blog",

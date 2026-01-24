@@ -169,7 +169,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                      Greenlight Designs
+                      Social Media Marketing Agency
                     </h3>
                     <p className="text-lg text-primary font-semibold mb-3">
                       Social Media Manager

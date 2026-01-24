@@ -46,3 +46,4 @@ const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs }) => {
 
 export default FAQSchema;
 
+

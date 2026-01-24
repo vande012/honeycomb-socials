@@ -93,6 +93,11 @@ const nextConfig: NextConfig = {
       //   destination: '/new-path',
       //   permanent: true,
       // },
+      {
+        source: '/portfolio',
+        destination: '/',
+        permanent: false,
+      }
     ];
   },
 

@@ -41,7 +41,7 @@ const footerNav = {
   main: [
     { label: 'About', href: '/about' },
     { label: 'My Process', href: '/process' },
-    { label: 'Portfolio', href: '/portfolio' },
+    /*{ label: 'Portfolio', href: '/portfolio' },*/
     { label: 'Blog', href: '/blog' },
   ],
   industries: {
